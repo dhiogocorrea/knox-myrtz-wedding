@@ -34,6 +34,11 @@ export function Footer({ config, dict }: FooterProps) {
           {dict.footer.madeWithLove} {config.couple.partner1.shortName} & {config.couple.partner2.shortName}
           <Heart className="w-3 h-3 text-rose/40 fill-rose/40" />
         </p>
+
+        {/* Developer credit */}
+        <p className="text-warm-gray/20 text-[10px] mt-4 italic">
+          Made with love by Orimaz 💜
+        </p>
       </div>
     </footer>
   );
