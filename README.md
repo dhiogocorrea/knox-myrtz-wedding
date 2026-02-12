@@ -1,4 +1,4 @@
-# 💍 Knox Wedding Website
+# 💍 Knox & Mytz Wedding Website
 
 A beautiful, modern wedding website built with love for G & M's special day. This elegant web application features a romantic design with interactive elements, multi-language support, and a delightful user experience.
 
