@@ -1,0 +1,155 @@
+"use client";
+
+import { useState, useEffect, type ReactNode } from "react";
+import { Home, CalendarDays, Mail, Plane, Gem, Globe } from "lucide-react";
+import type { Dictionary } from "@/lib/i18n";
+import type { TabId } from "./WeddingApp";
+
+interface NavigationProps {
+  dict: Dictionary;
+  activeTab: TabId;
+  onTabChange: (tab: TabId) => void;
+  locale: string;
+  otherLocale: string;
+}
+
+const tabs: { id: TabId; icon: ReactNode }[] = [
+  { id: "home", icon: <Home className="w-4 h-4" /> },
+  { id: "schedule", icon: <CalendarDays className="w-4 h-4" /> },
+  { id: "rsvp", icon: <Mail className="w-4 h-4" /> },
+  { id: "touristicInfo", icon: <Plane className="w-4 h-4" /> },
+  { id: "weddingInfo", icon: <Gem className="w-4 h-4" /> },
+];
+
+export function Navigation({
+  dict,
+  activeTab,
+  onTabChange,
+  locale,
+  otherLocale,
+}: NavigationProps) {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleTabClick = (tabId: TabId) => {
+    onTabChange(tabId);
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+          scrolled
+            ? "glass-card shadow-lg shadow-primary/5"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo / Brand */}
+            <button
+              onClick={() => handleTabClick("home")}
+              className="text-xl text-primary hover:text-primary-dark transition-all duration-300 cursor-pointer hover:scale-110"
+              style={{ fontFamily: "var(--font-great-vibes)" }}
+            >
+              G & M
+            </button>
+
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-1">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabClick(tab.id)}
+                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer hover:scale-105 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-gold/20 ${
+                    activeTab === tab.id
+                      ? "text-primary-dark bg-accent/50"
+                      : "text-warm-gray hover:text-primary hover:bg-accent/20"
+                  }`}
+                >
+                  <span className="mr-1.5 inline-flex">{tab.icon}</span>
+                  {dict.nav[tab.id]}
+                  {activeTab === tab.id && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-gold rounded-full" />
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Language Toggle + Mobile Menu Button */}
+            <div className="flex items-center gap-2">
+              <a
+                href={`/${otherLocale}`}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase border border-gold/30 text-gold hover:bg-gold/10 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-md hover:shadow-gold/30 hover:border-gold/50"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                {otherLocale === "pt" ? "PT" : "EN"}
+              </a>
+
+              {/* Mobile hamburger */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-2 text-primary hover:text-primary-dark transition-all duration-300 cursor-pointer hover:scale-110"
+                aria-label="Toggle menu"
+              >
+                <div className="w-5 flex flex-col gap-1">
+                  <span
+                    className={`block h-0.5 bg-current transition-all duration-300 ${
+                      mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+                    }`}
+                  />
+                  <span
+                    className={`block h-0.5 bg-current transition-all duration-300 ${
+                      mobileMenuOpen ? "opacity-0" : ""
+                    }`}
+                  />
+                  <span
+                    className={`block h-0.5 bg-current transition-all duration-300 ${
+                      mobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                    }`}
+                  />
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-30 md:hidden" onClick={() => setMobileMenuOpen(false)}>
+          <div className="absolute inset-0 bg-charcoal/20 backdrop-blur-sm" />
+          <div
+            className="absolute top-16 left-0 right-0 glass-card border-b border-accent/30 shadow-xl animate-fade-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-4 flex flex-col gap-1">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabClick(tab.id)}
+                  className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer hover:translate-x-1 hover:shadow-md ${
+                    activeTab === tab.id
+                      ? "text-primary-dark bg-accent/40"
+                      : "text-warm-gray hover:text-primary hover:bg-accent/20"
+                  }`}
+                >
+                  <span className="mr-3 inline-flex">{tab.icon}</span>
+                  {dict.nav[tab.id]}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

@@ -1,0 +1,223 @@
+# ─────────────────────────────────────────────
+# Knox Wedding – Site Configuration
+# ─────────────────────────────────────────────
+
+couple:
+  partner1:
+    name: "Gui"
+    shortName: "Gui"
+  partner2:
+    name: "Myrto"
+    shortName: "Myrto"
+
+wedding:
+  date: "2026-06-20"
+  time: "17:00"
+  venue:
+    name: "Villa Olivia"
+    address: "Akrotiri, Santorini, Greece"
+    mapUrl: "https://maps.google.com/?q=Akrotiri+Santorini+Greece"
+    coordinates:
+      lat: 36.3512
+      lng: 25.3767
+  hashtag: "#GuiAndMyrto2026"
+
+schedule:
+  - time: "18:00"
+    title:
+      en: "Welcome Dinner - Family"
+      pt: "Jantar de Boas-Vindas - Família"
+      el: "Δείπνο Υποδοχής - Οικογένεια"
+    description:
+      en: "Intimate dinner with close family at the villa - June 18"
+      pt: "Jantar íntimo com a família próxima na vila - 18 de junho"
+      el: "Οικείο δείπνο με την οικογένεια στη βίλα - 18 Ιουνίου"
+    icon: "utensils"
+    visibleTo:
+      - family
+
+  - time: "10:00"
+    title:
+      en: "Beach Day & Lunch"
+      pt: "Dia de Praia & Almoço"
+      el: "Μέρα στην Παραλία & Γεύμα"
+    description:
+      en: "Relaxing beach day at Red Beach with barbecue lunch - June 19"
+      pt: "Dia relaxante na praia Red Beach com churrasco ao almoço - 19 de junho"
+      el: "Χαλαρή μέρα στην Κόκκινη Παραλία με γεύμα barbecue - 19 Ιουνίου"
+    icon: "sun"
+    visibleTo:
+      - friends
+      - family
+
+  - time: "15:00"
+    title:
+      en: "Guest Arrival & Welcome Drinks"
+      pt: "Chegada dos Convidados e Bebidas de Boas-Vindas"
+      el: "Άφιξη Καλεσμένων & Ποτά Καλωσορίσματος"
+    description:
+      en: "Welcome to Santorini! Enjoy ouzo and mezedes as you arrive"
+      pt: "Bem-vindos a Santorini! Aproveite ouzo e mezedes na chegada"
+      el: "Καλώς ήρθατε στη Σαντορίνη! Απολαύστε ούζο και μεζέδες καθώς φτάνετε"
+    icon: "wine"
+
+  - time: "16:00"
+    title:
+      en: "Stefana Ceremony"
+      pt: "Cerimônia dos Stefana"
+      el: "Τελετή Στεφάνων"
+    description:
+      en: "The traditional Greek crowning ceremony — joining two lives as one"
+      pt: "A tradicional cerimônia grega das coroas — unindo duas vidas em uma"
+      el: "Η παραδοσιακή ελληνική τελετή στεφανώματος — ένωση δύο ζωών σε μία"
+    icon: "sun"
+
+  - time: "17:00"
+    title:
+      en: "Wedding Ceremony"
+      pt: "Cerimônia de Casamento"
+      el: "Τελετή Γάμου"
+    description:
+      en: "Exchange of vows overlooking the caldera at sunset"
+      pt: "Troca de votos com vista para a caldeira ao pôr do sol"
+      el: "Ανταλλαγή όρκων με θέα στην καλντέρα στο ηλιοβασίλεμα"
+    icon: "church"
+
+  - time: "18:30"
+    title:
+      en: "Cocktail Hour"
+      pt: "Hora do Coquetel"
+      el: "Ώρα Cocktail"
+    description:
+      en: "Greek wines, cocktails and canapés with Aegean views"
+      pt: "Vinhos gregos, coquetéis e canapés com vista para o Egeu"
+      el: "Ελληνικά κρασιά, cocktails και ορεκτικά με θέα στο Αιγαίο"
+    icon: "martini"
+
+  - time: "20:00"
+    title:
+      en: "Reception Dinner"
+      pt: "Jantar de Recepção"
+      el: "Δείπνο Υποδοχής"
+    description:
+      en: "A feast of Greek cuisine with live bouzouki music"
+      pt: "Um banquete de culinária grega com música de bouzouki ao vivo"
+      el: "Ένα πανηγύρι ελληνικής κουζίνας με ζωντανή μουσική μπουζούκι"
+    icon: "utensils"
+
+  - time: "22:00"
+    title:
+      en: "Dancing & Celebration"
+      pt: "Dança e Celebração"
+      el: "Χορός & Γιορτή"
+    description:
+      en: "Dance the night away under the stars — Opa!"
+      pt: "Dance a noite toda sob as estrelas — Opa!"
+      el: "Χορέψτε όλη τη νύχτα κάτω από τα αστέρια — Ώπα!"
+    icon: "music"
+
+rsvp:
+  googleFormUrl: "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
+  fields:
+    name: "entry.123456789"
+    email: "entry.987654321"
+    attendance: "entry.111111111"
+    guests: "entry.222222222"
+    dietary: "entry.333333333"
+    message: "entry.444444444"
+  deadline: "2026-05-15"
+
+auth:
+  password: "guimyrto2026"
+  passwords:
+    friends: "friends2026"
+    family: "family2026"
+  guestPasswords:
+    # Family members
+    - password: "maria2026"
+      group: family
+      name: "Maria"
+    - password: "joao2026"
+      group: family
+      name: "João"
+    - password: "ana2026"
+      group: family
+      name: "Ana"
+    - password: "carlos2026"
+      group: family
+      name: "Carlos"
+    
+    # Friends
+    - password: "pedro2026"
+      group: friends
+      name: "Pedro"
+    - password: "sofia2026"
+      group: friends
+      name: "Sofia"
+    - password: "lucas2026"
+      group: friends
+      name: "Lucas"
+    - password: "julia2026"
+      group: friends
+      name: "Julia"
+
+defaultLocale: "en"
+locales:
+  - "en"
+  - "pt"
+  - "el"
+
+touristicInfo:
+  - title:
+      en: "Getting to Santorini"
+      pt: "Como Chegar a Santorini"
+      el: "Πώς να φτάσετε στη Σαντορίνη"
+    content:
+      en: "Santorini (Thira) Airport has connections from Athens and major European cities. You can also take a ferry from Athens' Piraeus port — a scenic 5-hour journey through the Cyclades."
+      pt: "O Aeroporto de Santorini (Thira) tem conexões de Atenas e grandes cidades europeias. Você também pode pegar um ferry do porto de Pireu em Atenas — uma viagem cênica de 5 horas pelas Cíclades."
+      el: "Το αεροδρόμιο Σαντορίνης (Θήρα) έχει συνδέσεις από την Αθήνα και μεγάλες ευρωπαϊκές πόλεις. Μπορείτε επίσης να πάρετε φέρυμποτ από τον Πειραιά — ένα γραφικό ταξίδι 5 ωρών μέσα στις Κυκλάδες."
+    icon: "plane"
+
+  - title:
+      en: "Where to Stay"
+      pt: "Onde Ficar"
+      el: "Πού να μείνετε"
+    content:
+      en: "We recommend staying in Oia or Fira for stunning caldera views. Boutique cave hotels like Canaves Oia or Katikies offer unforgettable experiences. Budget-friendly options are available in Perissa and Kamari."
+      pt: "Recomendamos ficar em Oia ou Fira para vistas deslumbrantes da caldeira. Hotéis boutique em caverna como Canaves Oia ou Katikies oferecem experiências inesquecíveis. Opções econômicas estão disponíveis em Perissa e Kamari."
+      el: "Συνιστούμε να μείνετε στην Οία ή τη Φηρά για εκπληκτική θέα στην καλντέρα. Boutique ξενοδοχεία σε σπηλιές όπως το Canaves Oia ή Katikies προσφέρουν ανεπανάληπτες εμπειρίες. Οικονομικές επιλογές διατίθενται στην Περίσσα και το Καμάρι."
+    icon: "hotel"
+
+  - title:
+      en: "Things to See"
+      pt: "O que Ver"
+      el: "Τι να δείτε"
+    content:
+      en: "Visit the ancient ruins of Akrotiri, watch the legendary Oia sunset, explore the volcanic hot springs, and wander through the charming streets of Fira. Don't miss a catamaran cruise around the caldera!"
+      pt: "Visite as ruínas antigas de Akrotiri, assista ao lendário pôr do sol de Oia, explore as fontes termais vulcânicas e passeie pelas charmosas ruas de Fira. Não perca um cruzeiro de catamarã ao redor da caldeira!"
+      el: "Επισκεφθείτε τα αρχαία ερείπια του Ακρωτηρίου, παρακολουθήστε το θρυλικό ηλιοβασίλεμα της Οίας, εξερευνήστε τις θερμές ηφαιστειακές πηγές και περιπλανηθείτε στα γραφικά σοκάκια της Φηράς. Μην χάσετε μια κρουαζιέρα με καταμαράν γύρω από την καλντέρα!"
+    icon: "landmark"
+
+  - title:
+      en: "Local Cuisine"
+      pt: "Culinária Local"
+      el: "Τοπική Κουζίνα"
+    content:
+      en: "Savor fava (split pea purée), tomatokeftedes (tomato fritters), fresh grilled octopus, and the famous Santorini cherry tomatoes. Pair with local Assyrtiko wine — the volcanic terroir is extraordinary!"
+      pt: "Saboreie fava (purê de ervilha), tomatokeftedes (bolinhos de tomate), polvo grelhado fresco e os famosos tomates-cereja de Santorini. Harmonize com vinho Assyrtiko local — o terroir vulcânico é extraordinário!"
+      el: "Απολαύστε φάβα (πουρέ κόκκινου φακού), ντοματοκεφτέδες, χταπόδι σχάρας και τις φημισμένες ντομάτες τσέρι Σαντορίνης. Συνοδεύστε με τοπικό κρασί Ασύρτικο — το ηφαιστειακό terroir είναι εξαιρετικό!"
+    icon: "soup"
+
+weddingInfo:
+  dressCode:
+    en: "Elegant summer attire in light colours is encouraged. Think flowing fabrics, linens, and Mediterranean chic. Ladies, consider wedges or flat sandals for cobblestone paths. White is reserved for the bride!"
+    pt: "Trajes elegantes de verão em cores claras são encorajados. Pense em tecidos fluidos, linho e chique mediterrâneo. Senhoras, considerem anabelas ou sandálias rasteiras para caminhos de paralelepípedos. Branco é reservado para a noiva!"
+    el: "Συνιστάται κομψή καλοκαιρινή ενδυμασία σε ανοιχτά χρώματα. Σκεφτείτε επιρρέοντα υφάσματα, λινά και μεσογειακή κομψότητα. Κυρίες, προτιμήστε πλατφόρμες ή επίπεδα σανδάλια για τα καλντερίμια. Το άσπρο είναι δεσμευμένο για τη νύφη!"
+  gifts:
+    en: "Your presence at our celebration in Greece is the greatest gift. If you wish to give, we appreciate contributions to our honeymoon adventure fund."
+    pt: "Sua presença na nossa celebração na Grécia é o maior presente. Se desejar presentear, agradecemos contribuições para o nosso fundo de lua de mel."
+    el: "Η παρουσία σας στον γιορτασμό μας στην Ελλάδα είναι το μεγαλύτερο δώρο. Αν θέλετε να προσφέρετε, εκτιμούμε τις συνεισφορές στο ταμείο του μήνα του μέλιτος μας."
+  accommodation:
+    en: "We have reserved rooms at Villa Olivia at a special rate for wedding guests. Please mention 'Gui & Myrto Wedding' when booking. Additional recommendations available in our travel guide."
+    pt: "Reservamos quartos no Villa Olivia com tarifa especial para convidados do casamento. Mencione 'Casamento Gui & Myrto' ao reservar. Recomendações adicionais disponíveis no nosso guia de viagem."
+    el: "Έχουμε κρατήσει δωμάτια στη Villa Olivia με ειδική τιμή για τους καλεσμένους του γάμου. Παρακαλώ αναφέρετε 'Γάμος Gui & Myrto' κατά την κράτηση. Πρόσθετες συστάσεις διαθέσιμες στον ταξιδιωτικό μας οδηγό."

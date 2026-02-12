@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F5F0FF"/>
+      <stop offset="100%" stop-color="#EDE5FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)" rx="20"/>
+  <!-- Puppet Groom -->
+  <g transform="translate(280, 150)">
+    <!-- Body -->
+    <rect x="20" y="120" width="80" height="150" rx="15" fill="#6B21A8" opacity="0.8"/>
+    <!-- Head -->
+    <circle cx="60" cy="80" r="50" fill="#FBBF68"/>
+    <!-- Eyes -->
+    <circle cx="45" cy="75" r="6" fill="#1E1B4B"/>
+    <circle cx="75" cy="75" r="6" fill="#1E1B4B"/>
+    <!-- Smile -->
+    <path d="M40 95 Q60 115 80 95" stroke="#1E1B4B" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Hair -->
+    <path d="M15 65 Q20 20 60 15 Q100 20 105 65" fill="#4A3728" opacity="0.9"/>
+    <!-- Arms -->
+    <rect x="-15" y="140" width="30" height="80" rx="12" fill="#FBBF68" transform="rotate(-15, 0, 140)"/>
+    <rect x="105" y="140" width="30" height="80" rx="12" fill="#FBBF68" transform="rotate(15, 120, 140)"/>
+    <!-- Bow tie -->
+    <polygon points="45,125 60,135 75,125 60,145" fill="#A855F7"/>
+    <!-- Legs -->
+    <rect x="25" y="265" width="25" height="70" rx="10" fill="#1E1B4B"/>
+    <rect x="70" y="265" width="25" height="70" rx="10" fill="#1E1B4B"/>
+  </g>
+  <!-- Puppet Bride -->
+  <g transform="translate(440, 150)">
+    <!-- Dress -->
+    <path d="M20 120 L-20 300 L140 300 L100 120 Z" fill="#D8B4FE" rx="10"/>
+    <path d="M20 120 L-10 280 L130 280 L100 120 Z" fill="#E9D5FF" rx="10"/>
+    <!-- Head -->
+    <circle cx="60" cy="80" r="50" fill="#FBBF68"/>
+    <!-- Eyes -->
+    <circle cx="45" cy="75" r="6" fill="#1E1B4B"/>
+    <circle cx="75" cy="75" r="6" fill="#1E1B4B"/>
+    <!-- Eyelashes -->
+    <line x1="39" y1="68" x2="37" y2="63" stroke="#1E1B4B" stroke-width="2"/>
+    <line x1="45" y1="67" x2="45" y2="62" stroke="#1E1B4B" stroke-width="2"/>
+    <line x1="69" y1="68" x2="67" y2="63" stroke="#1E1B4B" stroke-width="2"/>
+    <line x1="75" y1="67" x2="75" y2="62" stroke="#1E1B4B" stroke-width="2"/>
+    <!-- Smile -->
+    <path d="M40 95 Q60 115 80 95" stroke="#1E1B4B" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Hair -->
+    <path d="M10 70 Q15 10 60 5 Q105 10 110 70 L115 120 Q60 100 5 120 Z" fill="#2D1810" opacity="0.9"/>
+    <!-- Flower crown -->
+    <circle cx="25" cy="45" r="8" fill="#A855F7" opacity="0.8"/>
+    <circle cx="45" cy="30" r="8" fill="#C084FC" opacity="0.8"/>
+    <circle cx="65" cy="25" r="8" fill="#A855F7" opacity="0.8"/>
+    <circle cx="85" cy="30" r="8" fill="#C084FC" opacity="0.8"/>
+    <circle cx="95" cy="45" r="8" fill="#A855F7" opacity="0.8"/>
+    <!-- Arms -->
+    <rect x="-15" y="130" width="28" height="70" rx="12" fill="#FBBF68" transform="rotate(-10, 0, 130)"/>
+    <rect x="105" y="130" width="28" height="70" rx="12" fill="#FBBF68" transform="rotate(10, 120, 130)"/>
+    <!-- Bouquet -->
+    <circle cx="-10" cy="210" r="20" fill="#A855F7" opacity="0.6"/>
+    <circle cx="0" cy="200" r="15" fill="#C084FC" opacity="0.7"/>
+    <circle cx="-20" cy="205" r="12" fill="#7C3AED" opacity="0.5"/>
+  </g>
+  <!-- Hearts -->
+  <text x="390" y="130" font-size="40" text-anchor="middle" fill="#A855F7" opacity="0.6">♥</text>
+  <text x="410" y="100" font-size="25" text-anchor="middle" fill="#C084FC" opacity="0.4">♥</text>
+  <text x="370" y="110" font-size="20" text-anchor="middle" fill="#7C3AED" opacity="0.3">♥</text>
+  <!-- Greek Key pattern at bottom -->
+  <rect x="0" y="570" width="800" height="30" fill="#7C3AED" opacity="0.1" rx="0"/>
+  <text x="400" y="590" font-size="14" text-anchor="middle" fill="#7C3AED" opacity="0.3" letter-spacing="8">ΓΟΥΙ ♥ ΜΥΡΤΩ</text>
+</svg>
