@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const petalColors = [
-  "text-purple-400/40",
+  "text-purple-600/40",
   "text-violet-300/50",
   "text-primary-light/30",
-  "text-purple-500/30",
+  "text-purple-700/30",
   "text-gold/25",
 ];
 

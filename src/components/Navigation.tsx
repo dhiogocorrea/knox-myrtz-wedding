@@ -1,16 +1,21 @@
 "use client";
 
-import { useState, useEffect, type ReactNode } from "react";
-import { Home, CalendarDays, Mail, Plane, Gem, Globe } from "lucide-react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
+import { Home, CalendarDays, Mail, Plane, Gem, ChevronDown } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n";
 import type { TabId } from "./WeddingApp";
+
+const localeOptions = [
+  { code: "pt", label: "PT", flag: "🇧🇷" },
+  { code: "en", label: "EN", flag: "🇺🇸" },
+  { code: "el", label: "EL", flag: "🇬🇷" },
+] as const;
 
 interface NavigationProps {
   dict: Dictionary;
   activeTab: TabId;
   onTabChange: (tab: TabId) => void;
   locale: string;
-  otherLocale: string;
 }
 
 const tabs: { id: TabId; icon: ReactNode }[] = [
@@ -26,15 +31,28 @@ export function Navigation({
   activeTab,
   onTabChange,
   locale,
-  otherLocale,
 }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
+
+  const currentLocale = localeOptions.find((l) => l.code === locale) ?? localeOptions[0];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const handleTabClick = (tabId: TabId) => {
@@ -86,13 +104,35 @@ export function Navigation({
 
             {/* Language Toggle + Mobile Menu Button */}
             <div className="flex items-center gap-2">
-              <a
-                href={`/${otherLocale}`}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase border border-gold/30 text-gold hover:bg-gold/10 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-md hover:shadow-gold/30 hover:border-gold/50"
-              >
-                <Globe className="w-3.5 h-3.5" />
-                {otherLocale === "pt" ? "PT" : "EN"}
-              </a>
+              {/* Language selector */}
+              <div className="relative" ref={langRef}>
+                <button
+                  onClick={() => setLangOpen(!langOpen)}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase border border-gold/30 text-gold hover:bg-gold/10 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-md hover:shadow-gold/30 hover:border-gold/50"
+                >
+                  <span className="text-sm leading-none">{currentLocale.flag}</span>
+                  {currentLocale.label}
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} />
+                </button>
+                {langOpen && (
+                  <div className="absolute right-0 mt-2 w-36 glass-card rounded-xl border border-accent/30 shadow-xl overflow-hidden animate-fade-in z-50">
+                    {localeOptions.map((opt) => (
+                      <a
+                        key={opt.code}
+                        href={`/${opt.code}`}
+                        className={`flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors duration-200 ${
+                          locale === opt.code
+                            ? "text-primary-dark bg-accent/40 font-medium"
+                            : "text-warm-gray hover:text-primary hover:bg-accent/20"
+                        }`}
+                      >
+                        <span className="text-base leading-none">{opt.flag}</span>
+                        {opt.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               {/* Mobile hamburger */}
               <button

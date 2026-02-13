@@ -49,7 +49,6 @@ export function WeddingApp({ locale, config, dict, guestGroup }: WeddingAppProps
         activeTab={activeTab}
         onTabChange={setActiveTab}
         locale={locale}
-        otherLocale={locale === "en" ? "pt" : "en"}
       />
       <main className="pt-20">
         {renderSection()}

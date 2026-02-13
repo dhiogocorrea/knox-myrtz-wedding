@@ -117,14 +117,14 @@ schedule:
     icon: "music"
 
 rsvp:
-  googleFormUrl: "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
+  googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdHRKBJqXxpZEdIAEeWC-bph49vG0bjavii8Y60oZ70RJkOfw/formResponse"
   fields:
-    name: "entry.123456789"
-    email: "entry.987654321"
-    attendance: "entry.111111111"
-    guests: "entry.222222222"
-    dietary: "entry.333333333"
-    message: "entry.444444444"
+    name: "entry.1452284229"
+    email: "entry.1547511739"
+    attendance: "entry.1010802250"
+    guests: "entry.292354585"
+    phone: "entry.1767841306"
+    message: "entry.1307819898"
   deadline: "2026-05-15"
 
 auth:

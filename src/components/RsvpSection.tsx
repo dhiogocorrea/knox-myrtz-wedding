@@ -17,9 +17,9 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    attendance: "yes",
+    attendance: "Yes",
     guests: "1",
-    dietary: "",
+    phone: "",
     message: "",
   });
 
@@ -35,18 +35,26 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
 
     try {
       const form = new FormData();
+      form.append("_googleFormUrl", config.rsvp.googleFormUrl);
       form.append(config.rsvp.fields.name, formData.name);
       form.append(config.rsvp.fields.email, formData.email);
       form.append(config.rsvp.fields.attendance, formData.attendance);
       form.append(config.rsvp.fields.guests, formData.guests);
-      form.append(config.rsvp.fields.dietary, formData.dietary);
+      form.append(config.rsvp.fields.phone, formData.phone);
       form.append(config.rsvp.fields.message, formData.message);
 
-      await fetch(config.rsvp.googleFormUrl, {
+      // Google Forms session fields
+      form.append("fvv", "1");
+      form.append("pageHistory", "0");
+
+      const response = await fetch("/api/rsvp", {
         method: "POST",
-        mode: "no-cors",
         body: form,
       });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
 
       setState("success");
     } catch {
@@ -84,9 +92,9 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
                 setFormData({
                   name: "",
                   email: "",
-                  attendance: "yes",
+                  attendance: "Yes",
                   guests: "1",
-                  dietary: "",
+                  phone: "",
                   message: "",
                 });
               }}
@@ -162,7 +170,7 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
             <div className="grid grid-cols-2 gap-3">
               <label
                 className={`flex items-center justify-center gap-2 p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
-                  formData.attendance === "yes"
+                  formData.attendance === "Yes"
                     ? "border-sage bg-sage/10 text-sage-dark"
                     : "border-accent hover:border-sage/40 text-warm-gray"
                 }`}
@@ -170,8 +178,8 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
                 <input
                   type="radio"
                   name="attendance"
-                  value="yes"
-                  checked={formData.attendance === "yes"}
+                  value="Yes"
+                  checked={formData.attendance === "Yes"}
                   onChange={handleChange}
                   className="sr-only"
                 />
@@ -180,7 +188,7 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
               </label>
               <label
                 className={`flex items-center justify-center gap-2 p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
-                  formData.attendance === "no"
+                  formData.attendance === "No"
                     ? "border-rose bg-rose/10 text-rose"
                     : "border-accent hover:border-rose/40 text-warm-gray"
                 }`}
@@ -188,8 +196,8 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
                 <input
                   type="radio"
                   name="attendance"
-                  value="no"
-                  checked={formData.attendance === "no"}
+                  value="No"
+                  checked={formData.attendance === "No"}
                   onChange={handleChange}
                   className="sr-only"
                 />
@@ -200,7 +208,7 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
           </div>
 
           {/* Number of Guests */}
-          {formData.attendance === "yes" && (
+          {formData.attendance === "Yes" && (
             <div className="mb-6 animate-fade-in">
               <label className="block text-sm font-medium text-primary-dark mb-2">
                 {dict.rsvp.guestsLabel}
@@ -220,22 +228,21 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
             </div>
           )}
 
-          {/* Dietary */}
-          {formData.attendance === "yes" && (
-            <div className="mb-6 animate-fade-in">
-              <label className="block text-sm font-medium text-primary-dark mb-2">
-                {dict.rsvp.dietaryLabel}
-              </label>
-              <input
-                type="text"
-                name="dietary"
-                value={formData.dietary}
-                onChange={handleChange}
-                placeholder={dict.rsvp.dietaryPlaceholder}
-                className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20"
-              />
-            </div>
-          )}
+          {/* Phone Number */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-primary-dark mb-2">
+              {dict.rsvp.phoneLabel} <span className="text-rose">*</span>
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              required
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder={dict.rsvp.phonePlaceholder}
+              className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20"
+            />
+          </div>
 
           {/* Message */}
           <div className="mb-8">

@@ -30,14 +30,14 @@ export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-cream">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <Flower2 className="absolute top-10 left-10 w-16 h-16 text-purple-400/10 animate-float" strokeWidth={1} />
+        <Flower2 className="absolute top-10 left-10 w-16 h-16 text-purple-700/10 animate-float" strokeWidth={1} />
         <Leaf className="absolute top-32 right-20 w-14 h-14 text-violet-400/10 animate-float" style={{ animationDelay: "1s" }} strokeWidth={1} />
-        <Flower2 className="absolute bottom-20 left-1/4 w-20 h-20 text-purple-300/10 animate-float" style={{ animationDelay: "2s" }} strokeWidth={1} />
+        <Flower2 className="absolute bottom-20 left-1/4 w-20 h-20 text-purple-600/10 animate-float" style={{ animationDelay: "2s" }} strokeWidth={1} />
         <Heart className="absolute bottom-40 right-1/3 w-12 h-12 text-primary/10 animate-float" style={{ animationDelay: "0.5s" }} strokeWidth={1} />
         <Leaf className="absolute top-1/2 left-5 w-10 h-10 text-violet-300/10 animate-float" style={{ animationDelay: "1.5s" }} strokeWidth={1} />
 
         {/* Soft gradient orbs - purple */}
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-purple-200 rounded-full opacity-30 blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-purple-400 rounded-full opacity-20 blur-3xl" />
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-violet-200 rounded-full opacity-30 blur-3xl" />
       </div>
 

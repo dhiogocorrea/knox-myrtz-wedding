@@ -19,7 +19,7 @@ const RsvpFieldsSchema = z.object({
   email: z.string(),
   attendance: z.string(),
   guests: z.string(),
-  dietary: z.string(),
+  phone: z.string(),
   message: z.string(),
 });
 
