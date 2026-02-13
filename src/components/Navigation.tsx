@@ -5,10 +5,36 @@ import { Home, CalendarDays, Mail, Plane, Gem, ChevronDown, Shield, LogOut } fro
 import type { Dictionary } from "@/lib/i18n";
 import type { TabId } from "./WeddingApp";
 
+// Flag SVG components
+const BrazilFlag = () => (
+  <svg viewBox="0 0 36 24" className="w-5 h-3.5 rounded-sm shadow-sm">
+    <rect width="36" height="24" fill="#009b3a"/>
+    <path d="M18,3.6 L30,12 L18,20.4 L6,12 Z" fill="#fedf00"/>
+    <circle cx="18" cy="12" r="4.5" fill="#002776"/>
+  </svg>
+);
+
+const USFlag = () => (
+  <svg viewBox="0 0 36 24" className="w-5 h-3.5 rounded-sm shadow-sm">
+    <rect width="36" height="24" fill="#b22234"/>
+    <path d="M0,2.77h36M0,5.54h36M0,8.31h36M0,11.08h36M0,13.85h36M0,16.62h36M0,19.39h36" stroke="#fff" strokeWidth="1.85"/>
+    <rect width="14.4" height="12.92" fill="#3c3b6e"/>
+  </svg>
+);
+
+const GreeceFlag = () => (
+  <svg viewBox="0 0 36 24" className="w-5 h-3.5 rounded-sm shadow-sm">
+    <rect width="36" height="24" fill="#0d5eaf"/>
+    <path d="M0,2.67h36M0,5.33h36M0,10.67h36M0,13.33h36M0,18.67h36M0,21.33h36" stroke="#fff" strokeWidth="2.67"/>
+    <rect width="12.86" height="13.71" fill="#0d5eaf"/>
+    <path d="M6.43,0v13.71M0,6.86h12.86" stroke="#fff" strokeWidth="2.29"/>
+  </svg>
+);
+
 const localeOptions = [
-  { code: "pt", label: "PT", flag: "🇧🇷" },
-  { code: "en", label: "EN", flag: "🇺🇸" },
-  { code: "el", label: "EL", flag: "🇬🇷" },
+  { code: "pt", label: "PT", flag: <BrazilFlag /> },
+  { code: "en", label: "EN", flag: <USFlag /> },
+  { code: "el", label: "EL", flag: <GreeceFlag /> },
 ] as const;
 
 interface NavigationProps {
@@ -98,7 +124,11 @@ export function Navigation({
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
                   className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer hover:scale-105 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-gold/20 ${
-                    activeTab === tab.id
+                    tab.id === "rsvp"
+                      ? activeTab === tab.id
+                        ? "text-white bg-gradient-to-r from-rose to-rose-dark shadow-lg shadow-rose/40 ring-2 ring-rose/30"
+                        : "text-rose border-2 border-rose/40 hover:text-white hover:bg-rose hover:border-rose hover:shadow-rose/40 font-semibold"
+                      : activeTab === tab.id
                       ? "text-primary-dark bg-accent/50"
                       : "text-warm-gray hover:text-primary hover:bg-accent/20"
                   }`}
@@ -130,7 +160,7 @@ export function Navigation({
                   onClick={() => setLangOpen(!langOpen)}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase border border-gold/30 text-gold hover:bg-gold/10 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-md hover:shadow-gold/30 hover:border-gold/50"
                 >
-                  <span className="text-sm leading-none">{currentLocale.flag}</span>
+                  <span className="inline-flex">{currentLocale.flag}</span>
                   {currentLocale.label}
                   <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -146,7 +176,7 @@ export function Navigation({
                             : "text-warm-gray hover:text-primary hover:bg-accent/20"
                         }`}
                       >
-                        <span className="text-base leading-none">{opt.flag}</span>
+                        <span className="inline-flex">{opt.flag}</span>
                         {opt.label}
                       </a>
                     ))}
@@ -197,7 +227,11 @@ export function Navigation({
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
                   className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer hover:translate-x-1 hover:shadow-md ${
-                    activeTab === tab.id
+                    tab.id === "rsvp"
+                      ? activeTab === tab.id
+                        ? "text-white bg-gradient-to-r from-rose to-rose-dark shadow-lg shadow-rose/40"
+                        : "text-rose border-2 border-rose/40 hover:text-white hover:bg-rose font-semibold"
+                      : activeTab === tab.id
                       ? "text-primary-dark bg-accent/40"
                       : "text-warm-gray hover:text-primary hover:bg-accent/20"
                   }`}
