@@ -14,15 +14,6 @@ const ScheduleItemSchema = z.object({
   visibleTo: z.array(z.enum(["friends", "family"])).optional(),
 });
 
-const RsvpFieldsSchema = z.object({
-  name: z.string(),
-  email: z.string(),
-  attendance: z.string(),
-  guests: z.string(),
-  phone: z.string(),
-  message: z.string(),
-});
-
 const TouristicInfoSchema = z.object({
   title: LocalizedStringSchema,
   content: LocalizedStringSchema,
@@ -53,21 +44,7 @@ export const SiteConfigSchema = z.object({
   }),
   schedule: z.array(ScheduleItemSchema),
   rsvp: z.object({
-    googleFormUrl: z.string(),
-    fields: RsvpFieldsSchema,
     deadline: z.string(),
-  }),
-  auth: z.object({
-    password: z.string(),
-    passwords: z.object({
-      friends: z.string(),
-      family: z.string(),
-    }),
-    guestPasswords: z.array(z.object({
-      password: z.string(),
-      group: z.enum(["friends", "family"]),
-      name: z.string().optional(),
-    })),
   }),
   defaultLocale: z.string(),
   locales: z.array(z.string()),
@@ -78,4 +55,4 @@ export const SiteConfigSchema = z.object({
 export type SiteConfig = z.infer<typeof SiteConfigSchema>;
 export type LocalizedString = z.infer<typeof LocalizedStringSchema>;
 export type Locale = "en" | "pt" | "el";
-export type GuestGroup = "friends" | "family" | null;
+export type GuestGroup = "friends" | "family" | "admin" | null;

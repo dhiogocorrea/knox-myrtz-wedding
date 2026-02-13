@@ -1,24 +1,27 @@
 "use client";
 
 import { useState } from "react";
-import { Flower2, Leaf, Heart } from "lucide-react";
+import { Flower2, Leaf, Heart, Loader2 } from "lucide-react";
 import type { SiteConfig } from "@/lib/schema";
 import type { Dictionary } from "@/lib/i18n";
 
 interface LoginScreenProps {
   dict: Dictionary;
   config: SiteConfig;
-  onLogin: (password: string) => boolean;
+  onLogin: (password: string) => Promise<boolean>;
 }
 
 export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [shaking, setShaking] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const success = onLogin(password);
+    setLoading(true);
+    const success = await onLogin(password);
+    setLoading(false);
     if (!success) {
       setError(true);
       setShaking(true);
@@ -120,10 +123,11 @@ export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
 
             <button
               type="submit"
-              className="w-full py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-medium tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-gold/50"
+              disabled={loading}
+              className="w-full py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-medium tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:hover:translate-y-0 focus:outline-none focus:ring-2 focus:ring-gold/50 flex items-center justify-center gap-2"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              {dict.login.button}
+              {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : dict.login.button}
             </button>
           </form>
 

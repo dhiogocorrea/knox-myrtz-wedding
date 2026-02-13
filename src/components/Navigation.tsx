@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, type ReactNode } from "react";
-import { Home, CalendarDays, Mail, Plane, Gem, ChevronDown } from "lucide-react";
+import { Home, CalendarDays, Mail, Plane, Gem, ChevronDown, Shield, LogOut } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n";
 import type { TabId } from "./WeddingApp";
 
@@ -16,9 +16,11 @@ interface NavigationProps {
   activeTab: TabId;
   onTabChange: (tab: TabId) => void;
   locale: string;
+  isAdmin?: boolean;
+  onLogout: () => void;
 }
 
-const tabs: { id: TabId; icon: ReactNode }[] = [
+const baseTabs: { id: TabId; icon: ReactNode }[] = [
   { id: "home", icon: <Home className="w-4 h-4" /> },
   { id: "schedule", icon: <CalendarDays className="w-4 h-4" /> },
   { id: "rsvp", icon: <Mail className="w-4 h-4" /> },
@@ -26,17 +28,25 @@ const tabs: { id: TabId; icon: ReactNode }[] = [
   { id: "weddingInfo", icon: <Gem className="w-4 h-4" /> },
 ];
 
+const adminTab: { id: TabId; icon: ReactNode } = {
+  id: "admin",
+  icon: <Shield className="w-4 h-4" />,
+};
+
 export function Navigation({
   dict,
   activeTab,
   onTabChange,
   locale,
+  isAdmin,
+  onLogout,
 }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
+  const tabs = isAdmin ? [...baseTabs, adminTab] : baseTabs;
   const currentLocale = localeOptions.find((l) => l.code === locale) ?? localeOptions[0];
 
   useEffect(() => {
@@ -102,8 +112,18 @@ export function Navigation({
               ))}
             </div>
 
-            {/* Language Toggle + Mobile Menu Button */}
+            {/* Language Toggle + Logout + Mobile Menu Button */}
             <div className="flex items-center gap-2">
+              {/* Logout button */}
+              <button
+                onClick={onLogout}
+                className="p-2 rounded-full text-warm-gray hover:text-rose hover:bg-rose/10 transition-all duration-300 cursor-pointer hover:scale-105"
+                title={dict.nav.logout}
+                aria-label={dict.nav.logout}
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
+
               {/* Language selector */}
               <div className="relative" ref={langRef}>
                 <button
@@ -186,6 +206,16 @@ export function Navigation({
                   {dict.nav[tab.id]}
                 </button>
               ))}
+
+              <div className="border-t border-accent/30 mt-2 pt-2">
+                <button
+                  onClick={onLogout}
+                  className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-rose hover:bg-rose/10 transition-all duration-200 cursor-pointer hover:translate-x-1"
+                >
+                  <span className="mr-3 inline-flex"><LogOut className="w-4 h-4" /></span>
+                  {dict.nav.logout}
+                </button>
+              </div>
             </div>
           </div>
         </div>

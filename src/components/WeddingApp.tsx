@@ -9,20 +9,23 @@ import { ScheduleSection } from "./ScheduleSection";
 import { RsvpSection } from "./RsvpSection";
 import { TouristicSection } from "./TouristicSection";
 import { WeddingInfoSection } from "./WeddingInfoSection";
+import { AdminPanel } from "./AdminPanel";
 import { Footer } from "./Footer";
 import { PetalOverlay } from "./PetalOverlay";
 import { CursorEffect } from "./CursorEffect";
 
-export type TabId = "home" | "schedule" | "rsvp" | "touristicInfo" | "weddingInfo";
+export type TabId = "home" | "schedule" | "rsvp" | "touristicInfo" | "weddingInfo" | "admin";
 
 interface WeddingAppProps {
   locale: string;
   config: SiteConfig;
   dict: Dictionary;
   guestGroup: GuestGroup;
+  authPassword: string;
+  onLogout: () => void;
 }
 
-export function WeddingApp({ locale, config, dict, guestGroup }: WeddingAppProps) {
+export function WeddingApp({ locale, config, dict, guestGroup, authPassword, onLogout }: WeddingAppProps) {
   const [activeTab, setActiveTab] = useState<TabId>("home");
 
   const renderSection = () => {
@@ -32,13 +35,17 @@ export function WeddingApp({ locale, config, dict, guestGroup }: WeddingAppProps
       case "schedule":
         return <ScheduleSection config={config} dict={dict} locale={locale} guestGroup={guestGroup} />;
       case "rsvp":
-        return <RsvpSection config={config} dict={dict} />;
+        return <RsvpSection config={config} dict={dict} authPassword={authPassword} />;
       case "touristicInfo":
         return <TouristicSection config={config} dict={dict} locale={locale} />;
       case "weddingInfo":
         return <WeddingInfoSection config={config} dict={dict} locale={locale} />;
+      case "admin":
+        return <AdminPanel dict={dict} authPassword={authPassword} />;
     }
   };
+
+  const isAdmin = guestGroup === "admin";
 
   return (
     <div className="min-h-screen bg-cream">
@@ -49,6 +56,8 @@ export function WeddingApp({ locale, config, dict, guestGroup }: WeddingAppProps
         activeTab={activeTab}
         onTabChange={setActiveTab}
         locale={locale}
+        isAdmin={isAdmin}
+        onLogout={onLogout}
       />
       <main className="pt-20">
         {renderSection()}

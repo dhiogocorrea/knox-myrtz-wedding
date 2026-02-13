@@ -21,56 +21,57 @@ export function LoginGate({ locale, config, dict }: LoginGateProps) {
   useEffect(() => {
     const storedPassword = localStorage.getItem("knox-wedding-auth");
     const storedGroup = localStorage.getItem("knox-wedding-group") as GuestGroup;
-    
-    if (storedPassword) {
-      // Check if password is still valid
-      const isGuestPassword = config.auth.guestPasswords.some(g => g.password === storedPassword);
-      const isGroupPassword = storedPassword === config.auth.passwords.friends || 
-                              storedPassword === config.auth.passwords.family;
-      const isGeneralPassword = storedPassword === config.auth.password;
-      
-      if (isGuestPassword || isGroupPassword || isGeneralPassword) {
-        setAuthenticated(true);
-        setGuestGroup(storedGroup);
-      } else {
-        // Clear invalid auth
-        localStorage.removeItem("knox-wedding-auth");
-        localStorage.removeItem("knox-wedding-group");
-      }
-    }
-    setChecking(false);
-  }, [config.auth.password, config.auth.passwords.friends, config.auth.passwords.family, config.auth.guestPasswords]);
 
-  const handleLogin = (password: string): boolean => {
-    let group: GuestGroup = null;
-    
-    // Check individual guest passwords first
-    const guestEntry = config.auth.guestPasswords.find(g => g.password === password);
-    if (guestEntry) {
-      group = guestEntry.group;
+    if (storedPassword && storedGroup) {
+      // Verify stored password is still valid via API
+      fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: storedPassword }),
+      })
+        .then((res) => {
+          if (res.ok) {
+            setAuthenticated(true);
+            setGuestGroup(storedGroup);
+          } else {
+            localStorage.removeItem("knox-wedding-auth");
+            localStorage.removeItem("knox-wedding-group");
+          }
+        })
+        .catch(() => {
+          // Network error – trust local cache to avoid blocking
+          setAuthenticated(true);
+          setGuestGroup(storedGroup);
+        })
+        .finally(() => setChecking(false));
+    } else {
+      setChecking(false);
+    }
+  }, []);
+
+  const handleLogin = async (password: string): Promise<boolean> => {
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+
+      if (!res.ok) return false;
+
+      const data = await res.json();
+      const group = data.guestGroup as GuestGroup;
+
       localStorage.setItem("knox-wedding-auth", password);
-      localStorage.setItem("knox-wedding-group", group);
+      if (group) {
+        localStorage.setItem("knox-wedding-group", group);
+      }
       setAuthenticated(true);
       setGuestGroup(group);
       return true;
-    }
-    
-    // Check group passwords
-    if (password === config.auth.passwords.friends) {
-      group = "friends";
-    } else if (password === config.auth.passwords.family) {
-      group = "family";
-    } else if (password !== config.auth.password) {
+    } catch {
       return false;
     }
-
-    localStorage.setItem("knox-wedding-auth", password);
-    if (group) {
-      localStorage.setItem("knox-wedding-group", group);
-    }
-    setAuthenticated(true);
-    setGuestGroup(group);
-    return true;
   };
 
   if (checking) {
@@ -91,7 +92,16 @@ export function LoginGate({ locale, config, dict }: LoginGateProps) {
     );
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem("knox-wedding-auth");
+    localStorage.removeItem("knox-wedding-group");
+    setAuthenticated(false);
+    setGuestGroup(null);
+  };
+
+  const authPassword = localStorage.getItem("knox-wedding-auth") || "";
+
   return (
-    <WeddingApp locale={locale} config={config} dict={dict} guestGroup={guestGroup} />
+    <WeddingApp locale={locale} config={config} dict={dict} guestGroup={guestGroup} authPassword={authPassword} onLogout={handleLogout} />
   );
 }

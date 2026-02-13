@@ -20,7 +20,7 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
       return true;
     }
     // Show only if user's group matches one of the allowed groups
-    return guestGroup && item.visibleTo.includes(guestGroup);
+    return guestGroup && (item.visibleTo as string[]).includes(guestGroup);
   });
 
   return (

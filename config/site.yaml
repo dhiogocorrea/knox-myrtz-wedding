@@ -117,49 +117,7 @@ schedule:
     icon: "music"
 
 rsvp:
-  googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdHRKBJqXxpZEdIAEeWC-bph49vG0bjavii8Y60oZ70RJkOfw/formResponse"
-  fields:
-    name: "entry.1452284229"
-    email: "entry.1547511739"
-    attendance: "entry.1010802250"
-    guests: "entry.292354585"
-    phone: "entry.1767841306"
-    message: "entry.1307819898"
   deadline: "2026-05-15"
-
-auth:
-  password: "guimyrto2026"
-  passwords:
-    friends: "friends2026"
-    family: "family2026"
-  guestPasswords:
-    # Family members
-    - password: "maria2026"
-      group: family
-      name: "Maria"
-    - password: "joao2026"
-      group: family
-      name: "João"
-    - password: "ana2026"
-      group: family
-      name: "Ana"
-    - password: "carlos2026"
-      group: family
-      name: "Carlos"
-    
-    # Friends
-    - password: "pedro2026"
-      group: friends
-      name: "Pedro"
-    - password: "sofia2026"
-      group: friends
-      name: "Sofia"
-    - password: "lucas2026"
-      group: friends
-      name: "Lucas"
-    - password: "julia2026"
-      group: friends
-      name: "Julia"
 
 defaultLocale: "en"
 locales:

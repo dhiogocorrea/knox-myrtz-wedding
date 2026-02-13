@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Heart, Mail, Check, X, Loader2 } from "lucide-react";
 import type { SiteConfig } from "@/lib/schema";
 import type { Dictionary } from "@/lib/i18n";
@@ -8,12 +8,13 @@ import type { Dictionary } from "@/lib/i18n";
 interface RsvpSectionProps {
   config: SiteConfig;
   dict: Dictionary;
+  authPassword: string;
 }
 
-type SubmitState = "idle" | "sending" | "success" | "error";
+type SubmitState = "idle" | "loading" | "sending" | "success" | "error" | "already-submitted";
 
-export function RsvpSection({ config, dict }: RsvpSectionProps) {
-  const [state, setState] = useState<SubmitState>("idle");
+export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
+  const [state, setState] = useState<SubmitState>("loading");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,6 +23,27 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
     phone: "",
     message: "",
   });
+
+  // Check RSVP status from Supabase on mount
+  useEffect(() => {
+    if (!authPassword) {
+      setState("idle");
+      return;
+    }
+
+    fetch("/api/rsvp/status", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: authPassword }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setState(data.submitted ? "already-submitted" : "idle");
+      })
+      .catch(() => {
+        setState("idle"); // On error, allow them to try
+      });
+  }, [authPassword]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -34,23 +56,24 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
     setState("sending");
 
     try {
-      const form = new FormData();
-      form.append("_googleFormUrl", config.rsvp.googleFormUrl);
-      form.append(config.rsvp.fields.name, formData.name);
-      form.append(config.rsvp.fields.email, formData.email);
-      form.append(config.rsvp.fields.attendance, formData.attendance);
-      form.append(config.rsvp.fields.guests, formData.guests);
-      form.append(config.rsvp.fields.phone, formData.phone);
-      form.append(config.rsvp.fields.message, formData.message);
-
-      // Google Forms session fields
-      form.append("fvv", "1");
-      form.append("pageHistory", "0");
-
       const response = await fetch("/api/rsvp", {
         method: "POST",
-        body: form,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          password: authPassword,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          attendance: formData.attendance.toLowerCase(),
+          guests: formData.guests,
+          message: formData.message,
+        }),
       });
+
+      if (response.status === 409) {
+        setState("already-submitted");
+        return;
+      }
 
       if (!response.ok) {
         throw new Error("Submission failed");
@@ -69,39 +92,36 @@ export function RsvpSection({ config, dict }: RsvpSectionProps) {
     day: "numeric",
   });
 
-  if (state === "success") {
+  if (state === "loading") {
+    return (
+      <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 px-4">
+        <Heart className="w-10 h-10 text-rose animate-pulse" strokeWidth={1.5} />
+      </section>
+    );
+  }
+
+  if (state === "success" || state === "already-submitted") {
+    const isAlready = state === "already-submitted";
     return (
       <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 px-4">
         <div className="max-w-md mx-auto text-center animate-scale-in">
           <div className="glass-card rounded-3xl p-10 shadow-2xl">
             <div className="flex justify-center mb-6">
-              <Heart className="w-16 h-16 text-rose fill-rose/20" strokeWidth={1.5} />
+              {isAlready ? (
+                <Mail className="w-16 h-16 text-gold" strokeWidth={1.5} />
+              ) : (
+                <Heart className="w-16 h-16 text-rose fill-rose/20" strokeWidth={1.5} />
+              )}
             </div>
             <h2
               className="text-3xl text-primary mb-4"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              {dict.rsvp.successTitle}
+              {isAlready ? dict.rsvp.alreadySubmittedTitle : dict.rsvp.successTitle}
             </h2>
-            <p className="text-warm-gray leading-relaxed mb-8">
-              {dict.rsvp.successMessage}
+            <p className="text-warm-gray leading-relaxed">
+              {isAlready ? dict.rsvp.alreadySubmittedMessage : dict.rsvp.successMessage}
             </p>
-            <button
-              onClick={() => {
-                setState("idle");
-                setFormData({
-                  name: "",
-                  email: "",
-                  attendance: "Yes",
-                  guests: "1",
-                  phone: "",
-                  message: "",
-                });
-              }}
-              className="text-sm text-gold hover:text-primary-dark transition-colors underline underline-offset-4 decoration-gold/30"
-            >
-              {dict.rsvp.sendAnother}
-            </button>
           </div>
         </div>
       </section>
