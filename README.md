@@ -156,7 +156,7 @@ Private project - All rights reserved.
 
 ## 💝 Credits
 
-**Made with love by [Orimaz](https://github.com/orimaz)**
+**Made with love by [Orimaz](https://github.com/dhiogocorrea)**
 
 ---
 
