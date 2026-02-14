@@ -38,6 +38,7 @@ interface Rsvp {
   phone: string;
   attendance: string;
   guests: number;
+  kids?: number;
   message: string | null;
   submitted_at: string;
 }
@@ -193,7 +194,7 @@ export function AdminPanel({ dict, authPassword }: AdminPanelProps) {
   const totalGuests = guests.filter((g) => g.guest_group !== "admin").length;
   const totalRsvps = rsvps.length;
   const attending = rsvps.filter((r) => r.attendance === "yes");
-  const totalAttendees = attending.reduce((sum, r) => sum + r.guests, 0);
+  const totalAttendees = attending.reduce((sum, r) => sum + r.guests + (r.kids || 0), 0);
   const declined = rsvps.filter((r) => r.attendance === "no").length;
 
   /* ---- Render ---- */
@@ -464,7 +465,10 @@ export function AdminPanel({ dict, authPassword }: AdminPanelProps) {
                   <div className="flex-1 min-w-0">
                     <p className="font-medium text-charcoal truncate">{rsvp.guest_name}</p>
                     <p className="text-xs text-warm-gray">
-                      {new Date(rsvp.submitted_at).toLocaleDateString()} · {rsvp.guests} {rsvp.guests === 1 ? "guest" : "guests"}
+                      {new Date(rsvp.submitted_at).toLocaleDateString()} · {rsvp.guests} {rsvp.guests === 1 ? "guest" : "guests"}{' '}
+                      {typeof rsvp.kids !== 'undefined' && (
+                        <span>· {rsvp.kids} {rsvp.kids === 1 ? "kid" : "kids"}</span>
+                      )}
                     </p>
                   </div>
 
@@ -495,6 +499,10 @@ export function AdminPanel({ dict, authPassword }: AdminPanelProps) {
                       <div>
                         <p className="text-warm-gray text-xs">{dict.admin.rsvpGuests}</p>
                         <p className="text-charcoal">{rsvp.guests}</p>
+                      </div>
+                      <div>
+                        <p className="text-warm-gray text-xs">{dict.admin.rsvpKids}</p>
+                        <p className="text-charcoal">{rsvp.kids ?? 0}</p>
                       </div>
                     </div>
                     {rsvp.message && (

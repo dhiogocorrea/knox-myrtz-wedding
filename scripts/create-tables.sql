@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS rsvp_submissions (
   phone TEXT NOT NULL,
   attendance TEXT NOT NULL,
   guests INTEGER NOT NULL DEFAULT 1,
+  kids INTEGER NOT NULL DEFAULT 0,
   message TEXT,
   submitted_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );

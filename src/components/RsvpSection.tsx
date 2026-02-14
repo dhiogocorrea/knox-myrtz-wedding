@@ -20,6 +20,7 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
     email: "",
     attendance: "Yes",
     guests: "1",
+    kids: "0",
     phone: "",
     message: "",
   });
@@ -66,6 +67,7 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
           phone: formData.phone,
           attendance: formData.attendance.toLowerCase(),
           guests: formData.guests,
+          kids: formData.kids,
           message: formData.message,
         }),
       });
@@ -240,6 +242,27 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
                 className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20"
               >
                 {[1, 2, 3, 4, 5].map((n) => (
+                  <option key={n} value={n}>
+                    {n}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {/* Number of Children */}
+          {formData.attendance === "Yes" && (
+            <div className="mb-6 animate-fade-in">
+              <label className="block text-sm font-medium text-primary-dark mb-2">
+                {dict.rsvp.kidsLabel}
+              </label>
+              <select
+                name="kids"
+                value={formData.kids}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20"
+              >
+                {[0, 1, 2, 3, 4, 5].map((n) => (
                   <option key={n} value={n}>
                     {n}
                   </option>
