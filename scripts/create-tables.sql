@@ -20,6 +20,8 @@ CREATE TABLE IF NOT EXISTS rsvp_submissions (
   attendance TEXT NOT NULL,
   guests INTEGER NOT NULL DEFAULT 1,
   kids INTEGER NOT NULL DEFAULT 0,
+  rent_car TEXT NOT NULL DEFAULT 'no',
+  dietary_restrictions TEXT,
   message TEXT,
   submitted_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
@@ -74,3 +76,10 @@ CREATE POLICY "allow_insert_rsvp"
 -- Create index for faster password lookups
 CREATE INDEX IF NOT EXISTS idx_guest_passwords_password ON guest_passwords(password);
 CREATE INDEX IF NOT EXISTS idx_rsvp_submissions_password ON rsvp_submissions(password);
+
+-- Migration: add rent_car column to existing rsvp_submissions table
+-- Run this if the table already exists:
+-- ALTER TABLE rsvp_submissions ADD COLUMN IF NOT EXISTS rent_car TEXT NOT NULL DEFAULT 'no';
+-- Migration: add dietary_restrictions column to existing rsvp_submissions table
+-- Run this if the table already exists:
+-- ALTER TABLE rsvp_submissions ADD COLUMN IF NOT EXISTS dietary_restrictions TEXT;

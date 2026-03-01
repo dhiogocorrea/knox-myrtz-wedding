@@ -1,3 +1,5 @@
+// npx tsx scripts/delete-rsvp.ts alice@example.com
+
 import dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
 import { createClient } from '@supabase/supabase-js';
@@ -53,17 +55,19 @@ async function deleteRsvpById(id: number) {
 
 const arg = process.argv[2];
 if (!arg) {
-  console.error('Usage: npx ts-node scripts/delete-rsvp.ts <email|id>');
+  console.error('Usage: npx tsx scripts/delete-rsvp.ts <email|id|guest_name>');
   process.exit(1);
 }
 
 const maybeId = Number(arg);
 if (!isNaN(maybeId)) {
   deleteRsvpById(maybeId);
+} else if (arg.includes('@')) {
+  // Treat as email only (avoid duplicate "no entries found" for guest_name)
+  deleteRsvpByField('email', arg);
 } else {
-  // Try deleting by email first
+  // Try deleting by email first, then by guest_name if not found
   deleteRsvpByField('email', arg).then(() => {
-    // Also try deleting by guest_name in case the user passed a name
     deleteRsvpByField('guest_name', arg);
   });
 }

@@ -39,6 +39,8 @@ interface Rsvp {
   attendance: string;
   guests: number;
   kids?: number;
+  rent_car?: string;
+  dietary_restrictions?: string | null;
   message: string | null;
   submitted_at: string;
 }
@@ -503,6 +505,16 @@ export function AdminPanel({ dict, authPassword }: AdminPanelProps) {
                       <div>
                         <p className="text-warm-gray text-xs">{dict.admin.rsvpKids}</p>
                         <p className="text-charcoal">{rsvp.kids ?? 0}</p>
+                      </div>
+                      <div>
+                        <p className="text-warm-gray text-xs">{dict.admin.rsvpRentCar}</p>
+                        <p className={rsvp.rent_car === "yes" ? "text-emerald-600" : "text-warm-gray"}>
+                          {rsvp.rent_car === "yes" ? dict.rsvp.rentCarYes : dict.rsvp.rentCarNo}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-warm-gray text-xs">{dict.admin.rsvpDietary}</p>
+                        <p className="text-charcoal">{rsvp.dietary_restrictions ?? "—"}</p>
                       </div>
                     </div>
                     {rsvp.message && (

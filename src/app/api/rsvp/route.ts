@@ -3,7 +3,7 @@ import supabase from "@/lib/db";
 
 export async function POST(req: NextRequest) {
   try {
-    const { password, name, email, phone, attendance, guests, kids, message } =
+    const { password, name, email, phone, attendance, guests, kids, message, rentCar, dietary } =
       await req.json();
 
     if (!password || !name || !email || !phone || !attendance) {
@@ -57,6 +57,8 @@ export async function POST(req: NextRequest) {
         guests: parseInt(guests) || 1,
         kids: parseInt(kids as any) || 0,
         message: message || null,
+        rent_car: rentCar === "Yes" ? "yes" : "no",
+        dietary_restrictions: dietary || null,
       });
 
     if (insertError) throw insertError;

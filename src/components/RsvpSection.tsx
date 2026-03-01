@@ -23,6 +23,8 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
     kids: "0",
     phone: "",
     message: "",
+    rentCar: "No",
+    dietary: "",
   });
 
   // Check RSVP status from Supabase on mount
@@ -69,6 +71,8 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
           guests: formData.guests,
           kids: formData.kids,
           message: formData.message,
+          rentCar: formData.rentCar,
+          dietary: formData.dietary,
         }),
       });
 
@@ -268,6 +272,70 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
                   </option>
                 ))}
               </select>
+            </div>
+          )}
+
+          {/* Rent a Car */}
+          {formData.attendance === "Yes" && (
+            <div className="mb-6 animate-fade-in">
+              <label className="block text-sm font-medium text-primary-dark mb-3">
+                {dict.rsvp.rentCarLabel}
+              </label>
+              <div className="grid grid-cols-2 gap-3">
+                <label
+                  className={`flex items-center justify-center gap-2 p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
+                    formData.rentCar === "Yes"
+                      ? "border-sage bg-sage/10 text-sage-dark"
+                      : "border-accent hover:border-sage/40 text-warm-gray"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="rentCar"
+                    value="Yes"
+                    checked={formData.rentCar === "Yes"}
+                    onChange={handleChange}
+                    className="sr-only"
+                  />
+                  <span className="text-xl"><Check className="w-5 h-5" /></span>
+                  <span className="text-sm font-medium">{dict.rsvp.rentCarYes}</span>
+                </label>
+                <label
+                  className={`flex items-center justify-center gap-2 p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
+                    formData.rentCar === "No"
+                      ? "border-rose bg-rose/10 text-rose"
+                      : "border-accent hover:border-rose/40 text-warm-gray"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="rentCar"
+                    value="No"
+                    checked={formData.rentCar === "No"}
+                    onChange={handleChange}
+                    className="sr-only"
+                  />
+                  <span className="text-xl"><X className="w-5 h-5" /></span>
+                  <span className="text-sm font-medium">{dict.rsvp.rentCarNo}</span>
+                </label>
+              </div>
+            </div>
+          )}
+
+          {/* Dietary restrictions */}
+          {formData.attendance === "Yes" && (
+            <div className="mb-6 animate-fade-in">
+              <label className="block text-sm font-medium text-primary-dark mb-2">
+                {dict.rsvp.dietaryLabel}
+              </label>
+              <textarea
+                name="dietary"
+                rows={2}
+                value={formData.dietary}
+                onChange={handleChange}
+                placeholder={dict.rsvp.dietaryPlaceholder}
+                className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20 resize-none"
+              />
             </div>
           )}
 
