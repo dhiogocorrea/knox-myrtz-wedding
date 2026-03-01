@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Flower2, Leaf, Heart, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import type { SiteConfig } from "@/lib/schema";
 import type { Dictionary } from "@/lib/i18n";
 
@@ -31,21 +31,24 @@ export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
 
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-cream">
-      {/* Decorative background elements */}
+      {/* Background illustration */}
       <div className="absolute inset-0 overflow-hidden">
-        <Flower2 className="absolute top-10 left-10 w-16 h-16 text-purple-700/10 animate-float" strokeWidth={1} />
-        <Leaf className="absolute top-32 right-20 w-14 h-14 text-violet-400/10 animate-float" style={{ animationDelay: "1s" }} strokeWidth={1} />
-        <Flower2 className="absolute bottom-20 left-1/4 w-20 h-20 text-purple-600/10 animate-float" style={{ animationDelay: "2s" }} strokeWidth={1} />
-        <Heart className="absolute bottom-40 right-1/3 w-12 h-12 text-primary/10 animate-float" style={{ animationDelay: "0.5s" }} strokeWidth={1} />
-        <Leaf className="absolute top-1/2 left-5 w-10 h-10 text-violet-300/10 animate-float" style={{ animationDelay: "1.5s" }} strokeWidth={1} />
+        <img
+          src="/images/bg-1.png"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center select-none opacity-[0.40]"
+          draggable={false}
+        />
 
-        {/* Soft gradient orbs - purple */}
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-purple-400 rounded-full opacity-20 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-violet-200 rounded-full opacity-30 blur-3xl" />
+        {/* Gentle edge vignette */}
+        <div
+          className="absolute inset-0 opacity-40"
+          style={{ background: "radial-gradient(ellipse at center, transparent 50%, var(--color-paper) 100%)" }}
+        />
       </div>
 
       <div className="relative z-10 w-full max-w-md mx-4">
-        <div className="glass-card rounded-3xl p-10 shadow-2xl">
+        <div className="glass-card p-10">
           {/* Couple puppet illustration */}
           <div className="flex justify-center mb-4 animate-fade-in-up">
             <img
@@ -57,34 +60,36 @@ export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
 
           {/* Couple Names */}
           <div className="text-center mb-8 animate-fade-in-up">
-            <p className="text-sm tracking-[0.3em] uppercase text-warm-gray mb-4">
+            <p className="text-xs tracking-[0.5em] uppercase text-warm-gray mb-4">
               The Wedding of
             </p>
             <h1
-              className="text-5xl md:text-6xl text-primary mb-2"
-              style={{ fontFamily: "var(--font-great-vibes)" }}
+              className="text-5xl md:text-6xl text-ink mb-2 font-bold"
+              style={{ fontFamily: "var(--font-manga)" }}
             >
               {config.couple.partner1.shortName}
             </h1>
-            <p className="text-2xl text-gold my-2">&</p>
+            <p className="text-2xl text-vermillion/60 my-2">&</p>
             <h1
-              className="text-5xl md:text-6xl text-primary"
-              style={{ fontFamily: "var(--font-great-vibes)" }}
+              className="text-5xl md:text-6xl text-ink font-bold"
+              style={{ fontFamily: "var(--font-manga)" }}
             >
               {config.couple.partner2.shortName}
             </h1>
           </div>
 
-          {/* Greek olive branch divider */}
+          {/* Katana divider */}
           <div className="mb-8 animate-fade-in-up stagger-2">
-            <div className="greek-divider mx-auto max-w-[200px]" />
+            <div className="katana-divider mx-auto max-w-[200px]">
+              <span className="text-vermillion/40 text-sm">❁</span>
+            </div>
           </div>
 
           {/* Login text */}
           <div className="text-center mb-6 animate-fade-in-up stagger-3">
             <h2
-              className="text-2xl text-primary-dark mb-2"
-              style={{ fontFamily: "var(--font-playfair)" }}
+              className="text-2xl text-ink mb-2 font-semibold"
+              style={{ fontFamily: "var(--font-manga)" }}
             >
               {dict.login.title}
             </h2>
@@ -108,14 +113,14 @@ export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
                   setError(false);
                 }}
                 placeholder={dict.login.placeholder}
-                className={`w-full px-5 py-4 rounded-xl border-2 transition-all duration-300 bg-white/80 text-charcoal placeholder:text-warm-gray/50 text-center tracking-widest focus:outline-none focus:ring-2 focus:ring-gold/30 ${
+                className={`w-full px-5 py-4 rounded-xl border transition-all duration-300 bg-white/80 text-charcoal placeholder:text-warm-gray/50 text-center tracking-widest focus:outline-none focus:ring-2 focus:ring-vermillion/20 ${
                   error
-                    ? "border-rose shake"
-                    : "border-accent focus:border-gold"
+                    ? "border-vermillion shake"
+                    : "border-ink/10 focus:border-vermillion/40"
                 }`}
               />
               {error && (
-                <p className="text-rose text-sm mt-2 text-center animate-fade-in">
+                <p className="text-vermillion text-sm mt-2 text-center animate-fade-in">
                   {dict.login.error}
                 </p>
               )}
@@ -124,8 +129,8 @@ export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-medium tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:hover:translate-y-0 focus:outline-none focus:ring-2 focus:ring-gold/50 flex items-center justify-center gap-2"
-              style={{ fontFamily: "var(--font-playfair)" }}
+              className="w-full py-4 bg-gradient-to-r from-ink to-indigo text-white rounded-xl font-medium tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-ink/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:hover:translate-y-0 focus:outline-none focus:ring-2 focus:ring-vermillion/30 flex items-center justify-center gap-2"
+              style={{ fontFamily: "var(--font-manga)" }}
             >
               {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : dict.login.button}
             </button>

@@ -1,4 +1,4 @@
-import { Inter, Playfair_Display, Great_Vibes } from "next/font/google";
+import { Inter, Playfair_Display, Great_Vibes, Noto_Serif_JP, Shippori_Mincho_B1, Dancing_Script } from "next/font/google";
 import { getSiteConfig } from "@/lib/config";
 import { getDictionary } from "@/lib/i18n";
 import type { Metadata } from "next";
@@ -19,6 +19,27 @@ const greatVibes = Great_Vibes({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-great-vibes",
+  display: "swap",
+});
+
+const notoSerifJP = Noto_Serif_JP({
+  weight: ["400", "700", "900"],
+  subsets: ["latin"],
+  variable: "--font-manga",
+  display: "swap",
+});
+
+const shipporiMincho = Shippori_Mincho_B1({
+  weight: ["400", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-zen",
+  display: "swap",
+});
+
+const dancingScript = Dancing_Script({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-brush",
   display: "swap",
 });
 
@@ -54,7 +75,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${inter.variable} ${playfair.variable} ${greatVibes.variable} antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${greatVibes.variable} ${notoSerifJP.variable} ${shipporiMincho.variable} ${dancingScript.variable} antialiased`}
         style={{
           fontFamily: "var(--font-inter), sans-serif",
         }}

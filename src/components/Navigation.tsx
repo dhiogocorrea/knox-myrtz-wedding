@@ -47,16 +47,16 @@ interface NavigationProps {
 }
 
 const baseTabs: { id: TabId; icon: ReactNode }[] = [
-  { id: "home", icon: <Home className="w-4 h-4" /> },
-  { id: "schedule", icon: <CalendarDays className="w-4 h-4" /> },
-  { id: "rsvp", icon: <Mail className="w-4 h-4" /> },
-  { id: "touristicInfo", icon: <Plane className="w-4 h-4" /> },
-  { id: "weddingInfo", icon: <Gem className="w-4 h-4" /> },
+  { id: "home", icon: <Home className="w-[18px] h-[18px]" /> },
+  { id: "schedule", icon: <CalendarDays className="w-[18px] h-[18px]" /> },
+  { id: "rsvp", icon: <Mail className="w-[18px] h-[18px]" /> },
+  { id: "touristicInfo", icon: <Plane className="w-[18px] h-[18px]" /> },
+  { id: "weddingInfo", icon: <Gem className="w-[18px] h-[18px]" /> },
 ];
 
 const adminTab: { id: TabId; icon: ReactNode } = {
   id: "admin",
-  icon: <Shield className="w-4 h-4" />,
+  icon: <Shield className="w-[18px] h-[18px]" />,
 };
 
 export function Navigation({
@@ -102,41 +102,41 @@ export function Navigation({
       <nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           scrolled
-            ? "glass-card shadow-lg shadow-primary/5"
+            ? "bg-white/80 backdrop-blur-xl border-b border-ink/[0.06] shadow-sm"
             : "bg-transparent"
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo / Brand */}
+          <div className="flex items-center justify-between h-16 md:h-[72px]">
+            {/* Logo / Brand – elegant Japanese */}
             <button
               onClick={() => handleTabClick("home")}
-              className="text-xl text-primary hover:text-primary-dark transition-all duration-300 cursor-pointer hover:scale-110"
-              style={{ fontFamily: "var(--font-great-vibes)" }}
+              className="text-2xl text-ink hover:text-vermillion transition-all duration-300 cursor-pointer hover:scale-105 font-bold tracking-wider"
+              style={{ fontFamily: "var(--font-manga)" }}
             >
-              G & M
+              G <span className="text-vermillion/70">&</span> M
             </button>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden md:flex items-center gap-2">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
-                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer hover:scale-105 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-gold/20 ${
+                  className={`relative px-5 py-2.5 rounded-xl text-[15px] font-semibold transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:-translate-y-0.5 ${
                     tab.id === "rsvp"
                       ? activeTab === tab.id
-                        ? "text-white bg-gradient-to-r from-rose to-rose-dark shadow-lg shadow-rose/40 ring-2 ring-rose/30"
-                        : "text-rose border-2 border-rose/40 hover:text-white hover:bg-rose hover:border-rose hover:shadow-rose/40 font-semibold"
+                        ? "text-white bg-vermillion shadow-lg shadow-vermillion/25 scale-[1.03]"
+                        : "text-vermillion border-2 border-vermillion/40 hover:bg-vermillion hover:text-white hover:shadow-lg hover:shadow-vermillion/25 animate-glow-pulse"
                       : activeTab === tab.id
-                      ? "text-primary-dark bg-accent/50"
-                      : "text-warm-gray hover:text-primary hover:bg-accent/20"
+                      ? "text-ink bg-sakura/40"
+                      : "text-warm-gray hover:text-ink hover:bg-ink/[0.04]"
                   }`}
                 >
-                  <span className="mr-1.5 inline-flex">{tab.icon}</span>
+                  <span className="mr-2 inline-flex">{tab.icon}</span>
                   {dict.nav[tab.id]}
-                  {activeTab === tab.id && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-gold rounded-full" />
+                  {activeTab === tab.id && tab.id !== "rsvp" && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-gradient-to-r from-transparent via-vermillion to-transparent rounded-full" />
                   )}
                 </button>
               ))}
@@ -147,33 +147,33 @@ export function Navigation({
               {/* Logout button */}
               <button
                 onClick={onLogout}
-                className="p-2 rounded-full text-warm-gray hover:text-rose hover:bg-rose/10 transition-all duration-300 cursor-pointer hover:scale-105"
+                className="p-2.5 rounded-xl text-warm-gray hover:text-vermillion hover:bg-vermillion/5 transition-all duration-300 cursor-pointer"
                 title={dict.nav.logout}
                 aria-label={dict.nav.logout}
               >
-                <LogOut className="w-4 h-4" />
+                <LogOut className="w-[18px] h-[18px]" />
               </button>
 
               {/* Language selector */}
               <div className="relative" ref={langRef}>
                 <button
                   onClick={() => setLangOpen(!langOpen)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase border border-gold/30 text-gold hover:bg-gold/10 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-md hover:shadow-gold/30 hover:border-gold/50"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium tracking-wider uppercase border border-ink/10 text-ink/70 hover:border-vermillion/30 hover:text-ink transition-all duration-300 cursor-pointer"
                 >
                   <span className="inline-flex">{currentLocale.flag}</span>
                   {currentLocale.label}
                   <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} />
                 </button>
                 {langOpen && (
-                  <div className="absolute right-0 mt-2 w-36 glass-card rounded-xl border border-accent/30 shadow-xl overflow-hidden animate-fade-in z-50">
+                  <div className="absolute right-0 mt-2 w-36 bg-white/90 backdrop-blur-xl rounded-xl border border-ink/[0.08] shadow-xl shadow-ink/5 overflow-hidden animate-fade-in z-50">
                     {localeOptions.map((opt) => (
                       <a
                         key={opt.code}
                         href={`/${opt.code}`}
                         className={`flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors duration-200 ${
                           locale === opt.code
-                            ? "text-primary-dark bg-accent/40 font-medium"
-                            : "text-warm-gray hover:text-primary hover:bg-accent/20"
+                            ? "text-ink bg-sakura/30 font-medium"
+                            : "text-warm-gray hover:text-ink hover:bg-ink/[0.03]"
                         }`}
                       >
                         <span className="inline-flex">{opt.flag}</span>
@@ -216,9 +216,9 @@ export function Navigation({
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-30 md:hidden" onClick={() => setMobileMenuOpen(false)}>
-          <div className="absolute inset-0 bg-charcoal/20 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-ink/10 backdrop-blur-sm" />
           <div
-            className="absolute top-16 left-0 right-0 glass-card border-b border-accent/30 shadow-xl animate-fade-in"
+            className="absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-ink/[0.06] shadow-lg shadow-ink/5 animate-fade-in"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-4 flex flex-col gap-1">
@@ -226,14 +226,14 @@ export function Navigation({
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
-                  className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer hover:translate-x-1 hover:shadow-md ${
+                  className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer hover:translate-x-1 ${
                     tab.id === "rsvp"
                       ? activeTab === tab.id
-                        ? "text-white bg-gradient-to-r from-rose to-rose-dark shadow-lg shadow-rose/40"
-                        : "text-rose border-2 border-rose/40 hover:text-white hover:bg-rose font-semibold"
+                        ? "text-white bg-vermillion shadow-lg shadow-vermillion/20"
+                        : "text-vermillion border border-vermillion/30 hover:bg-vermillion hover:text-white"
                       : activeTab === tab.id
-                      ? "text-primary-dark bg-accent/40"
-                      : "text-warm-gray hover:text-primary hover:bg-accent/20"
+                      ? "text-ink bg-sakura/30"
+                      : "text-warm-gray hover:text-ink hover:bg-ink/[0.03]"
                   }`}
                 >
                   <span className="mr-3 inline-flex">{tab.icon}</span>
@@ -241,10 +241,10 @@ export function Navigation({
                 </button>
               ))}
 
-              <div className="border-t border-accent/30 mt-2 pt-2">
+              <div className="border-t border-ink/[0.06] mt-2 pt-2">
                 <button
                   onClick={onLogout}
-                  className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-rose hover:bg-rose/10 transition-all duration-200 cursor-pointer hover:translate-x-1"
+                  className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-vermillion hover:bg-vermillion/5 transition-all duration-200 cursor-pointer hover:translate-x-1"
                 >
                   <span className="mr-3 inline-flex"><LogOut className="w-4 h-4" /></span>
                   {dict.nav.logout}

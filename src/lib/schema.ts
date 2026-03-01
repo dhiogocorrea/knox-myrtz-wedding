@@ -11,6 +11,7 @@ const ScheduleItemSchema = z.object({
   title: LocalizedStringSchema,
   description: LocalizedStringSchema,
   icon: z.string(),
+  image: z.string().optional(),
   visibleTo: z.array(z.enum(["friends", "family"])).optional(),
 });
 
@@ -18,6 +19,7 @@ const TouristicInfoSchema = z.object({
   title: LocalizedStringSchema,
   content: LocalizedStringSchema,
   icon: z.string(),
+  image: z.string().optional(),
 });
 
 const WeddingInfoSchema = z.object({

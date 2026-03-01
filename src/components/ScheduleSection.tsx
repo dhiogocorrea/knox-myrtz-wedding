@@ -1,9 +1,10 @@
 "use client";
 
+import { useRef, useEffect, useState, useCallback } from "react";
+import Image from "next/image";
 import type { SiteConfig, GuestGroup } from "@/lib/schema";
 import type { Dictionary } from "@/lib/i18n";
 import { getLocalizedValue } from "@/lib/utils";
-import { ScheduleIcon } from "./icons/ScheduleIcon";
 
 interface ScheduleSectionProps {
   config: SiteConfig;
@@ -12,127 +13,180 @@ interface ScheduleSectionProps {
   guestGroup: GuestGroup;
 }
 
+/* ── Panel layout templates ──────────────────
+   Each "row" defines how panels are arranged.
+   - span: column-span (out of 6 cols)
+   - tall: whether it gets extra row height
+   We cycle through row templates for any number of items.
+*/
+/* Balloon position variants — cycle per panel index */
+const BALLOON_POSITIONS = [
+  { pos: "top-3 left-3",                    tail: "manga-balloon-tail-bl" },
+  { pos: "top-3 right-3",                   tail: "manga-balloon-tail-br" },
+  { pos: "bottom-3 right-3",                tail: "manga-balloon-tail-tr" },
+  { pos: "bottom-3 left-3",                 tail: "manga-balloon-tail-tl" },
+  { pos: "top-1/2 left-3 -translate-y-1/2", tail: "manga-balloon-tail-r"  },
+];
+
+const ROW_TEMPLATES = [
+  // Row A: narrow left + wide right (like the manga reference top row)
+  [
+    { span: 2, tall: false },
+    { span: 4, tall: false },
+  ],
+  // Row B: three equal panels
+  [
+    { span: 2, tall: false },
+    { span: 2, tall: false },
+    { span: 2, tall: false },
+  ],
+  // Row C: wide panoramic + small aside
+  [
+    { span: 4, tall: true },
+    { span: 2, tall: true },
+  ],
+  // Row D: single full-width cinematic panel
+  [
+    { span: 6, tall: false },
+  ],
+];
+
 export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSectionProps) {
-  // Filter schedule items based on guest group
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visiblePanels, setVisiblePanels] = useState<Set<number>>(new Set());
+
   const filteredSchedule = config.schedule.filter(item => {
-    if (!item.visibleTo || item.visibleTo.length === 0) {
-      // No restrictions - visible to all
-      return true;
-    }
-    // Show only if user's group matches one of the allowed groups
+    if (!item.visibleTo || item.visibleTo.length === 0) return true;
     return guestGroup && (item.visibleTo as string[]).includes(guestGroup);
   });
 
+  /* Stagger-reveal panels on scroll */
+  const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = Number(entry.target.getAttribute("data-panel-index"));
+        if (!isNaN(idx)) {
+          setVisiblePanels(prev => new Set(prev).add(idx));
+        }
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.15,
+      rootMargin: "0px 0px -40px 0px",
+    });
+    const panels = sectionRef.current?.querySelectorAll("[data-panel-index]");
+    panels?.forEach(p => observer.observe(p));
+    return () => observer.disconnect();
+  }, [handleIntersection, filteredSchedule]);
+
+  /* Distribute schedule items into rows using the templates */
+  const rows: { item: (typeof filteredSchedule)[number]; span: number; tall: boolean; globalIdx: number }[][] = [];
+  let itemIdx = 0;
+  let templateIdx = 0;
+
+  while (itemIdx < filteredSchedule.length) {
+    const template = ROW_TEMPLATES[templateIdx % ROW_TEMPLATES.length];
+    const row: typeof rows[number] = [];
+
+    for (const slot of template) {
+      if (itemIdx >= filteredSchedule.length) break;
+      row.push({
+        item: filteredSchedule[itemIdx],
+        span: slot.span,
+        tall: slot.tall,
+        globalIdx: itemIdx,
+      });
+      itemIdx++;
+    }
+
+    rows.push(row);
+    templateIdx++;
+  }
+
   return (
-    <section className="min-h-[calc(100vh-5rem)] py-16 px-4">
-      <div className="max-w-3xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+    <section ref={sectionRef} className="min-h-[calc(100vh-5rem)] py-1 px-4 relative seigaiha">
+      <div className="max-w-4xl mx-auto relative z-10">
+
+        {/* ── Manga page header ─────────────── */}
+        <div className="text-center mb-8 animate-fade-in-up">
+          <p
+            className="text-xs tracking-[0.5em] uppercase text-vermillion/60 mb-3 font-medium"
+            style={{ fontFamily: "var(--font-manga)" }}
+          >
+            ── 予定 ──
+          </p>
           <h2
-            className="text-4xl md:text-5xl text-primary mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
+            className="text-3xl md:text-4xl text-ink mb-4 font-bold"
+            style={{ fontFamily: "var(--font-manga)" }}
           >
             {dict.schedule.title}
           </h2>
-          <div className="mb-4">
-            <div className="greek-divider mx-auto max-w-xs" />
-          </div>
-          <p className="text-warm-gray">{dict.schedule.subtitle}</p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/0 via-gold/30 to-gold/0 md:-translate-x-px" />
-
-          {filteredSchedule.map((item, index) => {
-            const isEven = index % 2 === 0;
-            return (
+        {/* ── Manga page container ──────────── */}
+        <div className="manga-page">
+          <div className="manga-page-inner">
+            {rows.map((row, rowIndex) => (
               <div
-                key={index}
-                className="relative mb-12 last:mb-0 animate-fade-in-up"
+                key={rowIndex}
+                className="manga-row"
                 style={{
-                  animationDelay: `${index * 150}ms`,
-                  animationFillMode: "forwards",
-                  opacity: 0,
+                  gridTemplateColumns: row.map(p => `${p.span}fr`).join(" "),
                 }}
               >
-                {/* Desktop layout */}
-                <div className="hidden md:flex items-center">
-                  {/* Left content */}
-                  <div className={`w-1/2 ${isEven ? "pr-12 text-right" : "pr-12 text-right opacity-0"}`}>
-                    {isEven && (
-                      <div className="glass-card rounded-2xl p-6 inline-block text-left ml-auto shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1 group">
-                        <div className="flex items-center gap-3 mb-2">
-                          <ScheduleIcon name={item.icon} className="w-6 h-6 text-gold group-hover:animate-float" strokeWidth={1.5} />
-                          <div>
-                            <h3
-                              className="text-lg text-primary-dark font-semibold"
-                              style={{ fontFamily: "var(--font-playfair)" }}
-                            >
-                              {getLocalizedValue(item.title, locale)}
-                            </h3>
-                            <p className="text-xs text-gold tracking-wider font-medium">{item.time}</p>
-                          </div>
-                        </div>
-                        <p className="text-warm-gray text-sm leading-relaxed">
-                          {getLocalizedValue(item.description, locale)}
+                {row.map((panel) => {
+                  const isVisible = visiblePanels.has(panel.globalIdx);
+                  const hasImage = !!panel.item.image;
+                  const isWide = panel.span >= 4;
+                  const isFull = panel.span === 6;
+                  const balloon = BALLOON_POSITIONS[panel.globalIdx % BALLOON_POSITIONS.length];
+
+                  return (
+                    <div
+                      key={panel.globalIdx}
+                      data-panel-index={panel.globalIdx}
+                      className={`
+                        manga-panel group
+                        ${panel.tall ? "manga-panel-tall" : ""}
+                        ${isFull ? "manga-panel-cinematic" : ""}
+                        ${hasImage ? "manga-panel-with-image" : ""}
+                        ${isVisible ? "manga-panel-visible" : "manga-panel-hidden"}
+                      `}
+                    >
+                      {/* ── Background image ──────────── */}
+                      {hasImage && (
+                        <Image
+                          src={panel.item.image!}
+                          alt={getLocalizedValue(panel.item.title, locale)}
+                          fill
+                          sizes={isFull ? "100vw" : isWide ? "66vw" : "33vw"}
+                          className="object-cover pointer-events-none manga-panel-img"
+                        />
+                      )}
+
+                      {/* ── Floating speech balloon ──────── */}
+                      <div className={`absolute z-10 max-w-[58%] manga-balloon ${balloon.pos} ${balloon.tail}`}>
+                        <p className="text-[0.68rem] leading-snug text-ink" style={{ fontFamily: "var(--font-manga)" }}>
+                          <span className="text-vermillion font-bold">{panel.item.time}</span>
+                          {" — "}{getLocalizedValue(panel.item.title, locale)}
                         </p>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Center dot */}
-                  <div className="relative z-10 w-4 h-4 rounded-full bg-gold border-4 border-cream shadow-md shadow-gold/20 -mx-2" />
-
-                  {/* Right content */}
-                  <div className={`w-1/2 ${!isEven ? "pl-12" : "pl-12 opacity-0"}`}>
-                    {!isEven && (
-                      <div className="glass-card rounded-2xl p-6 inline-block shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1 group">
-                        <div className="flex items-center gap-3 mb-2">
-                          <ScheduleIcon name={item.icon} className="w-6 h-6 text-gold group-hover:animate-float" strokeWidth={1.5} />
-                          <div>
-                            <h3
-                              className="text-lg text-primary-dark font-semibold"
-                              style={{ fontFamily: "var(--font-playfair)" }}
-                            >
-                              {getLocalizedValue(item.title, locale)}
-                            </h3>
-                            <p className="text-xs text-gold tracking-wider font-medium">{item.time}</p>
-                          </div>
-                        </div>
-                        <p className="text-warm-gray text-sm leading-relaxed">
-                          {getLocalizedValue(item.description, locale)}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Mobile layout */}
-                <div className="md:hidden flex items-start gap-4 ml-2">
-                  <div className="relative z-10 mt-2 w-3 h-3 rounded-full bg-gold border-3 border-cream shadow-sm shadow-gold/20 flex-shrink-0" />
-                  <div className="glass-card rounded-2xl p-5 shadow-lg shadow-primary/5 flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <ScheduleIcon name={item.icon} className="w-6 h-6 text-gold" strokeWidth={1.5} />
-                      <div>
-                        <h3
-                          className="text-base text-primary-dark font-semibold"
-                          style={{ fontFamily: "var(--font-playfair)" }}
-                        >
-                          {getLocalizedValue(item.title, locale)}
-                        </h3>
-                        <p className="text-xs text-gold tracking-wider font-medium">{item.time}</p>
                       </div>
                     </div>
-                    <p className="text-warm-gray text-sm leading-relaxed">
-                      {getLocalizedValue(item.description, locale)}
-                    </p>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
-            );
-          })}
+            ))}
+          </div>
+
+          {/* Page number */}
+          <div className="text-right mt-2 pr-2">
+            <span className="text-xs text-ink/30 tracking-wider" style={{ fontFamily: "var(--font-manga)" }}>
+              — {filteredSchedule.length} —
+            </span>
+          </div>
         </div>
       </div>
     </section>

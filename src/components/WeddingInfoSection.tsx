@@ -15,17 +15,17 @@ interface WeddingInfoSectionProps {
 export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionProps) {
   const infoCards: { icon: ReactNode; title: string; content: string }[] = [
     {
-      icon: <Shirt className="w-7 h-7 text-primary" strokeWidth={1.5} />,
+      icon: <Shirt className="w-7 h-7 text-vermillion/70" strokeWidth={1.5} />,
       title: dict.weddingInfo.dressCodeTitle,
       content: getLocalizedValue(config.weddingInfo.dressCode, locale),
     },
     {
-      icon: <Gift className="w-7 h-7 text-primary" strokeWidth={1.5} />,
+      icon: <Gift className="w-7 h-7 text-vermillion/70" strokeWidth={1.5} />,
       title: dict.weddingInfo.giftsTitle,
       content: getLocalizedValue(config.weddingInfo.gifts, locale),
     },
     {
-      icon: <Hotel className="w-7 h-7 text-primary" strokeWidth={1.5} />,
+      icon: <Hotel className="w-7 h-7 text-vermillion/70" strokeWidth={1.5} />,
       title: dict.weddingInfo.accommodationTitle,
       content: getLocalizedValue(config.weddingInfo.accommodation, locale),
     },
@@ -36,14 +36,20 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
+          <p className="text-xs tracking-[0.5em] uppercase text-vermillion/60 mb-3 font-medium"
+             style={{ fontFamily: "var(--font-manga)" }}>
+            ── 情報 ──
+          </p>
           <h2
-            className="text-4xl md:text-5xl text-primary mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
+            className="text-4xl md:text-5xl text-ink mb-4 font-bold"
+            style={{ fontFamily: "var(--font-manga)" }}
           >
             {dict.weddingInfo.title}
           </h2>
           <div className="mb-4">
-            <div className="greek-divider mx-auto max-w-xs" />
+            <div className="katana-divider mx-auto max-w-xs">
+              <span className="text-vermillion/40 text-sm">❁</span>
+            </div>
           </div>
           <p className="text-warm-gray">{dict.weddingInfo.subtitle}</p>
         </div>
@@ -53,7 +59,7 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
           {infoCards.map((card, index) => (
             <div
               key={index}
-              className="glass-card rounded-2xl p-8 md:p-10 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1 group animate-fade-in-up"
+              className="glass-card p-8 md:p-10 transition-all duration-500 hover:-translate-y-1 group glow-hover animate-fade-in-up"
               style={{
                 animationDelay: `${index * 200}ms`,
                 animationFillMode: "forwards",
@@ -61,13 +67,13 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
               }}
             >
               <div className="flex flex-col md:flex-row items-start gap-6">
-                <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-accent/40 flex items-center justify-center group-hover:animate-float">
+                <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-sakura/20 flex items-center justify-center group-hover:animate-float">
                   {card.icon}
                 </div>
                 <div>
                   <h3
-                    className="text-2xl text-primary-dark font-semibold mb-4"
-                    style={{ fontFamily: "var(--font-playfair)" }}
+                    className="text-2xl text-ink font-semibold mb-4"
+                    style={{ fontFamily: "var(--font-manga)" }}
                   >
                     {card.title}
                   </h3>
@@ -85,13 +91,13 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
           className="mt-16 text-center animate-fade-in-up"
           style={{ animationDelay: "600ms", animationFillMode: "forwards", opacity: 0 }}
         >
-          <div className="glass-card inline-block rounded-2xl px-10 py-6 shadow-lg">
+          <div className="glass-card inline-block px-10 py-6">
             <p className="text-xs text-warm-gray tracking-[0.3em] uppercase mb-2">
               Share your moments
             </p>
             <p
               className="text-2xl text-gold tracking-wide"
-              style={{ fontFamily: "var(--font-playfair)" }}
+              style={{ fontFamily: "var(--font-manga)" }}
             >
               {config.wedding.hashtag}
             </p>

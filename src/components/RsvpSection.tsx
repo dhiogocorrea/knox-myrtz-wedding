@@ -111,17 +111,17 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
     return (
       <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 px-4">
         <div className="max-w-md mx-auto text-center animate-scale-in">
-          <div className="glass-card rounded-3xl p-10 shadow-2xl">
+          <div className="glass-card p-10">
             <div className="flex justify-center mb-6">
               {isAlready ? (
                 <Mail className="w-16 h-16 text-gold" strokeWidth={1.5} />
               ) : (
-                <Heart className="w-16 h-16 text-rose fill-rose/20" strokeWidth={1.5} />
+                <Heart className="w-16 h-16 text-vermillion fill-vermillion/20" strokeWidth={1.5} />
               )}
             </div>
             <h2
-              className="text-3xl text-primary mb-4"
-              style={{ fontFamily: "var(--font-playfair)" }}
+              className="text-3xl text-ink mb-4"
+              style={{ fontFamily: "var(--font-manga)" }}
             >
               {isAlready ? dict.rsvp.alreadySubmittedTitle : dict.rsvp.successTitle}
             </h2>
@@ -139,14 +139,20 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
       <div className="max-w-xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in-up">
+          <p className="text-xs tracking-[0.5em] uppercase text-vermillion/60 mb-3 font-medium"
+             style={{ fontFamily: "var(--font-manga)" }}>
+            ── 返信 ──
+          </p>
           <h2
-            className="text-4xl md:text-5xl text-primary mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
+            className="text-4xl md:text-5xl text-ink mb-4 font-bold"
+            style={{ fontFamily: "var(--font-manga)" }}
           >
             {dict.rsvp.title}
           </h2>
           <div className="mb-4">
-            <div className="greek-divider mx-auto max-w-xs" />
+            <div className="katana-divider mx-auto max-w-xs">
+              <span className="text-vermillion/40 text-sm">❁</span>
+            </div>
           </div>
           <p className="text-warm-gray">{dict.rsvp.subtitle}</p>
         </div>
@@ -154,7 +160,7 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="glass-card rounded-3xl p-6 sm:p-10 shadow-xl shadow-primary/5 animate-fade-in-up stagger-2"
+          className="glass-card p-6 sm:p-10 animate-fade-in-up stagger-2"
         >
           {/* Name */}
           <div className="mb-6">
@@ -381,8 +387,8 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
           <button
             type="submit"
             disabled={state === "sending"}
-            className="w-full py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-medium tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:shadow-none focus:outline-none focus:ring-2 focus:ring-gold/50"
-            style={{ fontFamily: "var(--font-playfair)" }}
+            className="w-full py-4 bg-gradient-to-r from-ink to-indigo text-white rounded-xl font-medium tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-ink/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:shadow-none focus:outline-none focus:ring-2 focus:ring-vermillion/30"
+            style={{ fontFamily: "var(--font-manga)" }}
           >
             {state === "sending" ? (
               <span className="flex items-center justify-center gap-2">

@@ -11,15 +11,17 @@ interface FooterProps {
 
 export function Footer({ config, dict }: FooterProps) {
   return (
-    <footer className="py-12 px-4 border-t border-accent/30">
+    <footer className="py-12 px-4 border-t border-ink/[0.06]">
       <div className="max-w-4xl mx-auto text-center">
-        {/* Olive branch divider */}
-        <div className="greek-divider mb-6 mx-auto max-w-xs" />
+        {/* Katana divider */}
+        <div className="katana-divider mb-6 mx-auto max-w-xs">
+          <span className="text-vermillion/30 text-sm">❁</span>
+        </div>
 
         {/* Couple names */}
         <p
-          className="text-3xl text-primary/60 mb-3"
-          style={{ fontFamily: "var(--font-great-vibes)" }}
+          className="text-3xl text-ink/40 mb-3 font-bold"
+          style={{ fontFamily: "var(--font-manga)" }}
         >
           {config.couple.partner1.shortName} & {config.couple.partner2.shortName}
         </p>
@@ -32,12 +34,7 @@ export function Footer({ config, dict }: FooterProps) {
         {/* Made with love */}
         <p className="text-warm-gray/30 text-xs flex items-center justify-center gap-1">
           {dict.footer.madeWithLove} {config.couple.partner1.shortName} & {config.couple.partner2.shortName}
-          <Heart className="w-3 h-3 text-rose/40 fill-rose/40" />
-        </p>
-
-        {/* Developer credit */}
-        <p className="text-warm-gray/20 text-[10px] mt-4 italic">
-          Made with love by Orimaz 💜
+          <Heart className="w-3 h-3 text-vermillion/40 fill-vermillion/40" />
         </p>
       </div>
     </footer>

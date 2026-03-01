@@ -73,6 +73,13 @@ CREATE POLICY "allow_insert_rsvp"
   TO anon 
   WITH CHECK (true);
 
+-- Allow deleting RSVP submissions (for admin)
+CREATE POLICY "allow_delete_rsvp"
+  ON rsvp_submissions
+  FOR DELETE
+  TO anon
+  USING (true);
+
 -- Create index for faster password lookups
 CREATE INDEX IF NOT EXISTS idx_guest_passwords_password ON guest_passwords(password);
 CREATE INDEX IF NOT EXISTS idx_rsvp_submissions_password ON rsvp_submissions(password);

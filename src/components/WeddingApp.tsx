@@ -13,6 +13,7 @@ import { AdminPanel } from "./AdminPanel";
 import { Footer } from "./Footer";
 import { PetalOverlay } from "./PetalOverlay";
 import { CursorEffect } from "./CursorEffect";
+import { BackgroundScene } from "./BackgroundScene";
 
 export type TabId = "home" | "schedule" | "rsvp" | "touristicInfo" | "weddingInfo" | "admin";
 
@@ -48,7 +49,9 @@ export function WeddingApp({ locale, config, dict, guestGroup, authPassword, onL
   const isAdmin = guestGroup === "admin";
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream relative">
+      {/* Fixed background: couple + cherry tree + overlays */}
+      <BackgroundScene />
       <CursorEffect />
       <PetalOverlay />
       <Navigation
@@ -59,10 +62,10 @@ export function WeddingApp({ locale, config, dict, guestGroup, authPassword, onL
         isAdmin={isAdmin}
         onLogout={onLogout}
       />
-      <main className="pt-20">
+      <main className="pt-20 relative z-10">
         {renderSection()}
       </main>
-      <Footer config={config} dict={dict} />
+      {/* <Footer config={config} dict={dict} /> */}
     </div>
   );
 }

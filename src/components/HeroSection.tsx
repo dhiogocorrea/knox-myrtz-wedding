@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Flower2, Leaf, Heart, CalendarDays, Clock, MapPin, ArrowUpRight } from "lucide-react";
+import { CalendarDays, Clock, MapPin, ArrowUpRight } from "lucide-react";
 import type { SiteConfig } from "@/lib/schema";
 import type { Dictionary } from "@/lib/i18n";
 
@@ -44,146 +44,101 @@ export function HeroSection({ config, dict }: HeroSectionProps) {
   });
 
   return (
-    <section className="relative flex flex-col items-center px-4 overflow-hidden">
-      {/* Venue background image */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img
-          src="/images/venue-bg.svg"
-          alt=""
-          className="absolute bottom-0 left-0 w-full h-auto opacity-40 object-cover"
-        />
-      </div>
-
-      {/* Background decorations */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <Flower2 className="absolute top-[10%] left-[5%] w-24 h-24 text-purple-700/[0.08] animate-float select-none" strokeWidth={1} />
-        <Leaf className="absolute top-[20%] right-[10%] w-20 h-20 text-violet-400/[0.08] animate-float select-none" style={{ animationDelay: "1s" }} strokeWidth={1} />
-        <Heart className="absolute bottom-[15%] left-[15%] w-28 h-28 text-primary/[0.06] animate-float select-none" strokeWidth={1} />
-        <Flower2 className="absolute bottom-[25%] right-[8%] w-16 h-16 text-purple-600/[0.08] animate-float select-none" style={{ animationDelay: "0.5s" }} strokeWidth={1} />
-        <Leaf className="absolute top-[60%] left-[50%] w-20 h-20 text-violet-300/[0.05] animate-float select-none" style={{ animationDelay: "1.5s" }} strokeWidth={1} />
-
-        {/* Gradient orbs - purple theme */}
-        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-purple-400 rounded-full opacity-15 blur-[100px]" />
-        <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-violet-200 rounded-full opacity-15 blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-300 rounded-full opacity-10 blur-[120px]" />
-      </div>
-
-      {/* Above the fold — fits in viewport without scrolling */}
-      <div className="relative z-10 text-center max-w-3xl mx-auto flex flex-col items-center justify-center min-h-[calc(100vh-5rem)]">
-        {/* Save the date */}
+    <section className="relative flex flex-col items-center px-4 overflow-hidden min-h-[calc(100vh-5rem)]">
+      {/* ── Main title block (centered, cinematic) ── */}
+      <div className="relative z-10 text-center max-w-2xl mx-auto flex flex-col items-center justify-start pt-[8vh] sm:pt-[10vh]">
         <div className="animate-fade-in-up opacity-0" style={{ animationFillMode: "forwards" }}>
-          <p className="text-sm tracking-[0.4em] uppercase text-warm-gray mb-3">
-            {dict.home.saveTheDate}
-          </p>
-        </div>
+          {/* Names – THE dominant visual element */}
+          <div className="relative">
+            <p className="text-xs sm:text-sm tracking-[0.5em] uppercase text-vermillion/80 mb-4 font-semibold"
+               style={{ fontFamily: "var(--font-zen)" }}>
+              {dict.home.saveTheDate}
+            </p>
 
-        {/* Couple Names */}
-        <div className="animate-fade-in-up opacity-0 stagger-1" style={{ animationFillMode: "forwards" }}>
-          <h1
-            className="text-5xl sm:text-6xl md:text-7xl text-primary leading-none"
-            style={{ fontFamily: "var(--font-great-vibes)" }}
-          >
-            {config.couple.partner1.shortName}
-          </h1>
-          <div className="flex items-center justify-center gap-3 my-1">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-purple-600/60" />
-            <span className="text-xl text-gold animate-float">✦</span>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-purple-600/60" />
+            <h1
+              className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-ink font-black leading-[0.85] drop-shadow-[0_2px_4px_rgba(26,26,46,0.15)]"
+              style={{ fontFamily: "var(--font-brush)" }}
+            >
+              {config.couple.partner1.shortName}
+              <span className="text-vermillion mx-3 text-4xl sm:text-5xl md:text-6xl align-middle">&amp;</span>
+              {config.couple.partner2.shortName}
+            </h1>
+
+            <p className="text-xs sm:text-sm text-vermillion/80 tracking-[0.3em] uppercase mt-4 font-bold"
+               style={{ fontFamily: "var(--font-zen)" }}>
+              {dict.home.weAreGettingMarried}
+            </p>
           </div>
-          <h1
-            className="text-5xl sm:text-6xl md:text-7xl text-primary leading-none"
-            style={{ fontFamily: "var(--font-great-vibes)" }}
-          >
-            {config.couple.partner2.shortName}
-          </h1>
-        </div>
 
-        {/* We're Getting Married */}
-        <div className="animate-fade-in-up opacity-0 stagger-3 mt-3" style={{ animationFillMode: "forwards" }}>
-          <p
-            className="text-base md:text-lg text-primary-light tracking-wide"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            {dict.home.weAreGettingMarried}
-          </p>
-        </div>
-
-        {/* Date & Venue */}
-        <div className="animate-fade-in-up opacity-0 stagger-4 mt-4 space-y-2" style={{ animationFillMode: "forwards" }}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-warm-gray">
-            <div className="flex items-center gap-2">
-              <CalendarDays className="w-4 h-4 text-gold" />
-              <span className="text-sm tracking-wide">{dateFormatted}</span>
-            </div>
-            <span className="hidden sm:inline text-gold/40">|</span>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-gold" />
-              <span className="text-sm tracking-wide">{config.wedding.time}</span>
-            </div>
+          {/* Divider */}
+          <div className="flex items-center justify-center gap-4 my-7">
+            <div className="h-px w-16 bg-gradient-to-r from-transparent to-vermillion/50" />
+            <span className="text-vermillion/50 text-sm" style={{ fontFamily: "var(--font-manga)" }}>❁</span>
+            <div className="h-px w-16 bg-gradient-to-l from-transparent to-vermillion/50" />
           </div>
-          <a
-            href={config.wedding.venue.mapUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-dark transition-colors group"
-          >
-            <MapPin className="w-4 h-4 text-gold" />
-            <span className="group-hover:underline decoration-gold/50 underline-offset-4">
-              {config.wedding.venue.name}
+
+          {/* Date · Time · Venue – second visual priority */}
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-ink/90 font-medium">
+            <span className="flex items-center gap-1.5">
+              <CalendarDays className="w-4 h-4 text-vermillion/80" />
+              {dateFormatted}
             </span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-warm-gray/50 group-hover:text-gold transition-colors" />
-          </a>
-        </div>
-
-        {/* Countdown */}
-        <div className="mt-5 animate-fade-in-up opacity-0 stagger-5" style={{ animationFillMode: "forwards" }}>
-          <div className="grid grid-cols-4 gap-3 sm:gap-5 max-w-md mx-auto">
-            {[
-              { value: timeLeft.days, label: dict.home.days },
-              { value: timeLeft.hours, label: dict.home.hours },
-              { value: timeLeft.minutes, label: dict.home.minutes },
-              { value: timeLeft.seconds, label: dict.home.seconds },
-            ].map((item) => (
-              <div key={item.label} className="glass-card rounded-2xl p-2.5 sm:p-4">
-                <div
-                  className="text-2xl sm:text-4xl font-bold text-primary tabular-nums"
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                >
-                  {String(item.value).padStart(2, "0")}
-                </div>
-                <div className="text-[10px] sm:text-xs text-warm-gray uppercase tracking-[0.2em] mt-1">
-                  {item.label}
-                </div>
-              </div>
-            ))}
+            <span className="text-vermillion/40 text-lg">·</span>
+            <span className="flex items-center gap-1.5">
+              <Clock className="w-4 h-4 text-vermillion/80" />
+              {config.wedding.time}
+            </span>
+            <span className="text-vermillion/40 text-lg">·</span>
+            <a
+              href={config.wedding.venue.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 hover:text-vermillion transition-colors"
+            >
+              <MapPin className="w-4 h-4 text-vermillion/80" />
+              {config.wedding.venue.name}
+              <ArrowUpRight className="w-3.5 h-3.5 opacity-50" />
+            </a>
           </div>
-        </div>
-      </div>
 
-      {/* Below the fold — scrollable content */}
-      <div className="relative z-10 text-center max-w-3xl mx-auto pb-8">
-        {/* Olive branch divider */}
-        <div className="my-6 animate-fade-in-up opacity-0 stagger-6" style={{ animationFillMode: "forwards" }}>
-          <div className="greek-divider mx-auto max-w-xs" />
-        </div>
+          {/* ── Countdown – horizontal, directly below info ── */}
+          <div
+            className="mt-8 animate-fade-in-up opacity-0 stagger-2"
+            style={{ animationFillMode: "forwards" }}
+          >
+            <div className="inline-flex items-center gap-1.5 sm:gap-3 py-3 px-5 sm:px-8 rounded-2xl bg-ink/[0.06] backdrop-blur-sm border border-ink/[0.08]">
+              {/* Decorative kanji */}
+              <span className="text-[10px] text-vermillion/50 mr-1 hidden sm:inline" style={{ fontFamily: "var(--font-zen)" }}>残</span>
 
-        {/* Couple puppet illustration */}
-        <div className="my-4 animate-fade-in-up opacity-0 stagger-6" style={{ animationFillMode: "forwards" }}>
-          <img
-            src="/images/couple-hero.svg"
-            alt="Gui and Myrto"
-            className="mx-auto w-48 sm:w-64 md:w-80 h-auto opacity-80 hover:opacity-100 transition-opacity duration-500"
-          />
-        </div>
+              {[
+                { value: timeLeft.days, kanji: "日", label: "days" },
+                { value: timeLeft.hours, kanji: "時", label: "hrs" },
+                { value: timeLeft.minutes, kanji: "分", label: "min" },
+                { value: timeLeft.seconds, kanji: "秒", label: "sec" },
+              ].map((item, i) => (
+                <div key={item.kanji} className="flex items-center">
+                  {i > 0 && <span className="text-ink/20 mx-1 sm:mx-2 text-lg font-light">:</span>}
+                  <div className="flex flex-col items-center min-w-[2.5rem] sm:min-w-[3.2rem]">
+                    <span
+                      className="text-2xl sm:text-3xl font-black text-ink tabular-nums leading-none"
+                      style={{ fontFamily: "var(--font-zen)" }}
+                    >
+                      {String(item.value).padStart(2, "0")}
+                    </span>
+                    <span
+                      className="text-[9px] sm:text-[10px] text-vermillion/70 mt-1 font-medium tracking-wider uppercase"
+                      style={{ fontFamily: "var(--font-zen)" }}
+                    >
+                      {item.kanji}
+                    </span>
+                  </div>
+                </div>
+              ))}
 
-        {/* Join us message */}
-        <div className="mt-8 animate-fade-in-up opacity-0 stagger-7" style={{ animationFillMode: "forwards" }}>
-          <p className="text-warm-gray italic text-sm">
-            {dict.home.joinUs}
-          </p>
-          <p className="text-gold/60 text-xs mt-3 tracking-widest">
-            {config.wedding.hashtag}
-          </p>
+              {/* Decorative kanji */}
+              <span className="text-[10px] text-vermillion/50 ml-1 hidden sm:inline" style={{ fontFamily: "var(--font-zen)" }}>迄</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
