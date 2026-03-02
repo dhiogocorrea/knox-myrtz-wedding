@@ -9,13 +9,15 @@ const LocalizedStringSchema = z.object({
 const ScheduleItemSchema = z.object({
   time: z.string(),
   title: LocalizedStringSchema,
-  description: LocalizedStringSchema,
+  description: LocalizedStringSchema.optional(),
   icon: z.string(),
   image: z.string().optional(),
   location: z
     .object({ name: LocalizedStringSchema, url: z.string().url() })
     .optional(),
   visibleTo: z.array(z.enum(["friends", "family"])).optional(),
+  panel: z.any().optional(),
+  balloon: z.any().optional(),
 });
 
 const TouristicInfoSchema = z.object({

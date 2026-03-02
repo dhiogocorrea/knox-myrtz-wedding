@@ -95,10 +95,13 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
 
     for (const slot of template) {
       if (itemIdx >= filteredSchedule.length) break;
+      const item = filteredSchedule[itemIdx] as any;
+      const itemSpan = item.panel?.span ?? slot.span;
+      const itemTall = item.panel?.tall ?? slot.tall;
       row.push({
-        item: filteredSchedule[itemIdx],
-        span: slot.span,
-        tall: slot.tall,
+        item: item,
+        span: itemSpan,
+        tall: itemTall,
         globalIdx: itemIdx,
       });
       itemIdx++;
@@ -144,7 +147,14 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
                   const hasImage = !!panel.item.image;
                   const isWide = panel.span >= 4;
                   const isFull = panel.span === 6;
-                  const balloon = BALLOON_POSITIONS[panel.globalIdx % BALLOON_POSITIONS.length];
+                  const defaultBalloon = BALLOON_POSITIONS[panel.globalIdx % BALLOON_POSITIONS.length];
+                  const itemBalloon = (panel.item as any).balloon;
+                  const usePosClass = !(itemBalloon && (itemBalloon.style?.top || itemBalloon.style?.left || itemBalloon.style?.right || itemBalloon.style?.bottom));
+                  const posClass = usePosClass ? (itemBalloon?.pos ?? defaultBalloon.pos) : "";
+                  const tailClass = itemBalloon?.tail ?? defaultBalloon.tail;
+                  const maxWidthClass = itemBalloon?.maxWidth ?? "max-w-[58%]";
+                  const balloonInlineStyle = itemBalloon?.style ? (itemBalloon.style as any) : undefined;
+                  const panelInlineStyle = (panel.item as any).panel?.style ? ((panel.item as any).panel.style as any) : undefined;
 
                   return (
                     <div
@@ -157,6 +167,7 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
                         ${hasImage ? "manga-panel-with-image" : ""}
                         ${isVisible ? "manga-panel-visible" : "manga-panel-hidden"}
                       `}
+                      style={panelInlineStyle}
                     >
                       {/* ── Background image ──────────── */}
                       {hasImage && (
@@ -170,7 +181,10 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
                       )}
 
                       {/* ── Floating speech balloon ──────── */}
-                          <div className={`absolute z-10 max-w-[58%] manga-balloon ${balloon.pos} ${balloon.tail}`}>
+                          <div
+                            className={`${["absolute z-10", maxWidthClass, "manga-balloon", posClass, tailClass].filter(Boolean).join(" ")}`}
+                            style={balloonInlineStyle}
+                          >
                             <p className="text-[0.68rem] leading-snug text-ink" style={{ fontFamily: "var(--font-manga)" }}>
                               <span className="text-vermillion font-bold">{panel.item.time}</span>
                               {" — "}{getLocalizedValue(panel.item.title, locale)}

@@ -72,14 +72,20 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
+  const fontClass = [
+    inter?.variable,
+    playfair?.variable,
+    greatVibes?.variable,
+    notoSerifJP?.variable,
+    shipporiMincho?.variable,
+    dancingScript?.variable,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <html lang={locale}>
-      <body
-        className={`${inter.variable} ${playfair.variable} ${greatVibes.variable} ${notoSerifJP.variable} ${shipporiMincho.variable} ${dancingScript.variable} antialiased`}
-        style={{
-          fontFamily: "var(--font-inter), sans-serif",
-        }}
-      >
+      <body className={`${fontClass} antialiased`} style={{ fontFamily: "var(--font-inter), sans-serif" }}>
         {children}
       </body>
     </html>

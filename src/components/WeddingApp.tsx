@@ -11,9 +11,11 @@ import { TouristicSection } from "./TouristicSection";
 import { WeddingInfoSection } from "./WeddingInfoSection";
 import { AdminPanel } from "./AdminPanel";
 import { Footer } from "./Footer";
-import { PetalOverlay } from "./PetalOverlay";
-import { CursorEffect } from "./CursorEffect";
-import { BackgroundScene } from "./BackgroundScene";
+import dynamic from "next/dynamic";
+
+const PetalOverlay = dynamic(() => import("./PetalOverlay").then((mod) => mod.PetalOverlay), { ssr: false });
+const CursorEffect = dynamic(() => import("./CursorEffect").then((mod) => mod.CursorEffect), { ssr: false });
+const BackgroundScene = dynamic(() => import("./BackgroundScene").then((mod) => mod.BackgroundScene), { ssr: false });
 
 export type TabId = "home" | "schedule" | "rsvp" | "touristicInfo" | "weddingInfo" | "admin";
 
