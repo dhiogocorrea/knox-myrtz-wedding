@@ -32,8 +32,8 @@ export const dictionaries = {
       joinUs: "We can't wait to celebrate with you!",
     },
     schedule: {
-      title: "Wedding Schedule",
-      subtitle: "Here's what to expect on our special day",
+      title: "Schedule",
+      subtitle: "Here's what to expect on our special week.",
     },
     rsvp: {
       title: "RSVP",

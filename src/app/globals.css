@@ -398,7 +398,7 @@ body {
 /* ── Manga page container ────────────────── */
 .manga-page {
   background: var(--color-paper);
-  border: 3px solid var(--color-ink);
+  border: 5px solid var(--color-ink);
   border-radius: 4px;
   padding: 6px;
   box-shadow:
@@ -408,7 +408,7 @@ body {
 }
 
 .manga-page-inner {
-  border: 1.5px solid var(--color-ink);
+  border: 3px solid var(--color-ink);
   border-radius: 2px;
   overflow: hidden;
   display: flex;
@@ -420,7 +420,7 @@ body {
   display: grid;
   gap: 0;
   min-height: 180px;
-  border-bottom: 2.5px solid var(--color-ink);
+  border-bottom: 4px solid var(--color-ink);
 }
 
 .manga-row:last-child {
@@ -432,7 +432,7 @@ body {
   position: relative;
   overflow: hidden;
   padding: 20px 16px;
-  border-right: 2.5px solid var(--color-ink);
+  border-right: 4px solid var(--color-ink);
   min-height: 170px;
   display: flex;
   align-items: center;
@@ -617,7 +617,7 @@ body {
 
 /* ── Minimal floating speech balloon ─────── */
 .manga-balloon {
-  background: rgba(255, 255, 255, 0.93);
+  background: rgba(255, 255, 255, 0.65);
   border: 1.5px solid var(--color-ink);
   border-radius: 12px;
   padding: 6px 10px;
@@ -647,7 +647,7 @@ body {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 3px solid transparent;
-  border-top: 7px solid rgba(255,255,255,0.93);
+  border-top: 7px solid rgba(255,255,255,0.65);
   z-index: 1;
 }
 
@@ -672,7 +672,7 @@ body {
   height: 0;
   border-left: 3px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 7px solid rgba(255,255,255,0.93);
+  border-top: 7px solid rgba(255,255,255,0.65);
   z-index: 1;
 }
 
@@ -697,7 +697,7 @@ body {
   height: 0;
   border-left: 3px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 7px solid rgba(255,255,255,0.93);
+  border-bottom: 7px solid rgba(255,255,255,0.65);
   z-index: 1;
 }
 
@@ -722,7 +722,7 @@ body {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 3px solid transparent;
-  border-bottom: 7px solid rgba(255,255,255,0.93);
+  border-bottom: 7px solid rgba(255,255,255,0.65);
   z-index: 1;
 }
 
@@ -749,7 +749,7 @@ body {
   height: 0;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-left: 7px solid rgba(255,255,255,0.93);
+  border-left: 7px solid rgba(255,255,255,0.65);
   z-index: 1;
 }
 

@@ -64,7 +64,7 @@ export function HeroSection({ config, dict }: HeroSectionProps) {
               {config.couple.partner2.shortName}
             </h1>
 
-            <p className="text-xs sm:text-sm text-vermillion/80 tracking-[0.3em] uppercase mt-4 font-bold"
+            <p className="text-xs sm:text-sm text-vermillion/80 tracking-[0.3em] uppercase mt-6 font-bold"
                style={{ fontFamily: "var(--font-zen)" }}>
               {dict.home.weAreGettingMarried}
             </p>

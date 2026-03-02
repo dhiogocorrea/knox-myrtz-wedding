@@ -12,6 +12,9 @@ const ScheduleItemSchema = z.object({
   description: LocalizedStringSchema,
   icon: z.string(),
   image: z.string().optional(),
+  location: z
+    .object({ name: LocalizedStringSchema, url: z.string().url() })
+    .optional(),
   visibleTo: z.array(z.enum(["friends", "family"])).optional(),
 });
 

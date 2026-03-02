@@ -23,7 +23,7 @@ export function BackgroundScene() {
       </div>
 
       {/* ── Couple illustration (B&W anime) ──────── */}
-      <div className="absolute bottom-0 left-0 right-0 flex justify-center">
+        <div className="absolute bottom-42 left-0 right-0 flex justify-start px-6 md:px-12">
         <img
           src="/images/couple-2.png"
           alt=""

@@ -7,8 +7,8 @@ couple:
     name: "Gui"
     shortName: "Gui"
   partner2:
-    name: "Myrto"
-    shortName: "Myrto"
+    name: "Mirto"
+    shortName: "Mirto"
 
 wedding:
   date: "2026-06-06"
@@ -23,106 +23,62 @@ wedding:
   hashtag: "#thejourneybeyond"
 
 schedule:
-  - time: "18:00"
+  - time: "04-06-26 @ 18:00"
     title:
-      en: "Welcome Dinner - Family"
-      pt: "Jantar de Boas-Vindas - Família"
-      el: "Δείπνο Υποδοχής - Οικογένεια"
+      en: "Family Welcome Dinner"
+      pt: "Jantar de Boas-Vindas Familiar"
+      el: "Οικογενειακό Δείπνο Καλωσορίσματος"
     description:
-      en: "Intimate dinner with close family at the villa - June 18"
-      pt: "Jantar íntimo com a família próxima na vila - 18 de junho"
-      el: "Οικείο δείπνο με την οικογένεια στη βίλα - 18 Ιουνίου"
+      en: "Intimate dinner with close family at Mirto's house."
+      pt: "Jantar íntimo com a família próxima na casa da Mirto."
+      el: "Οικείο δείπνο με την οικογένεια στο σπίτι της Μύρτου."
     icon: "utensils"
-    image: "/images/schedule/manga1.webp"
+    image: "/images/schedule/family_dinner_frieren.png"
     visibleTo:
       - family
-
-  - time: "10:00"
-    title:
-      en: "Beach Day & Lunch"
-      pt: "Dia de Praia & Almoço"
-      el: "Μέρα στην Παραλία & Γεύμα"
-    description:
-      en: "Relaxing beach day at Red Beach with barbecue lunch - June 19"
-      pt: "Dia relaxante na praia Red Beach com churrasco ao almoço - 19 de junho"
-      el: "Χαλαρή μέρα στην Κόκκινη Παραλία με γεύμα barbecue - 19 Ιουνίου"
-    icon: "sun"
-    image: "/images/schedule/manga2.jpeg"
-    visibleTo:
       - friends
-      - family
+    location:
+      name:
+        en: "Mirto's House"
+        pt: "Casa da Mirto"
+        el: "Σπίτι της Μύρτου"
+      url: "https://goo.gl/maps/1Z5n9sXo7j2Zz8cA9"
 
-  - time: "15:00"
-    title:
-      en: "Guest Arrival & Welcome Drinks"
-      pt: "Chegada dos Convidados e Bebidas de Boas-Vindas"
-      el: "Άφιξη Καλεσμένων & Ποτά Καλωσορίσματος"
-    description:
-      en: "Welcome to Santorini! Enjoy ouzo and mezedes as you arrive"
-      pt: "Bem-vindos a Santorini! Aproveite ouzo e mezedes na chegada"
-      el: "Καλώς ήρθατε στη Σαντορίνη! Απολαύστε ούζο και μεζέδες καθώς φτάνετε"
-    icon: "wine"
-    image: "/images/schedule/manga3.png"
-
-  - time: "16:00"
-    title:
-      en: "Stefana Ceremony"
-      pt: "Cerimônia dos Stefana"
-      el: "Τελετή Στεφάνων"
-    description:
-      en: "The traditional Greek crowning ceremony — joining two lives as one"
-      pt: "A tradicional cerimônia grega das coroas — unindo duas vidas em uma"
-      el: "Η παραδοσιακή ελληνική τελετή στεφανώματος — ένωση δύο ζωών σε μία"
-    icon: "sun"
-    image: "/images/schedule/manga4.jpeg"
-
-  - time: "17:00"
+  - time: "06-06-26 @ 18:00"
     title:
       en: "Wedding Ceremony"
       pt: "Cerimônia de Casamento"
       el: "Τελετή Γάμου"
     description:
-      en: "Exchange of vows overlooking the caldera at sunset"
-      pt: "Troca de votos com vista para a caldeira ao pôr do sol"
-      el: "Ανταλλαγή όρκων με θέα στην καλντέρα στο ηλιοβασίλεμα"
-    icon: "church"
-    image: "/images/schedule/manga5.webp"
+      en: "Join us for our wedding ceremony at the beautiful Agia Anna."
+      pt: "Junte-se a nós para a cerimônia de casamento na bela Agia Anna."
+      el: "Εντάξει μαζί μας για την τελετή γάμου στην όμορφη Αγιά Άννα."
+    icon: "music"
+    image: "/images/schedule/majestic.jpg"
+    location:
+      name:
+        en: "Agia Anna"
+        pt: "Agiá Anna"
+        el: "Αγιά Άννα"
+      url: "https://goo.gl/maps/nndURo4VnTG9VFcw7"
 
-  - time: "18:30"
+  - time: "08-06-26 @ 12:00"
     title:
-      en: "Cocktail Hour"
-      pt: "Hora do Coquetel"
-      el: "Ώρα Cocktail"
+      en: "All day in the best beach of Evia: Chiliadou."
+      pt: "O dia todo na melhor praia de Evia: Chiliadou."
+      el: "Ολη την ημέρα στην καλύτερη παραλία της Εβίας: Χιλιάδου"
     description:
-      en: "Greek wines, cocktails and canapés with Aegean views"
-      pt: "Vinhos gregos, coquetéis e canapés com vista para o Egeu"
-      el: "Ελληνικά κρασιά, cocktails και ορεκτικά με θέα στο Αιγαίο"
-    icon: "martini"
-    image: "/images/schedule/manga6.jpg"
-
-  - time: "20:00"
-    title:
-      en: "Reception Dinner"
-      pt: "Jantar de Recepção"
-      el: "Δείπνο Υποδοχής"
-    description:
-      en: "A feast of Greek cuisine with live bouzouki music"
-      pt: "Um banquete de culinária grega com música de bouzouki ao vivo"
-      el: "Ένα πανηγύρι ελληνικής κουζίνας με ζωντανή μουσική μπουζούκι"
-    icon: "utensils"
-    image: "/images/schedule/manga7.jpeg"
-
-  - time: "22:00"
-    title:
-      en: "Dancing & Celebration"
-      pt: "Dança e Celebração"
-      el: "Χορός & Γιορτή"
-    description:
-      en: "Dance the night away under the stars — Opa!"
-      pt: "Dance a noite toda sob as estrelas — Opa!"
-      el: "Χορέψτε όλη τη νύχτα κάτω από τα αστέρια — Ώπα!"
+      en: "Spend the day at Chiliadou beach, known for its crystal-clear waters and stunning rock formations. Perfect for swimming, snorkeling, and relaxing under the sun."
+      pt: "Passe o dia na praia de Chiliadou, conhecida por suas águas cristalinas e formações rochosas deslumbrantes. Perfeita para nadar, fazer snorkel e relaxar ao sol."
+      el: "Περάστε την ημέρα στην παραλία Χιλιάδου, γνωστή για τα κρυστάλλινα νερά και τις εκπληκτικές βραχώδεις μορφές. Ιδανική για κολύμπι, καταδύσεις με αναπνευστήρα και χαλάρωση κάτω από τον ήλιο."
     icon: "music"
     image: "/images/schedule/manga1.webp"
+    location:
+      name:
+        en: "Chiliadou Beach"
+        pt: "Praia de Chiliadou"
+        el: "Παραλία Χιλιάδου"
+      url: "https://maps.app.goo.gl/xBQStJ6592AHRztf7"
 
 rsvp:
   deadline: "2026-04-15"
@@ -184,6 +140,6 @@ weddingInfo:
     pt: "Sua presença na nossa celebração na Grécia é o maior presente. Se desejar presentear, agradecemos contribuições para o nosso fundo de lua de mel."
     el: "Η παρουσία σας στον γιορτασμό μας στην Ελλάδα είναι το μεγαλύτερο δώρο. Αν θέλετε να προσφέρετε, εκτιμούμε τις συνεισφορές στο ταμείο του μήνα του μέλιτος μας."
   accommodation:
-    en: "We have reserved rooms at Villa Olivia at a special rate for wedding guests. Please mention 'Gui & Myrto Wedding' when booking. Additional recommendations available in our travel guide."
-    pt: "Reservamos quartos no Villa Olivia com tarifa especial para convidados do casamento. Mencione 'Casamento Gui & Myrto' ao reservar. Recomendações adicionais disponíveis no nosso guia de viagem."
-    el: "Έχουμε κρατήσει δωμάτια στη Villa Olivia με ειδική τιμή για τους καλεσμένους του γάμου. Παρακαλώ αναφέρετε 'Γάμος Gui & Myrto' κατά την κράτηση. Πρόσθετες συστάσεις διαθέσιμες στον ταξιδιωτικό μας οδηγό."
+    en: "We have reserved rooms at Villa Olivia at a special rate for wedding guests. Please mention 'Gui & Mirto Wedding' when booking. Additional recommendations available in our travel guide."
+    pt: "Reservamos quartos no Villa Olivia com tarifa especial para convidados do casamento. Mencione 'Casamento Gui & Mirto' ao reservar. Recomendações adicionais disponíveis no nosso guia de viagem."
+    el: "Έχουμε κρατήσει δωμάτια στη Villa Olivia με ειδική τιμή για τους καλεσμένους του γάμου. Παρακαλώ αναφέρετε 'Γάμος Gui & Mirto' κατά την κράτηση. Πρόσθετες συστάσεις διαθέσιμες στον ταξιδιωτικό μας οδηγό."

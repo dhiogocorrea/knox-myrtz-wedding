@@ -57,6 +57,8 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
 
   const filteredSchedule = config.schedule.filter(item => {
     if (!item.visibleTo || item.visibleTo.length === 0) return true;
+    // Admins should see everything regardless of per-item visibility
+    if (guestGroup === "admin") return true;
     return guestGroup && (item.visibleTo as string[]).includes(guestGroup);
   });
 
@@ -168,12 +170,44 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
                       )}
 
                       {/* ── Floating speech balloon ──────── */}
-                      <div className={`absolute z-10 max-w-[58%] manga-balloon ${balloon.pos} ${balloon.tail}`}>
-                        <p className="text-[0.68rem] leading-snug text-ink" style={{ fontFamily: "var(--font-manga)" }}>
-                          <span className="text-vermillion font-bold">{panel.item.time}</span>
-                          {" — "}{getLocalizedValue(panel.item.title, locale)}
-                        </p>
-                      </div>
+                          <div className={`absolute z-10 max-w-[58%] manga-balloon ${balloon.pos} ${balloon.tail}`}>
+                            <p className="text-[0.68rem] leading-snug text-ink" style={{ fontFamily: "var(--font-manga)" }}>
+                              <span className="text-vermillion font-bold">{panel.item.time}</span>
+                              {" — "}{getLocalizedValue(panel.item.title, locale)}
+                            </p>
+                            {panel.item.location && (
+                              <p className="mt-1 text-[0.62rem] leading-snug text-ink/70" style={{ fontFamily: "var(--font-manga)" }}>
+                                <a
+                                  href={panel.item.location.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 underline"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth={1.5}
+                                    className="w-3 h-3 text-vermillion"
+                                    aria-hidden
+                                  >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4.5 8-11a8 8 0 1 0-16 0c0 6.5 8 11 8 11z" />
+                                  </svg>
+                                  {getLocalizedValue(panel.item.location.name, locale)}
+                                </a>
+                              </p>
+                            )}
+                            {panel.item.description && (
+                              <div
+                                className="mt-2 text-[0.62rem] leading-snug text-ink/80 bg-cream/80 p-2 rounded-md shadow-sm max-w-[18rem] opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200"
+                                style={{ fontFamily: "var(--font-manga)" }}
+                              >
+                                {getLocalizedValue(panel.item.description, locale)}
+                              </div>
+                            )}
+                          </div>
                     </div>
                   );
                 })}

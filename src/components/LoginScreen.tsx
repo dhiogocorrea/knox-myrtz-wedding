@@ -53,7 +53,7 @@ export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
           <div className="flex justify-center mb-4 animate-fade-in-up">
             <img
               src="/images/couple-login.svg"
-              alt="Gui and Myrto"
+              alt="Gui and Mirto"
               className="w-40 h-40 opacity-90"
             />
           </div>
