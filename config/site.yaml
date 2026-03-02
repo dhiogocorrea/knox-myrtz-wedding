@@ -105,7 +105,7 @@ schedule:
     panel:
       # tall: true
       style:
-        minHeight: "350px"
+        minHeight: "400px"
 
   - time: "08-06-26 @ 12:00"
     title:
