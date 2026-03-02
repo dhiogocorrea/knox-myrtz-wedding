@@ -23,15 +23,42 @@ wedding:
   hashtag: "#thejourneybeyond"
 
 schedule:
+
+  - time: "05-06-26 @ 12:00"
+    title:
+      en: "Join the heroes for an entire day at the beach, drinking and eating at the local beach bar "
+      pt: "Junte-se aos heróis para um dia inteiro na praia, bebendo e comendo no bar local da praia "
+      el: "Ελάτε να συναντήσετε τους ήρωες για μια ολόκληρη μέρα στην παραλία, πίνοντας και τρώγοντας στο τοπικό beach bar "
+    # description:
+    #   en: "Spend the day at Chiliadou beach, known for its crystal-clear waters and stunning rock formations. Perfect for swimming, snorkeling, and relaxing under the sun."
+    #   pt: "Passe o dia na praia de Chiliadou, conhecida por suas águas cristalinas e formações rochosas deslumbrantes. Perfeita para nadar, fazer snorkel e relaxar ao sol."
+    #   el: "Περάστε την ημέρα στην παραλία Χιλιάδου, γνωστή για τα κρυστάλλινα νερά και τις εκπληκτικές βραχώδεις μορφές. Ιδανική για κολύμπι, καταδύσεις με αναπνευστήρα και χαλάρωση κάτω από τον ήλιο."
+    icon: "music"
+    image: "/images/schedule/going_merry.avif"
+    location:
+      name:
+        en: "Ippokampos Beach Bar"
+        pt: "Bar de Praia Ippokampos"
+        el: "Beach Bar Ιππόκαμπος"
+      url: "https://maps.app.goo.gl/rYpaXUxRqPNFNkX87"
+    balloon:
+      type: "square"
+      pos: "top-0 right-0"
+      style:
+        width: "300px"
+        transform: "translateY(0px)"
+    panel:
+      span: 14
+
   - time: "04-06-26 @ 18:00"
     title:
-      en: "Family Welcome Dinner"
-      pt: "Jantar de Boas-Vindas Familiar"
-      el: "Οικογενειακό Δείπνο Καλωσορίσματος"
-    description:
-      en: "Intimate dinner with close family at Mirto's house."
-      pt: "Jantar íntimo com a família próxima na casa da Mirto."
-      el: "Οικείο δείπνο με την οικογένεια στο σπίτι της Μύρτου."
+      en: "Come join the heroes for an intimate welcome dinner with close family at "
+      pt: "Venha se juntar aos heróis para um jantar de boas-vindas íntimo com a família próxima "
+      el: "Ελάτε να συναντήσετε τους ήρωες για ένα οικείο δείπνο καλωσορίσματος με την κοντινή οικογένεια στο "
+    # description:
+    #   en: "Come join the heroes for an intimate welcome dinner with close family at "
+    #   pt: "Venha se juntar aos heróis para um jantar de boas-vindas íntimo com a família próxima "
+    #   el: "Ελάτε να συναντήσετε τους ήρωες για ένα οικείο δείπνο καλωσορίσματος με την κοντινή οικογένεια στο "
     icon: "utensils"
     image: "/images/schedule/family_dinner_frieren.png"
     visibleTo:
@@ -42,84 +69,49 @@ schedule:
         pt: "Casa da Mirto"
         el: "Σπίτι της Μύρτου"
       url: "https://goo.gl/maps/1Z5n9sXo7j2Zz8cA9"
+    balloon:
+      type: "square"
+      style:
+        top: "0px"
+        left: "0px"
+        width: "100px"
+        transform: "translateY(0px)"
+    panel:
+      span: 6
 
   - time: "06-06-26 @ 18:00"
     title:
-      en: "Wedding Ceremony"
-      pt: "Cerimônia de Casamento"
-      el: "Τελετή Γάμου"
-    description:
-      en: "Join us for our wedding ceremony at the beautiful Agia Anna."
-      pt: "Junte-se a nós para a cerimônia de casamento na bela Agia Anna."
-      el: "Εντάξει μαζί μας για την τελετή γάμου στην όμορφη Αγιά Άννα."
+      en: "Join the heroes in their wedding ceremony at the beautiful Agia Anna, for a night of celebration and dancing under the stars"
+      pt: "Junte-se aos heróis em sua cerimônia de casamento na bela Agia Anna, para uma noite de celebração e dança sob as estrelas"
+      el: "Ελάτε να συναντήσετε τους ήρωες στην τελετή του γάμου τους στην όμορφη Αγία Άννα, για μια νύχτα γιορτής και χορού κάτω από τα αστέρια"
+    # description:
+    #   en: "Spend the day at Chiliadou beach, known for its crystal-clear waters and stunning rock formations. Perfect for swimming, snorkeling, and relaxing under the sun."
+    #   pt: "Passe o dia na praia de Chiliadou, conhecida por suas águas cristalinas e formações rochosas deslumbrantes. Perfeita para nadar, fazer snorkel e relaxar ao sol."
+    #   el: "Περάστε την ημέρα στην παραλία Χιλιάδου, γνωστή για τα κρυστάλλινα νερά και τις εκπληκτικές βραχώδεις μορφές. Ιδανική για κολύμπι, καταδύσεις με αναπνευστήρα και χαλάρωση κάτω από τον ήλιο."
     icon: "music"
-    image: "/images/schedule/majestic.jpg"
+    image: "/images/schedule/himmel_cutie.png"
     location:
       name:
         en: "Agia Anna"
-        pt: "Agiá Anna"
-        el: "Αγιά Άννα"
+        pt: "Agia Anna"
+        el: "Αγία Άννα"
       url: "https://goo.gl/maps/nndURo4VnTG9VFcw7"
+    balloon:
+      type: "square"
+      pos: "top-0 right-0"
+      style:
+        width: "300px"
+        transform: "translateY(0px)"
+    panel:
+      # tall: true
+      style:
+        minHeight: "350px"
 
   - time: "08-06-26 @ 12:00"
     title:
-      en: "All day in the best beach of Evia: Chiliadou."
-      pt: "O dia todo na melhor praia de Evia: Chiliadou."
-      el: "Ολη την ημέρα στην καλύτερη παραλία της Εβίας: Χιλιάδου"
-    description:
-      en: "Spend the day at Chiliadou beach, known for its crystal-clear waters and stunning rock formations. Perfect for swimming, snorkeling, and relaxing under the sun."
-      pt: "Passe o dia na praia de Chiliadou, conhecida por suas águas cristalinas e formações rochosas deslumbrantes. Perfeita para nadar, fazer snorkel e relaxar ao sol."
-      el: "Περάστε την ημέρα στην παραλία Χιλιάδου, γνωστή για τα κρυστάλλινα νερά και τις εκπληκτικές βραχώδεις μορφές. Ιδανική για κολύμπι, καταδύσεις με αναπνευστήρα και χαλάρωση κάτω από τον ήλιο."
-    icon: "music"
-    image: "/images/schedule/manga1.webp"
-    location:
-      name:
-        en: "Chiliadou Beach"
-        pt: "Praia de Chiliadou"
-        el: "Παραλία Χιλιάδου"
-      url: "https://maps.app.goo.gl/xBQStJ6592AHRztf7"
-
-  - time: "08-06-26 @ 12:00"
-    title:
-      en: "All day in the best beach of Evia: Chiliadou."
-      pt: "O dia todo na melhor praia de Evia: Chiliadou."
-      el: "Ολη την ημέρα στην καλύτερη παραλία της Εβίας: Χιλιάδου"
-    description:
-      en: "Spend the day at Chiliadou beach, known for its crystal-clear waters and stunning rock formations. Perfect for swimming, snorkeling, and relaxing under the sun."
-      pt: "Passe o dia na praia de Chiliadou, conhecida por suas águas cristalinas e formações rochosas deslumbrantes. Perfeita para nadar, fazer snorkel e relaxar ao sol."
-      el: "Περάστε την ημέρα στην παραλία Χιλιάδου, γνωστή για τα κρυστάλλινα νερά και τις εκπληκτικές βραχώδεις μορφές. Ιδανική για κολύμπι, καταδύσεις με αναπνευστήρα και χαλάρωση κάτω από τον ήλιο."
-    icon: "music"
-    image: "/images/schedule/manga1.webp"
-    location:
-      name:
-        en: "Chiliadou Beach"
-        pt: "Praia de Chiliadou"
-        el: "Παραλία Χιλιάδου"
-      url: "https://maps.app.goo.gl/xBQStJ6592AHRztf7"
-
-  - time: "08-06-26 @ 12:00"
-    title:
-      en: "All day in the best beach of Evia: Chiliadou."
-      pt: "O dia todo na melhor praia de Evia: Chiliadou."
-      el: "Ολη την ημέρα στην καλύτερη παραλία της Εβίας: Χιλιάδου"
-    description:
-      en: "Spend the day at Chiliadou beach, known for its crystal-clear waters and stunning rock formations. Perfect for swimming, snorkeling, and relaxing under the sun."
-      pt: "Passe o dia na praia de Chiliadou, conhecida por suas águas cristalinas e formações rochosas deslumbrantes. Perfeita para nadar, fazer snorkel e relaxar ao sol."
-      el: "Περάστε την ημέρα στην παραλία Χιλιάδου, γνωστή για τα κρυστάλλινα νερά και τις εκπληκτικές βραχώδεις μορφές. Ιδανική για κολύμπι, καταδύσεις με αναπνευστήρα και χαλάρωση κάτω από τον ήλιο."
-    icon: "music"
-    image: "/images/schedule/manga1.webp"
-    location:
-      name:
-        en: "Chiliadou Beach"
-        pt: "Praia de Chiliadou"
-        el: "Παραλία Χιλιάδου"
-      url: "https://maps.app.goo.gl/xBQStJ6592AHRztf7"
-
-  - time: "08-06-26 @ 12:00"
-    title:
-      en: "Join us in an all day at the best beach of Evia: Chiliadou."
-      pt: "O dia todo na melhor praia de Evia: Chiliadou."
-      el: "Ολη την ημέρα στην καλύτερη παραλία της Εβίας: Χιλιάδου"
+      en: "Join us in an all day at the best beach of Evia:"
+      pt: "O dia todo na melhor praia de Evia:"
+      el: "Ολη την ημέρα στην καλύτερη παραλία της Εβίας:"
     # description:
     #   en: "Spend the day at Chiliadou beach. Perfect for swimming, snorkeling, and relaxing under the sun."
     #   pt: "Passe o dia na praia de Chiliadou. Perfeita para nadar, fazer snorkel e relaxar ao sol."
@@ -133,13 +125,18 @@ schedule:
         el: "Παραλία Χιλιάδου"
       url: "https://maps.app.goo.gl/xBQStJ6592AHRztf7"
     balloon:
-      tail: "manga-balloon-tail-bl"
+      type: "none"
+      tail: ""
       maxWidth: "max-w-[25%]"
       style:
-        top: "12px"
-        left: "64px"
-        width: "375px"
+        top: "40px"
+        left: "46px"
+        width: "80px"
         transform: "translateY(-8px)"
+        border: "none"
+        boxShadow: "none"
+    panel:
+      span: 8
 
   - time: "08-06-26 @ 12:00"
     title:
@@ -158,6 +155,8 @@ schedule:
         pt: "Praia de Chiliadou"
         el: "Παραλία Χιλιάδου"
       url: "https://maps.app.goo.gl/xBQStJ6592AHRztf7"
+    panel:
+      span: 12
 
 rsvp:
   deadline: "2026-04-15"
