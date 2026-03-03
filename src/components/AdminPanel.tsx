@@ -42,6 +42,7 @@ interface Rsvp {
   rent_car?: string;
   dietary_restrictions?: string | null;
   message: string | null;
+  event_dates?: string[] | null;
   submitted_at: string;
 }
 
@@ -510,6 +511,22 @@ export function AdminPanel({ dict, authPassword }: AdminPanelProps) {
                         <p className="text-warm-gray text-xs">{dict.admin.rsvpRentCar}</p>
                         <p className={rsvp.rent_car === "yes" ? "text-emerald-600" : "text-warm-gray"}>
                           {rsvp.rent_car === "yes" ? dict.rsvp.rentCarYes : dict.rsvp.rentCarNo}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-warm-gray text-xs">Planned events</p>
+                        <p className="text-charcoal">
+                          {Array.isArray(rsvp.event_dates) && rsvp.event_dates.length > 0
+                            ? rsvp.event_dates
+                                .map((d) => {
+                                  try {
+                                    return new Date(d).toLocaleDateString();
+                                  } catch {
+                                    return d;
+                                  }
+                                })
+                                .join(", ")
+                            : "—"}
                         </p>
                       </div>
                       <div>

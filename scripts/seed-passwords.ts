@@ -52,7 +52,8 @@ const guests = [
 
   // family 
 
-  
+  { password: "1958katia2026", guest_group: "family", guest_name: "Katia Alvarenga" },
+
   // Administrative
   { password: "knoxmyrtz2026", guest_group: "admin", guest_name: "Administrator G & M" },
 ];

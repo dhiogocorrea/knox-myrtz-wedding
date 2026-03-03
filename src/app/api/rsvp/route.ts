@@ -3,8 +3,19 @@ import supabase from "@/lib/db";
 
 export async function POST(req: NextRequest) {
   try {
-    const { password, name, email, phone, attendance, guests, kids, message, rentCar, dietary } =
-      await req.json();
+    const {
+      password,
+      name,
+      email,
+      phone,
+      attendance,
+      guests,
+      kids,
+      message,
+      rentCar,
+      dietary,
+      eventDates,
+    } = await req.json();
 
     if (!password || !name || !email || !phone || !attendance) {
       return NextResponse.json(
@@ -45,7 +56,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Insert RSVP
+    // Insert RSVP (include event dates if provided)
     const { error: insertError } = await supabase
       .from("rsvp_submissions")
       .insert({
@@ -59,6 +70,7 @@ export async function POST(req: NextRequest) {
         message: message || null,
         rent_car: rentCar === "Yes" ? "yes" : "no",
         dietary_restrictions: dietary || null,
+        event_dates: eventDates && Array.isArray(eventDates) ? eventDates : null,
       });
 
     if (insertError) throw insertError;

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import type { SiteConfig, GuestGroup } from "@/lib/schema";
 import type { Dictionary } from "@/lib/i18n";
 import { Navigation } from "./Navigation";
@@ -31,6 +32,49 @@ interface WeddingAppProps {
 export function WeddingApp({ locale, config, dict, guestGroup, authPassword, onLogout }: WeddingAppProps) {
   const [activeTab, setActiveTab] = useState<TabId>("home");
 
+  const router = useRouter();
+
+  // Initialize active tab from URL hash (e.g. #schedule, #rsvp)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const hash = (window.location.hash || "").replace("#", "");
+    if (!hash) return;
+    switch (hash) {
+      case "schedule":
+        setActiveTab("schedule");
+        break;
+      case "rsvp":
+        setActiveTab("rsvp");
+        break;
+      case "touristicInfo":
+        setActiveTab("touristicInfo");
+        break;
+      case "weddingInfo":
+        setActiveTab("weddingInfo");
+        break;
+      default:
+        setActiveTab("home");
+    }
+  }, []);
+
+  // Handler that sets tab and updates URL hash so each section has its own URL
+  const handleTabChange = async (tab: TabId) => {
+    setActiveTab(tab);
+    const base = window.location.pathname || ""; // includes locale
+    const target = tab === "home" ? base : `${base}#${tab}`;
+    // update URL and let browser handle history; use router.push for client navigation
+    await router.push(target);
+    // scroll to section if present
+    setTimeout(() => {
+      if (tab === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const el = document.getElementById(tab);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 120);
+  };
+
   const renderSection = () => {
     switch (activeTab) {
       case "home":
@@ -59,13 +103,13 @@ export function WeddingApp({ locale, config, dict, guestGroup, authPassword, onL
       <Navigation
         dict={dict}
         activeTab={activeTab}
-        onTabChange={setActiveTab}
+        onTabChange={handleTabChange}
         locale={locale}
         isAdmin={isAdmin}
         onLogout={onLogout}
       />
       <main className="pt-20 relative z-10">
-        {renderSection()}
+        <div id={activeTab}>{renderSection()}</div>
       </main>
       {/* <Footer config={config} dict={dict} /> */}
     </div>

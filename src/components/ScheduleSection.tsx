@@ -153,7 +153,7 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
   }
 
   return (
-    <section ref={sectionRef} className="min-h-[calc(100vh-5rem)] py-1 px-4 relative seigaiha">
+    <section id="schedule" ref={sectionRef} className="min-h-[calc(100vh-5rem)] py-1 px-4 relative seigaiha">
       <div className="max-w-4xl mx-auto relative z-10">
 
         {/* ── Manga page header ─────────────── */}

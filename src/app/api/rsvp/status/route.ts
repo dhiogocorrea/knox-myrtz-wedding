@@ -9,18 +9,30 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing password" }, { status: 400 });
     }
 
-    const { data, error } = await supabase
+    // Get guest group from guest_passwords
+    const { data: pwData, error: pwError } = await supabase
+      .from("guest_passwords")
+      .select("guest_group")
+      .eq("password", password)
+      .limit(1)
+      .maybeSingle();
+
+    if (pwError) throw pwError;
+
+    // Check if RSVP already submitted
+    const { data: submission, error: subError } = await supabase
       .from("rsvp_submissions")
       .select("submitted_at")
       .eq("password", password)
       .limit(1)
       .maybeSingle();
 
-    if (error) throw error;
+    if (subError) throw subError;
 
     return NextResponse.json({
-      submitted: !!data,
-      submittedAt: data?.submitted_at ?? null,
+      submitted: !!submission,
+      submittedAt: submission?.submitted_at ?? null,
+      guestGroup: pwData?.guest_group ?? null,
     });
   } catch (err) {
     console.error("RSVP status check failed:", err);

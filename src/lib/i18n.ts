@@ -65,6 +65,8 @@ export const dictionaries = {
       rentCarLabel: "Will you rent a car?",
       rentCarYes: "Yes",
       rentCarNo: "No",
+      eventDatesLabel: "Please confirm which dates you'll join the heroes in our",
+      scheduleLinkText: "planned events",
     },
     touristicInfo: {
       title: "Travel Guide",
@@ -183,6 +185,8 @@ export const dictionaries = {
       rentCarLabel: "Vai alugar um carro?",
       rentCarYes: "Sim",
       rentCarNo: "Não",
+      eventDatesLabel: "Por favor confirme em quais datas você participará dos nossos",
+      scheduleLinkText: "eventos planejados",
     },
     touristicInfo: {
       title: "Guia de Viagem",
@@ -301,6 +305,8 @@ export const dictionaries = {
       rentCarLabel: "Θα νοικιάσετε αυτοκίνητο;",
       rentCarYes: "Ναι",
       rentCarNo: "Όχι",
+        eventDatesLabel: "Παρακαλούμε επιβεβαιώστε ποιες ημερομηνίες θα συμμετάσχετε στις",
+        scheduleLinkText: "προγραμματισμένες εκδηλώσεις",
     },
     touristicInfo: {
       title: "Ταξιδιωτικός Οδηγός",

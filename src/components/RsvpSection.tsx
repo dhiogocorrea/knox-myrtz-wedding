@@ -25,7 +25,10 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
     message: "",
     rentCar: "No",
     dietary: "",
+    eventDates: [] as string[],
   });
+
+  const [guestGroup, setGuestGroup] = useState<"friends" | "family" | null>(null);
 
   // Check RSVP status from Supabase on mount
   useEffect(() => {
@@ -42,6 +45,7 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
       .then((res) => res.json())
       .then((data) => {
         setState(data.submitted ? "already-submitted" : "idle");
+        if (data.guestGroup) setGuestGroup(data.guestGroup as any);
       })
       .catch(() => {
         setState("idle"); // On error, allow them to try
@@ -51,6 +55,23 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
+    const target = e.target as HTMLInputElement;
+    // checkbox multi-select for event dates
+    if (target.type === "checkbox" && target.name === "eventDates") {
+      const val = target.value;
+      setFormData((prev) => {
+        const existing = Array.isArray(prev.eventDates) ? prev.eventDates.slice() : [];
+        if (target.checked) {
+          if (!existing.includes(val)) existing.push(val);
+        } else {
+          const idx = existing.indexOf(val);
+          if (idx !== -1) existing.splice(idx, 1);
+        }
+        return { ...prev, eventDates: existing };
+      });
+      return;
+    }
+
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -73,6 +94,7 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
           message: formData.message,
           rentCar: formData.rentCar,
           dietary: formData.dietary,
+          eventDates: formData.eventDates,
         }),
       });
 
@@ -278,6 +300,38 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
                   </option>
                 ))}
               </select>
+            </div>
+          )}
+
+          {/* Event date multi-select (after children, before rent car) */}
+          {formData.attendance === "Yes" && (
+            <div className="mb-6 animate-fade-in">
+              <label className="block text-sm font-medium text-primary-dark mb-2">
+                {dict.rsvp.eventDatesLabel}{' '}
+                <a href="/#schedule" className="underline text-ink">{dict.rsvp.scheduleLinkText}</a>
+              </label>
+              <div className="grid grid-cols-2 gap-2 mt-2">
+                {(
+                  (guestGroup === 'family')
+                    ? [4, 5, 6, 7, 8]
+                    : [5, 6, 7, 8]
+                ).map((d) => {
+                  const value = `2026-06-${String(d).padStart(2, '0')}`;
+                  return (
+                    <label key={value} className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        name="eventDates"
+                        value={value}
+                        checked={formData.eventDates.includes(value)}
+                        onChange={handleChange}
+                        className="w-4 h-4"
+                      />
+                      <span className="text-sm">{d} June</span>
+                    </label>
+                  );
+                })}
+              </div>
             </div>
           )}
 

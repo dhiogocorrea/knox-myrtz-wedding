@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS rsvp_submissions (
   guests INTEGER NOT NULL DEFAULT 1,
   kids INTEGER NOT NULL DEFAULT 0,
   rent_car TEXT NOT NULL DEFAULT 'no',
+  event_dates JSONB,
   dietary_restrictions TEXT,
   message TEXT,
   submitted_at TIMESTAMPTZ NOT NULL DEFAULT now()
@@ -90,3 +91,6 @@ CREATE INDEX IF NOT EXISTS idx_rsvp_submissions_password ON rsvp_submissions(pas
 -- Migration: add dietary_restrictions column to existing rsvp_submissions table
 -- Run this if the table already exists:
 -- ALTER TABLE rsvp_submissions ADD COLUMN IF NOT EXISTS dietary_restrictions TEXT;
+-- Migration: add event_dates column to existing rsvp_submissions table (JSONB array of selected dates)
+-- Run this if the table already exists:
+-- ALTER TABLE rsvp_submissions ADD COLUMN IF NOT EXISTS event_dates JSONB;
