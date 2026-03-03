@@ -398,7 +398,7 @@ body {
 /* ── Manga page container ────────────────── */
 .manga-page {
   background: var(--color-paper);
-  border: 5px solid var(--color-ink);
+  border: 3px solid var(--color-ink);
   border-radius: 4px;
   padding: 6px;
   box-shadow:
@@ -408,23 +408,24 @@ body {
 }
 
 .manga-page-inner {
-  border: 3px solid var(--color-ink);
+  border: 2px solid var(--color-ink);
   border-radius: 2px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  /* Vertical gap between rows so stacked manga strips have space */
+  gap: 0.75rem;
+  /* inset padding so panel borders don't touch the page frame */
+  padding: 0.75rem;
 }
 
 /* ── Manga row (CSS grid for each strip) ── */
 .manga-row {
   display: grid;
-  gap: 0;
+  /* Add gutters between panels (both column and row gaps) so blocks don't touch */
+  gap: 0.75rem;
   min-height: 180px;
-  border-bottom: 4px solid var(--color-ink);
-}
-
-.manga-row:last-child {
-  border-bottom: none;
+  /* rows no longer draw a shared divider; each panel draws its own border */
 }
 
 /* ── Individual manga panel ──────────────── */
@@ -432,17 +433,16 @@ body {
   position: relative;
   overflow: hidden;
   padding: 20px 16px;
-  border-right: 4px solid var(--color-ink);
+  /* Each panel has its own border so neighboring panels never touch */
+  border: 2px solid var(--color-ink);
+  border-radius: 6px;
   min-height: 170px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: default;
   transition: transform 0.3s ease;
-}
-
-.manga-panel:last-child {
-  border-right: none;
+  background: var(--color-paper);
 }
 
 .manga-panel-tall {
@@ -803,14 +803,9 @@ body {
     min-height: auto;
   }
 
+  /* Keep each panel's own border on mobile; spacing provided by gaps and container padding */
   .manga-panel {
-    border-right: none;
-    border-bottom: 2.5px solid var(--color-ink);
     min-height: 140px;
-  }
-
-  .manga-panel:last-child {
-    border-bottom: none;
   }
 
   .manga-panel-tall,
@@ -819,6 +814,6 @@ body {
   }
 
   .manga-row:last-child .manga-panel:last-child {
-    border-bottom: none;
+    /* nothing special needed; panels keep their borders */
   }
 }
