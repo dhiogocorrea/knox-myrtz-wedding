@@ -399,7 +399,7 @@ body {
 .manga-page {
   background: var(--color-paper);
   border: 3px solid var(--color-ink);
-  border-radius: 4px;
+  border-radius: 0;
   padding: 6px;
   box-shadow:
     4px 4px 0 rgba(26, 26, 46, 0.12),
@@ -409,7 +409,7 @@ body {
 
 .manga-page-inner {
   border: 2px solid var(--color-ink);
-  border-radius: 2px;
+  border-radius: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -435,7 +435,7 @@ body {
   padding: 20px 16px;
   /* Each panel has its own border so neighboring panels never touch */
   border: 2px solid var(--color-ink);
-  border-radius: 6px;
+  border-radius: 0;
   min-height: 170px;
   display: flex;
   align-items: center;
