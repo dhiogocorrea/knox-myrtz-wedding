@@ -52,9 +52,9 @@ schedule:
 
   - time: "04-06-26 @ 18:00"
     title:
-      en: "Come join the heroes for an intimate welcome dinner with close family at "
-      pt: "Venha se juntar aos heróis para um jantar de boas-vindas íntimo com a família próxima "
-      el: "Ελάτε να συναντήσετε τους ήρωες για ένα οικείο δείπνο καλωσορίσματος με την κοντινή οικογένεια στο "
+      en: ""
+      pt: ""
+      el: ""
     # description:
     #   en: "Come join the heroes for an intimate welcome dinner with close family at "
     #   pt: "Venha se juntar aos heróis para um jantar de boas-vindas íntimo com a família próxima "
@@ -70,11 +70,12 @@ schedule:
         el: "Σπίτι της Μύρτου"
       url: "https://goo.gl/maps/1Z5n9sXo7j2Zz8cA9"
     balloon:
+      opaque: true
       type: "square"
       style:
-        top: "0px"
-        left: "0px"
-        width: "100px"
+        top: "190px"
+        left: "40px"
+        width: "1000px"
         transform: "translateY(0px)"
     panel:
       span: 6
