@@ -22,15 +22,9 @@ export function BackgroundScene() {
         />
       </div>
 
-      {/* ── Couple illustration (B&W anime) ──────── */}
-        <div className="absolute bottom-42 left-0 right-0 flex justify-start px-6 md:px-12">
-        <img
-          src="/images/couple-2.png"
-          alt=""
-          className="w-auto max-w-[min(620px,90vw)] h-auto max-h-[72vh] object-contain select-none opacity-[0.55] mix-blend-multiply"
-          draggable={false}
-        />
-      </div>
+      {/* Couple illustration moved into the HeroSection to appear between
+          the titles and the date/countdown (keeps background scene purely
+          decorative). */}
 
       {/* ── Sakura tree petals ──────── */}
       <SakuraTreePetals />
