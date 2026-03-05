@@ -317,17 +317,19 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
                     : [5, 6, 7, 8]
                 ).map((d) => {
                   const value = `2026-06-${String(d).padStart(2, '0')}`;
+                  const options = (dict.rsvp as any).eventOptions as Record<string, string> | undefined;
+                  const labelHtml = options?.[value] ?? `${d} June`;
                   return (
-                    <label key={value} className="flex items-center gap-2">
+                    <label key={value} className="flex items-start gap-2">
                       <input
                         type="checkbox"
                         name="eventDates"
                         value={value}
                         checked={formData.eventDates.includes(value)}
                         onChange={handleChange}
-                        className="w-4 h-4"
+                        className="w-4 h-4 mt-1"
                       />
-                      <span className="text-sm">{d} June</span>
+                      <span className="text-sm leading-tight" dangerouslySetInnerHTML={{ __html: labelHtml }} />
                     </label>
                   );
                 })}

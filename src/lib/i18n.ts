@@ -67,6 +67,13 @@ export const dictionaries = {
       rentCarNo: "No",
       eventDatesLabel: "Please confirm which dates you'll join the heroes in our",
       scheduleLinkText: "planned events",
+      eventOptions: {
+        "2026-06-04": "4 June - Close-family dinner at <a href=\"https://maps.google.com/?q=Mirto%27s+House\">📍 Mirto's House</a>",
+        "2026-06-05": "5 June - All day at Alykes beach at <a href=\"https://maps.google.com/?q=Alykes+Beach\">📍 Alykes Beach</a>",
+        "2026-06-06": "6 June - Wedding ceremony at <a href=\"https://maps.google.com/?q=Agia+Anna\">📍 Agia Anna</a>",
+        "2026-06-07": "7 June - Brunch at Ktima Anthidon at <a href=\"https://maps.google.com/?q=Ktima+Anthidon\">📍 Ktima Anthidon</a>",
+        "2026-06-08": "8 June - All day at Chiliadou beach at <a href=\"https://maps.google.com/?q=Chiliadou+Beach\">📍 Chiliadou Beach</a>",
+      },
     },
     touristicInfo: {
       title: "Travel Guide",
@@ -187,6 +194,13 @@ export const dictionaries = {
       rentCarNo: "Não",
       eventDatesLabel: "Por favor confirme em quais datas você participará dos nossos",
       scheduleLinkText: "eventos planejados",
+      eventOptions: {
+        "2026-06-04": "4 de junho - Jantar íntimo em família na <a href=\"https://maps.google.com/?q=Casa+da+Mirto\">📍 Casa da Mirto</a>",
+        "2026-06-05": "5 de junho - Dia todo na praia Alykes em <a href=\"https://maps.google.com/?q=Alykes+Beach\">📍 Praia Alykes</a>",
+        "2026-06-06": "6 de junho - Cerimônia de casamento em <a href=\"https://maps.google.com/?q=Agia+Anna\">📍 Agia Anna</a>",
+        "2026-06-07": "7 de junho - Brunch no <a href=\"https://maps.google.com/?q=Ktima+Anthidon\">📍 Ktima Anthidon</a>",
+        "2026-06-08": "8 de junho - Dia todo na praia Chiliadou em <a href=\"https://maps.google.com/?q=Chiliadou+Beach\">📍 Praia Chiliadou</a>",
+      },
     },
     touristicInfo: {
       title: "Guia de Viagem",
@@ -307,6 +321,13 @@ export const dictionaries = {
       rentCarNo: "Όχι",
         eventDatesLabel: "Παρακαλούμε επιβεβαιώστε ποιες ημερομηνίες θα συμμετάσχετε στις",
         scheduleLinkText: "προγραμματισμένες εκδηλώσεις",
+        eventOptions: {
+          "2026-06-04": "4 Ιουνίου - Δείπνο με την πολύ κοντινή οικογένεια στο <a href=\"https://maps.google.com/?q=Mirto%27s+House\">📍 Σπίτι της Μύρτου</a>",
+          "2026-06-05": "5 Ιουνίου - Ολη την ημέρα στην παραλία Alykes στο <a href=\"https://maps.google.com/?q=Alykes+Beach\">📍 Παραλία Alykes</a>",
+          "2026-06-06": "6 Ιουνίου - Τελετή γάμου στο <a href=\"https://maps.google.com/?q=Agia+Anna\">📍 Αγία Άννα</a>",
+          "2026-06-07": "7 Ιουνίου - Brunch στο <a href=\"https://maps.google.com/?q=Ktima+Anthidon\">📍 Κτήμα Ανθίδων</a>",
+          "2026-06-08": "8 Ιουνίου - Ολη την ημέρα στην παραλία Χιλιάδου στο <a href=\"https://maps.google.com/?q=Chiliadou+Beach\">📍 Παραλία Χιλιάδου</a>",
+        },
     },
     touristicInfo: {
       title: "Ταξιδιωτικός Οδηγός",
