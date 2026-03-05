@@ -121,6 +121,8 @@ export const dictionaries = {
     touristicInfo: {
       title: "Travel Guide",
       subtitle: "Everything you need to know for your trip",
+      introText:
+        "Here we have listed some of our favourite attractions of the area, for those who are looking to explore the region further.",
     },
     weddingInfo: {
       title: "Wedding Details",
@@ -291,6 +293,8 @@ export const dictionaries = {
     touristicInfo: {
       title: "Guia de Viagem",
       subtitle: "Tudo que você precisa saber para sua viagem",
+      introText:
+        "Aqui listamos algumas das nossas atrações favoritas da região, para quem quer explorar mais a área.",
     },
     weddingInfo: {
       title: "Detalhes do Casamento",
@@ -461,6 +465,8 @@ export const dictionaries = {
     touristicInfo: {
       title: "Ταξιδιωτικός Οδηγός",
       subtitle: "Όλα όσα χρειάζεται να γνωρίζετε για το ταξίδι σας",
+      introText:
+        "Εδώ έχουμε καταχωρίσει μερικά από τα αγαπημένα μας αξιοθέατα της περιοχής, για όσους θέλουν να εξερευνήσουν περαιτέρω την περιοχή.",
     },
     weddingInfo: {
       title: "Λεπτομέρειες Γάμου",

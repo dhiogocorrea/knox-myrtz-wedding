@@ -70,7 +70,13 @@ export function TouristicSection({ config, dict, locale }: TouristicSectionProps
     rows.push(row);
     templateIdx++;
   }
+ 
 
+  // Intro text handling: replace first occurrence of "here" (any case) with the linked anchor
+  const rawIntro: string | undefined = ((dict as any).touristicInfo || {}).introText;
+  const introMatch = rawIntro ? rawIntro.match(/\bhere\b/i) : null;
+  const introIndex = introMatch?.index ?? -1;
+  const introMatchText = introMatch?.[0] ?? "";
   return (
     <section ref={sectionRef} className="min-h-[calc(100vh-5rem)] py-16 px-4 relative seigaiha">
       <div className="max-w-4xl mx-auto relative z-10">
@@ -89,87 +95,67 @@ export function TouristicSection({ config, dict, locale }: TouristicSectionProps
           >
             {dict.touristicInfo.title}
           </h2>
+          {/* Intro sentence (red, smaller and subtle like the header subtitle) */}
+          {rawIntro && (
+            <p className="text-vermillion text-sm tracking-wide mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+              {introIndex >= 0 ? (
+                <>
+                  {rawIntro.slice(0, introIndex)}
+                  <a href="https://maps.app.goo.gl/a1tywE4SUAQVyE4N8" target="_blank" rel="noreferrer" className="underline font-medium">{introMatchText}</a>
+                  {rawIntro.slice(introIndex + introMatchText.length)}
+                </>
+              ) : (
+                <>{rawIntro}{' '}<a href="https://maps.app.goo.gl/a1tywE4SUAQVyE4N8" target="_blank" rel="noreferrer" className="underline font-medium">here</a></>
+              )}
+            </p>
+          )}
         </div>
 
-        {/* ── Manga page ─────────────────── */}
-        <div className="manga-page">
-          <div className="manga-page-inner">
-            {rows.map((row, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="manga-row"
-                style={{ gridTemplateColumns: row.map(p => `${p.span}fr`).join(" ") }}
-              >
-                {row.map((panel) => {
-                  const isVisible = visiblePanels.has(panel.globalIdx);
-                  const hasImage = !!panel.item.image;
-                  const isWide = panel.span >= 4;
-                  const isFull = panel.span === 6;
-
-                  return (
-                    <div
-                      key={panel.globalIdx}
-                      data-panel-index={panel.globalIdx}
-                      className={`
-                        manga-panel group
-                        ${panel.tall ? "manga-panel-tall" : ""}
-                        ${isFull ? "manga-panel-cinematic" : ""}
-                        ${hasImage ? "manga-panel-with-image" : ""}
-                        ${isVisible ? "manga-panel-visible" : "manga-panel-hidden"}
-                      `}
-                    >
-                      {hasImage ? (
-                        <Image
-                          src={panel.item.image!}
-                          alt={getLocalizedValue(panel.item.title, locale)}
-                          fill
-                          sizes={isFull ? "100vw" : isWide ? "66vw" : "33vw"}
-                          className="object-cover pointer-events-none manga-panel-img"
-                        />
-                      ) : (
-                        <div className="relative z-10 h-full flex flex-col justify-end">
-                          <div className="manga-time-badge">
-                            {getLocalizedValue(panel.item.title, locale)}
-                          </div>
-                          <div className="manga-narration">
-                            <p className="text-xs md:text-sm text-warm-gray leading-relaxed">
-                              {getLocalizedValue(panel.item.content, locale)}
-                            </p>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
+        {/* ── Static map (placed below intro, above the content box) ─────────────────── */}
+        <div className="mb-6 flex justify-center animate-fade-in-up" style={{ animationFillMode: "forwards" }}>
+          <div className="w-full max-w-xl mx-auto">
+            <Image
+              src="/images/travel_tips/map.png"
+              alt="Local map"
+              width={900}
+              height={600}
+              className="w-full h-auto object-cover rounded-md shadow-sm"
+            />
           </div>
+        </div>
 
-          <div className="text-right mt-2 pr-2">
-            <span className="text-xs text-ink/30 tracking-wider" style={{ fontFamily: "var(--font-manga)" }}>
-              — {items.length} —
-            </span>
+        {/* ── Touristic grid (titles as black hyperlink blocks; descriptions in white boxes) ─────────────────── */}
+        <div className="mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {config.touristicInfo?.map((item, idx) => {
+              const title = getLocalizedValue(item.title, locale) || '';
+              const content = getLocalizedValue(item.content, locale) || '';
+              const url = (item as any).url ?? null;
+              return (
+                <div key={idx} className="mb-4">
+                  <div className="inline-block bg-black text-white px-3 py-1 text-sm" style={{ fontFamily: "var(--font-manga)" }}>
+                    <a href={url ?? '#'} target="_blank" rel="noreferrer" className="font-semibold">{title}</a>
+                  </div>
+
+                  <div className="mt-3 bg-white rounded-none shadow-sm p-5 text-ink">
+                    <p className="text-sm leading-relaxed">{content}</p>
+                    {url && (
+                      <p className="mt-3 text-sm">
+                        <a href={url} target="_blank" rel="noopener noreferrer" className="text-vermillion underline inline-flex items-center">
+                          <MapPin className="mr-2" size={14} />
+                          <span>maps</span>
+                        </a>
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
         {/* ── Map link ───────────────────── */}
-        <div className="mt-8 text-center animate-fade-in-up" style={{ animationDelay: "400ms", animationFillMode: "forwards", opacity: 0 }}>
-          <a
-            href={config.wedding.venue.mapUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 glass-card text-ink hover:text-vermillion transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group"
-          >
-            <MapPin className="w-6 h-6 text-vermillion/70" strokeWidth={1.5} />
-            <div className="text-left">
-              <p className="font-semibold" style={{ fontFamily: "var(--font-manga)" }}>
-                {config.wedding.venue.name}
-              </p>
-              <p className="text-xs text-warm-gray">{config.wedding.venue.address}</p>
-            </div>
-            <ArrowRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
+        
 
       </div>
     </section>

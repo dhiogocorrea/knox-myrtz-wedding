@@ -181,44 +181,224 @@ locales:
 
 touristicInfo:
   - title:
-      en: "Getting to Santorini"
-      pt: "Como Chegar a Santorini"
-      el: "Πώς να φτάσετε στη Σαντορίνη"
+      en: "1. Brown Beach Chalkida"
+      pt: "1. Brown Beach Chalkida"
+      el: "1. Brown Beach Chalkida"
+    url: "https://maps.app.goo.gl/8dcXT4uLUbKF4tDL6"
     content:
-      en: "Santorini (Thira) Airport has connections from Athens and major European cities. You can also take a ferry from Athens' Piraeus port — a scenic 5-hour journey through the Cyclades."
-      pt: "O Aeroporto de Santorini (Thira) tem conexões de Atenas e grandes cidades europeias. Você também pode pegar um ferry do porto de Pireu em Atenas — uma viagem cênica de 5 horas pelas Cíclades."
-      el: "Το αεροδρόμιο Σαντορίνης (Θήρα) έχει συνδέσεις από την Αθήνα και μεγάλες ευρωπαϊκές πόλεις. Μπορείτε επίσης να πάρετε φέρυμποτ από τον Πειραιά — ένα γραφικό ταξίδι 5 ωρών μέσα στις Κυκλάδες."
-    icon: "plane"
-
-  - title:
-      en: "Where to Stay"
-      pt: "Onde Ficar"
-      el: "Πού να μείνετε"
-    content:
-      en: "We recommend staying in Oia or Fira for stunning caldera views. Boutique cave hotels like Canaves Oia or Katikies offer unforgettable experiences. Budget-friendly options are available in Perissa and Kamari."
-      pt: "Recomendamos ficar em Oia ou Fira para vistas deslumbrantes da caldeira. Hotéis boutique em caverna como Canaves Oia ou Katikies oferecem experiências inesquecíveis. Opções econômicas estão disponíveis em Perissa e Kamari."
-      el: "Συνιστούμε να μείνετε στην Οία ή τη Φηρά για εκπληκτική θέα στην καλντέρα. Boutique ξενοδοχεία σε σπηλιές όπως το Canaves Oia ή Katikies προσφέρουν ανεπανάληπτες εμπειρίες. Οικονομικές επιλογές διατίθενται στην Περίσσα και το Καμάρι."
-    icon: "hotel"
-
-  - title:
-      en: "Things to See"
-      pt: "O que Ver"
-      el: "Τι να δείτε"
-    content:
-      en: "Visit the ancient ruins of Akrotiri, watch the legendary Oia sunset, explore the volcanic hot springs, and wander through the charming streets of Fira. Don't miss a catamaran cruise around the caldera!"
-      pt: "Visite as ruínas antigas de Akrotiri, assista ao lendário pôr do sol de Oia, explore as fontes termais vulcânicas e passeie pelas charmosas ruas de Fira. Não perca um cruzeiro de catamarã ao redor da caldeira!"
-      el: "Επισκεφθείτε τα αρχαία ερείπια του Ακρωτηρίου, παρακολουθήστε το θρυλικό ηλιοβασίλεμα της Οίας, εξερευνήστε τις θερμές ηφαιστειακές πηγές και περιπλανηθείτε στα γραφικά σοκάκια της Φηράς. Μην χάσετε μια κρουαζιέρα με καταμαράν γύρω από την καλντέρα!"
+      en: ""
+      pt: ""
+      el: ""
     icon: "landmark"
 
   - title:
-      en: "Local Cuisine"
-      pt: "Culinária Local"
-      el: "Τοπική Κουζίνα"
+      en: "2. Kapetanios"
+      pt: "2. Kapetanios"
+      el: "2. Kapetanios"
+    url: "https://maps.app.goo.gl/D6o1Fmnfm83xfGqh9"
     content:
-      en: "Savor fava (split pea purée), tomatokeftedes (tomato fritters), fresh grilled octopus, and the famous Santorini cherry tomatoes. Pair with local Assyrtiko wine — the volcanic terroir is extraordinary!"
-      pt: "Saboreie fava (purê de ervilha), tomatokeftedes (bolinhos de tomate), polvo grelhado fresco e os famosos tomates-cereja de Santorini. Harmonize com vinho Assyrtiko local — o terroir vulcânico é extraordinário!"
-      el: "Απολαύστε φάβα (πουρέ κόκκινου φακού), ντοματοκεφτέδες, χταπόδι σχάρας και τις φημισμένες ντομάτες τσέρι Σαντορίνης. Συνοδεύστε με τοπικό κρασί Ασύρτικο — το ηφαιστειακό terroir είναι εξαιρετικό!"
-    icon: "soup"
+      en: ""
+      pt: ""
+      el: ""
+    icon: "landmark"
+
+  - title:
+      en: "3. Ouzeri Ten Steps in Sand"
+      pt: "3. Ouzeri Ten Steps in Sand"
+      el: "3. Ouzeri Ten Steps in Sand"
+    url: "https://maps.app.goo.gl/8xdJckUTi4rzB3VEA"
+    content:
+      en: ""
+      pt: ""
+      el: ""
+    icon: "landmark"
+
+  - title:
+      en: "4. Manteskas"
+      pt: "4. Manteskas"
+      el: "4. Manteskas"
+    url: "https://maps.app.goo.gl/iDTw6Tn2UHRAxd42A"
+    content:
+      en: ""
+      pt: ""
+      el: ""
+    icon: "landmark"
+
+  - title:
+      en: "5. Limnionas Beach"
+      pt: "5. Limnionas Beach"
+      el: "5. Limnionas Beach"
+    url: "https://maps.app.goo.gl/tjdv9qedHDBmrR8H8"
+    content:
+      en: ""
+      pt: ""
+      el: ""
+    icon: "landmark"
+
+  - title:
+      en: "6. Eubous"
+      pt: "6. Eubous"
+      el: "6. Eubous"
+    url: "https://maps.app.goo.gl/WJENfrxWucEwnecr7"
+    content:
+      en: ""
+      pt: ""
+      el: ""
+    icon: "landmark"
+
+  - title:
+      en: "7. Ouzo Nicholas"
+      pt: "7. Ouzo Nicholas"
+      el: "7. Ouzo Nicholas"
+    url: "https://maps.app.goo.gl/ys7bcCzMbre2oRDn9"
+    content:
+      en: ""
+      pt: ""
+      el: ""
+    icon: "landmark"
+
+  - title:
+      en: "8. Paralia Petali"
+      pt: "8. Paralia Petali"
+      el: "8. Paralia Petali"
+    url: "https://maps.app.goo.gl/DrrG2oFNcYxyftcz5"
+    content:
+      en: "Great beach!"
+      pt: "Great beach!"
+      el: "Great beach!"
+    icon: "landmark"
+
+  - title:
+      en: "9. Paralia Vithouri"
+      pt: "9. Paralia Vithouri"
+      el: "9. Paralia Vithouri"
+    url: "https://maps.app.goo.gl/9bVqBMkBiEPQcgsG9"
+    content:
+      en: "Great beach to visit but difficult access. If you have the budget, we could help you book a boat to take you to several beaches by the coast for 1 day."
+      pt: "Great beach to visit but difficult access. If you have the budget, we could help you book a boat to take you to several beaches by the coast for 1 day."
+      el: "Great beach to visit but difficult access. If you have the budget, we could help you book a boat to take you to several beaches by the coast for 1 day."
+    icon: "landmark"
+
+  - title:
+      en: "10. Steni Dirfios"
+      pt: "10. Steni Dirfios"
+      el: "10. Steni Dirfios"
+    url: "https://maps.app.goo.gl/3xnhCYiqEn1BZHRQA"
+    content:
+      en: "On our way back from Chiliadou (the beach on the Aegean side) we will eat lamb chops in this village."
+      pt: "On our way back from Chiliadou (the beach on the Aegean side) we will eat lamb chops in this village."
+      el: "On our way back from Chiliadou (the beach on the Aegean side) we will eat lamb chops in this village."
+    icon: "landmark"
+
+  - title:
+      en: "11. Palaiologos"
+      pt: "11. Palaiologos"
+      el: "11. Palaiologos"
+    url: "https://maps.app.goo.gl/Mzk9KQzwQk1fk8nu7"
+    content:
+      en: "Also a good tavern on this beach. You can try kalamaraki, shrimp saganaki, fresh fish, zucchini balls, etc."
+      pt: "Also a good tavern on this beach. You can try kalamaraki, shrimp saganaki, fresh fish, zucchini balls, etc."
+      el: "Also a good tavern on this beach. You can try kalamaraki, shrimp saganaki, fresh fish, zucchini balls, etc."
+    icon: "landmark"
+
+  - title:
+      en: "12. Amoudia"
+      pt: "12. Amoudia"
+      el: "12. Amoudia"
+    url: "https://maps.app.goo.gl/Y1hZzY3gT2ekk96U7"
+    content:
+      en: "All of the taverns in this street are nice. I like this one for the location of the tables by the beach."
+      pt: "All of the taverns in this street are nice. I like this one for the location of the tables by the beach."
+      el: "All of the taverns in this street are nice. I like this one for the location of the tables by the beach."
+    icon: "landmark"
+
+  - title:
+      en: "13. Asteria Plage"
+      pt: "13. Asteria Plage"
+      el: "13. Asteria Plage"
+    url: "https://maps.app.goo.gl/cnBAeMZ799wHCDJ57"
+    content:
+      en: "Good coffee place for daytime and bar in the evening. Good food as well but the nighttime only."
+      pt: "Good coffee place for daytime and bar in the evening. Good food as well but the nighttime only."
+      el: "Good coffee place for daytime and bar in the evening. Good food as well but the nighttime only."
+    icon: "landmark"
+
+  - title:
+      en: "14. Pericles"
+      pt: "14. Pericles"
+      el: "14. Pericles"
+    url: "https://maps.app.goo.gl/RbyNAFHt1QkExqHE8"
+    content:
+      en: "Excellent tavern for fish, kalamari, shrimp saganaki, and all the goodies."
+      pt: "Excellent tavern for fish, kalamari, shrimp saganaki, and all the goodies."
+      el: "Excellent tavern for fish, kalamari, shrimp saganaki, and all the goodies."
+    icon: "landmark"
+
+  - title:
+      en: "15. Ktina Anthedon"
+      pt: "15. Ktina Anthedon"
+      el: "15. Ktina Anthedon"
+    url: "https://maps.app.goo.gl/ULmQTGPdmkFVHsv6A"
+    content:
+      en: "Amazing place to have some coffee and watch the sunset. Not for food!"
+      pt: "Amazing place to have some coffee and watch the sunset. Not for food!"
+      el: "Amazing place to have some coffee and watch the sunset. Not for food!"
+    icon: "landmark"
+
+  - title:
+      en: "16. Alykes Drosia"
+      pt: "16. Alykes Drosia"
+      el: "16. Alykes Drosia"
+    url: "https://maps.app.goo.gl/VG2WHbCzsG1CVMZR7"
+    content:
+      en: "On Friday, the day before the wedding, we'll be spending the day here, by the beach!"
+      pt: "On Friday, the day before the wedding, we'll be spending the day here, by the beach!"
+      el: "On Friday, the day before the wedding, we'll be spending the day here, by the beach!"
+    icon: "landmark"
+
+  - title:
+      en: "17. Agia Anna"
+      pt: "17. Agia Anna"
+      el: "17. Agia Anna"
+    url: "https://maps.app.goo.gl/gjoQtKs27bsTKnMZ7"
+    content:
+      en: "This is the wedding location for Saturday afternoon."
+      pt: "This is the wedding location for Saturday afternoon."
+      el: "This is the wedding location for Saturday afternoon."
+    icon: "landmark"
+
+  - title:
+      en: "18. Skopelos"
+      pt: "18. Skopelos"
+      el: "18. Skopelos"
+    url: "https://maps.app.goo.gl/ZKxSKdAQUw4XxQYBA"
+    content:
+      en: "If you can rent a car, you should definitely visit this beautiful island. Easily accessible through the port in Evia."
+      pt: "If you can rent a car, you should definitely visit this beautiful island. Easily accessible through the port in Evia."
+      el: "If you can rent a car, you should definitely visit this beautiful island. Easily accessible through the port in Evia."
+    icon: "landmark"
+
+  - title:
+      en: "19. Skiathos"
+      pt: "19. Skiathos"
+      el: "19. Skiathos"
+    url: "https://maps.app.goo.gl/EBrDWQdbZSuhS19P7"
+    content:
+      en: "If you have some time, and budget, visit this easy to access island by boat. No need to rent a car on this island."
+      pt: "If you have some time, and budget, visit this easy to access island by boat. No need to rent a car on this island."
+      el: "If you have some time, and budget, visit this easy to access island by boat. No need to rent a car on this island."
+    icon: "landmark"
+
+  - title:
+      en: "20. Paralia Chiliadou"
+      pt: "20. Paralia Chiliadou"
+      el: "20. Paralia Chiliadou"
+    url: "https://maps.app.goo.gl/TmEeaijg4X1ognMD9"
+    content:
+      en: "Gui and Mirto will go to this beautiful beach on Monday after the wedding! You may join, but it's more than 1 hour driving over the mountain."
+      pt: "Gui and Mirto will go to this beautiful beach on Monday after the wedding! You may join, but it's more than 1 hour driving over the mountain."
+      el: "Gui and Mirto will go to this beautiful beach on Monday after the wedding! You may join, but it's more than 1 hour driving over the mountain."
+    icon: "landmark"
 
 weddingInfo:
   dressCode:
