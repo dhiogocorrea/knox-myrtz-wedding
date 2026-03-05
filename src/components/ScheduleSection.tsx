@@ -185,6 +185,60 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
               />
             </div>
           </div>
+          {/* ── Narrative days block ───────── */}
+          <div className="mt-8 max-w-3xl mx-auto">
+            {(((dict.schedule as any).days || []) as any[]).slice(1).map((d: any, idx: number) => {
+              // idx is 0 for the original second item (05-06-26)
+              const dayNum = idx + 1; // new day numbering starts at 1
+
+              // build localized title: remove original leading 'Day N:' and re-prefix
+              const rawTitle: string = d.title || "";
+              const colonIdx = rawTitle.indexOf(":");
+              const remainder = colonIdx !== -1 ? rawTitle.slice(colonIdx + 1).trim() : rawTitle;
+              const dayLabel = (dict.schedule as any).dayLabel ?? "Day";
+              const newTitle = `${dayLabel} ${dayNum}: ${remainder}`;
+
+              // compute date string (original days start at 4 June)
+              const dateDay = 5 + idx; // 05 for idx=0, 06 for idx=1, etc.
+              const dateStr = `${String(dateDay).padStart(2, "0")}-06-26`;
+
+              // render date; optionally highlight '6' in red for the Ultimate Quest day only
+              const renderDate = (s: string, highlightSix: boolean) => (
+                <span className="ml-3 text-sm font-mono">
+                  {Array.from(s).map((ch, i) => (
+                    ch === "6" && highlightSix ? (
+                      <span key={i} className="text-rose">{ch}</span>
+                    ) : (
+                      <span key={i}>{ch}</span>
+                    )
+                  ))}
+                </span>
+              );
+
+              // remove any leading 'Panel' translations from panelTitle
+              const panelTitle = (d.panelTitle || "").replace(/^\s*(Panel|Painel|Πίνακας)\s*:\s*/i, "");
+
+              return (
+                <div key={idx} className="mb-6">
+                  <div className="inline-block bg-black text-white px-3 py-1 text-sm" style={{ fontFamily: "var(--font-manga)" }}>
+                    <span>{newTitle}</span>
+                    {renderDate(dateStr, idx === 1)}
+                  </div>
+                  <div className="mt-3 bg-white rounded-none shadow-sm p-5 text-ink">
+                    <p className="font-semibold mb-2">{panelTitle}</p>
+                    <p className="text-sm leading-relaxed">{d.panelText}</p>
+                    {d.locationName && d.locationUrl && (
+                      <p className="mt-3 text-sm">
+                        <a href={d.locationUrl} target="_blank" rel="noopener noreferrer" className="text-vermillion underline">
+                          📍 {d.locationName}
+                        </a>
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
 
           {/* Page number */}
           <div className="text-right mt-2 pr-2">

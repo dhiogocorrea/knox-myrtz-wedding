@@ -33,7 +33,50 @@ export const dictionaries = {
     },
     schedule: {
       title: "Schedule",
+      dayLabel: "Day",
       subtitle: "Here's what to expect on our special week.",
+      days: [
+        {
+          title: "Day 1: Thursday – The Secret Gathering",
+          panelTitle: "Panel: Close-up on a warm, glowing family dinner table at Mirto's home",
+          panelText:
+            "The brave heroes ignite their legendary journey! Reuniting with closest kin in the hidden hearth of Mirto's domain for a feast of heartfelt tales and unbreakable bonds. (Shh... this sacred panel reveals itself only to the chosen few!)",
+          locationName: "Mirto's House",
+          locationUrl: "https://maps.app.goo.gl/kn94JwutcQFEfdpg9",
+        },
+        {
+          title: "Day 2: Friday – The Grand Reunion",
+          panelTitle: "Panel: Sun-drenched beach bar buzzing with laughter",
+          panelText:
+            "All allies assemble! Heroes unite with friends and family at the sun-kissed shore tavern from noon till stars claim the sky. Devour epic feasts, share endless laughs, and let the sea whispers fuel the eve of destiny!",
+          locationName: "Alykes Beach",
+          locationUrl: "https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7",
+        },
+        {
+          title: "Day 3: Saturday – The Ultimate Quest Begins",
+          panelTitle: "Panel: Heroes ascending misty Dirfys peaks into an enchanted forest glade",
+          panelText:
+            "Dawn of eternity! The heroes charge into the \"Journey Beyond\" atop Evia's majestic Dirfys mountains, within a mystical woodland realm. Ceremony and revelry await—don your finest armor and come prepared for heart-pounding miracles!",
+          locationName: "Agia Anna",
+          locationUrl: "https://maps.app.goo.gl/ExUjAww6jhaXCp8w5",
+        },
+        {
+          title: "Day 4: Sunday – Dawn of the Survivors",
+          panelTitle: "Panel: Cozy local café, weary but grinning heroes sipping coffee",
+          panelText:
+            "Victors emerge from the fray! Those who conquered the enchanted trials gather for a chill morning brew at a beloved local haven. Reflect, recharge, and toast to legends forged!",
+          locationName: "Ktima Anthidon",
+          locationUrl: "https://maps.app.goo.gl/qGqXru5bec2JYz356",
+        },
+        {
+          title: "Day 5: Monday – The Wild Odyssey",
+          panelTitle: "Panel: Epic mountain trek to a sparkling Aegean beach paradise",
+          panelText:
+            "Final frontier calls! Bold heroes traverse Evia's rugged spine to the Aegean wilds—a daring pilgrimage to a bewitching beach on the island's far edge. Rally your staunchest allies for this adrenaline-fueled saga!",
+          locationName: "Chiliadou Beach",
+          locationUrl: "https://maps.app.goo.gl/9vipXFbDTbtUQZGNA",
+        },
+      ],
     },
     rsvp: {
       title: "RSVP",
@@ -68,11 +111,11 @@ export const dictionaries = {
       eventDatesLabel: "Please confirm which dates you'll join the heroes in our",
       scheduleLinkText: "planned events",
       eventOptions: {
-        "2026-06-04": "4 June - Close-family dinner at <a href=\"https://maps.google.com/?q=Mirto%27s+House\">📍 Mirto's House</a>",
-        "2026-06-05": "5 June - All day at Alykes beach at <a href=\"https://maps.google.com/?q=Alykes+Beach\">📍 Alykes Beach</a>",
-        "2026-06-06": "6 June - Wedding ceremony at <a href=\"https://maps.google.com/?q=Agia+Anna\">📍 Agia Anna</a>",
-        "2026-06-07": "7 June - Brunch at Ktima Anthidon at <a href=\"https://maps.google.com/?q=Ktima+Anthidon\">📍 Ktima Anthidon</a>",
-        "2026-06-08": "8 June - All day at Chiliadou beach at <a href=\"https://maps.google.com/?q=Chiliadou+Beach\">📍 Chiliadou Beach</a>",
+        "2026-06-04": "<strong>4 June</strong>&nbsp;—&nbsp;Close-family dinner at <a href=\"https://maps.app.goo.gl/kn94JwutcQFEfdpg9\">📍 Mirto's House</a>",
+        "2026-06-05": "<strong>5 June</strong>&nbsp;—&nbsp;All day at Alykes beach at <a href=\"https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7\">📍 Alykes Beach</a>",
+        "2026-06-06": "<strong>6 June</strong>&nbsp;—&nbsp;Wedding ceremony at <a href=\"https://maps.app.goo.gl/ExUjAww6jhaXCp8w5\">📍 Agia Anna</a>",
+        "2026-06-07": "<strong>7 June</strong>&nbsp;—&nbsp;Brunch at Ktima Anthidon at <a href=\"https://maps.app.goo.gl/qGqXru5bec2JYz356\">📍 Ktima Anthidon</a>",
+        "2026-06-08": "<strong>8 June</strong>&nbsp;—&nbsp;All day at Chiliadou beach at <a href=\"https://maps.app.goo.gl/9vipXFbDTbtUQZGNA\">📍 Chiliadou Beach</a>",
       },
     },
     touristicInfo: {
@@ -160,7 +203,50 @@ export const dictionaries = {
     },
     schedule: {
       title: "Programação do Dia",
+      dayLabel: "Dia",
       subtitle: "Veja o que esperar no nosso dia especial",
+      days: [
+        {
+          title: "Dia 1: Quinta-feira – A Reunião Secreta",
+          panelTitle: "Painel: Close-up numa mesa de jantar familiar calorosa na casa da Mirto",
+          panelText:
+            "Os bravos heróis acendem sua jornada lendária! Reunindo-se com os parentes mais próximos no lar escondido do domínio de Mirto para um banquete de histórias sinceras e laços inquebráveis. (Shh... este painel sagrado revela-se apenas aos poucos escolhidos!)",
+          locationName: "Casa da Mirto",
+          locationUrl: "https://maps.app.goo.gl/kn94JwutcQFEfdpg9",
+        },
+        {
+          title: "Dia 2: Sexta-feira – A Grande Reunião",
+          panelTitle: "Painel: Bar de praia ensolarado cheio de risadas",
+          panelText:
+            "Todos os aliados se reúnem! Heróis unem-se com amigos e família no bar à beira-mar ensolarado, do meio-dia até as estrelas tomarem o céu. Devorem banquetes épicos, compartilhem risadas infinitas e deixem os sussurros do mar alimentar a noite do destino!",
+          locationName: "Praia Alykes",
+          locationUrl: "https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7",
+        },
+        {
+          title: "Dia 3: Sábado – A Jornada Suprema Começa",
+          panelTitle: "Painel: Heróis ascendendo os picos enevoados de Dirfys em um bosque encantado",
+          panelText:
+            "Aurora da eternidade! Os heróis avançam na \"Jornada Além\" no topo das majestosas montanhas Dirfys de Evia, dentro de um reino místico de floresta. Cerimônia e festejo aguardam—vista sua melhor armadura e prepare-se para milagres de tirar o fôlego!",
+          locationName: "Agia Anna",
+          locationUrl: "https://maps.app.goo.gl/ExUjAww6jhaXCp8w5",
+        },
+        {
+          title: "Dia 4: Domingo – Aurora dos Sobreviventes",
+          panelTitle: "Painel: Café local acolhedor, heróis cansados porém sorridentes tomando café",
+          panelText:
+            "Vencedores emergem da batalha! Aqueles que conquistaram as provações encantadas reúnem-se para um café matinal relaxado em um refúgio local querido. Reflita, recarregue e brinde às lendas forjadas!",
+          locationName: "Ktima Anthidon",
+          locationUrl: "https://maps.app.goo.gl/qGqXru5bec2JYz356",
+        },
+        {
+          title: "Dia 5: Segunda-feira – A Odisseia Selvagem",
+          panelTitle: "Painel: Caminhada épica nas montanhas até um paraíso de praia Egeu",
+          panelText:
+            "A fronteira final chama! Heróis ousados percorrem a espinha acidentada de Evia até as selvagens águas do Egeu—uma peregrinação ousida para uma praia encantadora no extremo da ilha. Reúna seus aliados mais firmes para esta saga repleta de adrenalina!",
+          locationName: "Praia Chiliadou",
+          locationUrl: "https://maps.app.goo.gl/9vipXFbDTbtUQZGNA",
+        },
+      ],
     },
     rsvp: {
       title: "Confirmação de Presença",
@@ -195,11 +281,11 @@ export const dictionaries = {
       eventDatesLabel: "Por favor confirme em quais datas você participará dos nossos",
       scheduleLinkText: "eventos planejados",
       eventOptions: {
-        "2026-06-04": "4 de junho - Jantar íntimo em família na <a href=\"https://maps.google.com/?q=Casa+da+Mirto\">📍 Casa da Mirto</a>",
-        "2026-06-05": "5 de junho - Dia todo na praia Alykes em <a href=\"https://maps.google.com/?q=Alykes+Beach\">📍 Praia Alykes</a>",
-        "2026-06-06": "6 de junho - Cerimônia de casamento em <a href=\"https://maps.google.com/?q=Agia+Anna\">📍 Agia Anna</a>",
-        "2026-06-07": "7 de junho - Brunch no <a href=\"https://maps.google.com/?q=Ktima+Anthidon\">📍 Ktima Anthidon</a>",
-        "2026-06-08": "8 de junho - Dia todo na praia Chiliadou em <a href=\"https://maps.google.com/?q=Chiliadou+Beach\">📍 Praia Chiliadou</a>",
+        "2026-06-04": "<strong>4 de junho</strong>&nbsp;—&nbsp;Jantar íntimo em família na <a href=\"https://maps.app.goo.gl/kn94JwutcQFEfdpg9\">📍 Casa da Mirto</a>",
+        "2026-06-05": "<strong>5 de junho</strong>&nbsp;—&nbsp;Dia todo na praia Alykes em <a href=\"https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7\">📍 Praia Alykes</a>",
+        "2026-06-06": "<strong>6 de junho</strong>&nbsp;—&nbsp;Cerimônia de casamento em <a href=\"https://maps.app.goo.gl/ExUjAww6jhaXCp8w5\">📍 Agia Anna</a>",
+        "2026-06-07": "<strong>7 de junho</strong>&nbsp;—&nbsp;Brunch no <a href=\"https://maps.app.goo.gl/qGqXru5bec2JYz356\">📍 Ktima Anthidon</a>",
+        "2026-06-08": "<strong>8 de junho</strong>&nbsp;—&nbsp;Dia todo na praia Chiliadou em <a href=\"https://maps.app.goo.gl/9vipXFbDTbtUQZGNA\">📍 Praia Chiliadou</a>",
       },
     },
     touristicInfo: {
@@ -287,7 +373,50 @@ export const dictionaries = {
     },
     schedule: {
       title: "Πρόγραμμα Γάμου",
+      dayLabel: "Ημέρα",
       subtitle: "Τι να περιμένετε στην ξεχωριστή μας μέρα",
+      days: [
+        {
+          title: "Ημέρα 1: Πέμπτη – Η Μυστική Συνάθροιση",
+          panelTitle: "Πίνακας: Κοντινό σε ζεστό, φωτεινό οικογενειακό τραπέζι στο σπίτι της Μύρτου",
+          panelText:
+            "Οι θαρραλέοι ήρωες πυροδοτούν την θρυλική τους πορεία! Επανενώνονται με τους στενότερους συγγενείς στην κρυφή εστία του χώρου της Μύρτου για ένα γλέντι γεμάτο συγκινητικές ιστορίες και ανθεκτικούς δεσμούς. (Σσσ... αυτός ο ιερός πίνακας αποκαλύπτεται μόνο στους εκλεκτούς!)",
+          locationName: "Σπίτι της Μύρτου",
+          locationUrl: "https://maps.app.goo.gl/kn94JwutcQFEfdpg9",
+        },
+        {
+          title: "Ημέρα 2: Παρασκευή – Η Μεγάλη Επανένωση",
+          panelTitle: "Πίνακας: Ηλιοφώτιστο beach bar γεμάτο γέλια",
+          panelText:
+            "Όλοι οι σύμμαχοι συγκεντρώνονται! Οι ήρωες ενώνουν φίλους και οικογένεια στην ηλιόλουστη παραλιακή ταβέρνα από το μεσημέρι μέχρι τα αστέρια. Καταβροχθίστε επικά γεύματα, μοιραστείτε ατελείωτα γέλια και αφήστε τους ψιθύρους της θάλασσας να τροφοδοτήσουν το βράδυ της μοίρας!",
+          locationName: "Παραλία Alykes",
+          locationUrl: "https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7",
+        },
+        {
+          title: "Ημέρα 3: Σάββατο – Η Απόλυτη Αποστολή Ξεκινά",
+          panelTitle: "Πίνακας: Ήρωες ανεβαίνουν στα ομιχλώδη κορυφές του Δίρφυς σε έναν μαγεμένο δρυμό",
+          panelText:
+            "Η αυγή της αιωνιότητας! Οι ήρωες εφορμούν στην \"Ταξίδι Πέρα\" πάνω στις μεγαλοπρεπείς κορυφές του Δίρφυ στην Εύβοια, μέσα σε έναν μυστηριακό δασώδη κόσμο. Τελετή και γλέντι περιμένουν—φορέστε την καλύτερη πανοπλία σας και ετοιμαστείτε για καρδιοχτύπι θαύματα!",
+          locationName: "Αγία Άννα",
+          locationUrl: "https://maps.app.goo.gl/ExUjAww6jhaXCp8w5",
+        },
+        {
+          title: "Ημέρα 4: Κυριακή – Η Αυγή των Επιζώντων",
+          panelTitle: "Πίνακας: Άνετο τοπικό καφέ, ήρωες κουρασμένοι αλλά γελαστοί πίνουν καφέ",
+          panelText:
+            "Οι νικητές αναδύονται από την πάλη! Όσοι κατέκτησαν τις μαγικές δοκιμασίες συγκεντρώνονται για ένα χαλαρό πρωινό ρόφημα σε ένα αγαπημένο τοπικό στέκι. Αναλογιστείτε, επαναφορτιστείτε και κάντε ένα τοστ στις σφυρηλατημένες θρύλους!",
+          locationName: "Κτήμα Ανθίδων",
+          locationUrl: "https://maps.app.goo.gl/qGqXru5bec2JYz356",
+        },
+        {
+          title: "Ημέρα 5: Δευτέρα – Η Άγρια Οδύσσεια",
+          panelTitle: "Πίνακας: Επικό βουνίσιο πέρασμα προς έναν λαμπερό αιγαιοπελαγίτικο παράδεισο",
+          panelText:
+            "Η τελική σύνορο καλεί! Τολμηροί ήρωες διασχίζουν την τραχιά ραχοκοκαλιά της Εύβοιας προς τα άγρια παράλια του Αιγαίου—μια τολμηρή προσκυνηματική πορεία προς μια μαγευτική παραλία στην άκρη του νησιού. Συνασπιστείτε τους πιο πιστούς συμμάχους σας για αυτήν την αδρεναλίνη-γεμάτη σάγκα!",
+          locationName: "Παραλία Χιλιάδου",
+          locationUrl: "https://maps.app.goo.gl/9vipXFbDTbtUQZGNA",
+        },
+      ],
     },
     rsvp: {
       title: "Επιβεβαίωση Παρουσίας",
@@ -322,11 +451,11 @@ export const dictionaries = {
         eventDatesLabel: "Παρακαλούμε επιβεβαιώστε ποιες ημερομηνίες θα συμμετάσχετε στις",
         scheduleLinkText: "προγραμματισμένες εκδηλώσεις",
         eventOptions: {
-          "2026-06-04": "4 Ιουνίου - Δείπνο με την πολύ κοντινή οικογένεια στο <a href=\"https://maps.google.com/?q=Mirto%27s+House\">📍 Σπίτι της Μύρτου</a>",
-          "2026-06-05": "5 Ιουνίου - Ολη την ημέρα στην παραλία Alykes στο <a href=\"https://maps.google.com/?q=Alykes+Beach\">📍 Παραλία Alykes</a>",
-          "2026-06-06": "6 Ιουνίου - Τελετή γάμου στο <a href=\"https://maps.google.com/?q=Agia+Anna\">📍 Αγία Άννα</a>",
-          "2026-06-07": "7 Ιουνίου - Brunch στο <a href=\"https://maps.google.com/?q=Ktima+Anthidon\">📍 Κτήμα Ανθίδων</a>",
-          "2026-06-08": "8 Ιουνίου - Ολη την ημέρα στην παραλία Χιλιάδου στο <a href=\"https://maps.google.com/?q=Chiliadou+Beach\">📍 Παραλία Χιλιάδου</a>",
+          "2026-06-04": "<strong>4 Ιουνίου</strong>&nbsp;—&nbsp;Δείπνο με την πολύ κοντινή οικογένεια στο <a href=\"https://maps.app.goo.gl/kn94JwutcQFEfdpg9\">📍 Σπίτι της Μύρτου</a>",
+          "2026-06-05": "<strong>5 Ιουνίου</strong>&nbsp;—&nbsp;Ολη την ημέρα στην παραλία Alykes στο <a href=\"https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7\">📍 Παραλία Alykes</a>",
+          "2026-06-06": "<strong>6 Ιουνίου</strong>&nbsp;—&nbsp;Τελετή γάμου στο <a href=\"https://maps.app.goo.gl/ExUjAww6jhaXCp8w5\">📍 Αγία Άννα</a>",
+          "2026-06-07": "<strong>7 Ιουνίου</strong>&nbsp;—&nbsp;Brunch στο <a href=\"https://maps.app.goo.gl/qGqXru5bec2JYz356\">📍 Κτήμα Ανθίδων</a>",
+          "2026-06-08": "<strong>8 Ιουνίου</strong>&nbsp;—&nbsp;Ολη την ημέρα στην παραλία Χιλιάδου στο <a href=\"https://maps.app.goo.gl/9vipXFbDTbtUQZGNA\">📍 Παραλία Χιλιάδου</a>",
         },
     },
     touristicInfo: {

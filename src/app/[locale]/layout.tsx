@@ -85,7 +85,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${fontClass} antialiased`} style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+      <body suppressHydrationWarning className={`${fontClass} antialiased`} style={{ fontFamily: "var(--font-inter), sans-serif" }}>
         {children}
       </body>
     </html>
