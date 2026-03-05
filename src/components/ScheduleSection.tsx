@@ -168,72 +168,22 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
         {/* ── Manga page container ──────────── */}
         <div className="manga-page">
           <div className="manga-page-inner">
-            {rows.map((row, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="manga-row"
-                style={{
-                  gridTemplateColumns: row.map(p => `${p.span}fr`).join(" "),
-                }}
-              >
-                {row.map((panel) => {
-                  const isVisible = visiblePanels.has(panel.globalIdx);
-
-                  // Special-case: localized images for certain panels (dinner, going merry)
-                  const isDinnerPanel = (panel.item as any).time === "04-06-26 @ 18:00";
-                  const isGoingMerryPanel = (panel.item as any).image && (panel.item as any).image.includes("going_merry");
-                  const isHimmelPanel = (panel.item as any).image && (panel.item as any).image.includes("himmel_cutie");
-                  const isManga1Panel = (panel.item as any).image && (panel.item as any).image.includes("manga1");
-                  const LOCALE_MAP: Record<string, string> = { en: "EN", pt: "PT", el: "GR" };
-                  let imageSrc: string | undefined = (panel.item as any).image;
-                  if (isDinnerPanel) {
-                    const suf = LOCALE_MAP[locale] ?? "EN";
-                    imageSrc = `/images/schedule/panel_1_${suf}.png`;
-                  } else if (isGoingMerryPanel) {
-                    const suf = LOCALE_MAP[locale] ?? "EN";
-                    imageSrc = `/images/schedule/goingmerry_${suf}.png`;
-                  } else if (isHimmelPanel) {
-                    const suf = LOCALE_MAP[locale] ?? "EN";
-                    imageSrc = `/images/schedule/panel_3_${suf}.png`;
-                  } else if (isManga1Panel) {
-                    const suf = LOCALE_MAP[locale] ?? "EN";
-                    imageSrc = `/images/schedule/brunch_${suf}.png`;
-                  }
-                  const hasImage = !!imageSrc;
-                  const isWide = panel.span >= 4;
-                  const isFull = panel.span === 6;
-                  const panelInlineStyle = (panel.item as any).panel?.style ? ((panel.item as any).panel.style as any) : undefined;
-
-                  return (
-                    <div
-                      key={panel.globalIdx}
-                      data-panel-index={panel.globalIdx}
-                      className={`
-                        manga-panel group
-                        ${panel.tall ? "manga-panel-tall" : ""}
-                        ${isFull ? "manga-panel-cinematic" : ""}
-                        ${hasImage ? "manga-panel-with-image" : ""}
-                        ${isVisible ? "manga-panel-visible" : "manga-panel-hidden"}
-                      `}
-                      style={panelInlineStyle}
-                    >
-                      {/* ── Background image ──────────── */}
-                      {hasImage && (
-                        <Image
-                          src={imageSrc!}
-                          alt={getLocalizedValue(panel.item.title, locale)}
-                          fill
-                          sizes={isFull ? "100vw" : isWide ? "66vw" : "33vw"}
-                          className={`${isDinnerPanel ? "object-left" : (isHimmelPanel || isManga1Panel) ? "object-center" : "object-cover"} pointer-events-none manga-panel-img`}
-                        />
-                      )}
-
-                      {/* Balloons removed — images only */}
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
+            <div className="flex flex-col w-full overflow-hidden">
+              <Image
+                src="/images/schedule/manga-top-EN.png"
+                alt={dict.schedule.title + " — top"}
+                width={1200}
+                height={800}
+                className="w-full block object-cover"
+              />
+              <Image
+                src="/images/schedule/manga-bottom-EN.png"
+                alt={dict.schedule.title + " — bottom"}
+                width={1200}
+                height={800}
+                className="w-full block object-cover"
+              />
+            </div>
           </div>
 
           {/* Page number */}
