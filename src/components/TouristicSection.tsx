@@ -111,19 +111,6 @@ export function TouristicSection({ config, dict, locale }: TouristicSectionProps
           )}
         </div>
 
-        {/* ── Static map (placed below intro, above the content box) ─────────────────── */}
-        <div className="mb-6 flex justify-center animate-fade-in-up" style={{ animationFillMode: "forwards" }}>
-          <div className="w-full max-w-xl mx-auto">
-            <Image
-              src="/images/travel_tips/map.png"
-              alt="Local map"
-              width={900}
-              height={600}
-              className="w-full h-auto object-cover rounded-md shadow-sm"
-            />
-          </div>
-        </div>
-
         {/* ── Touristic grid (titles as black hyperlink blocks; descriptions in white boxes) ─────────────────── */}
         <div className="mt-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -151,6 +138,19 @@ export function TouristicSection({ config, dict, locale }: TouristicSectionProps
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        {/* ── Static map (placed below content) ─────────────────── */}
+        <div className="mt-8 flex justify-center animate-fade-in-up" style={{ animationFillMode: "forwards" }}>
+          <div className="w-full max-w-xl mx-auto">
+            <Image
+              src="/images/travel_tips/map.png"
+              alt="Local map"
+              width={900}
+              height={600}
+              className="w-full h-auto object-cover rounded-md shadow-sm"
+            />
           </div>
         </div>
 
