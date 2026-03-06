@@ -424,7 +424,7 @@ body {
   display: grid;
   /* Add gutters between panels (both column and row gaps) so blocks don't touch */
   gap: 0.75rem;
-  min-height: 180px;
+  min-height: auto;
   /* rows no longer draw a shared divider; each panel draws its own border */
 }
 
@@ -432,14 +432,14 @@ body {
 .manga-panel {
   position: relative;
   overflow: hidden;
-  padding: 20px 16px;
+  padding: 12px 12px;
   /* Each panel has its own border so neighboring panels never touch */
   border: 2px solid var(--color-ink);
   border-radius: 0;
-  min-height: 170px;
+  min-height: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: stretch;
   cursor: default;
   transition: transform 0.3s ease;
   background: var(--color-paper);
@@ -450,7 +450,7 @@ body {
 }
 
 .manga-panel-cinematic {
-  min-height: 150px;
+  min-height: 170px;
 }
 
 /* ── Panel reveal animations ──────────────── */

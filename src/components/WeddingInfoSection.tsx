@@ -1,9 +1,26 @@
 "use client";
 
 import { useRef, useEffect, useState, useCallback } from "react";
+import { Phone } from "lucide-react";
 import type { SiteConfig } from "@/lib/schema";
 import type { Dictionary } from "@/lib/i18n";
 import { getLocalizedValue } from "@/lib/utils";
+
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  );
+}
+
+function SignalIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 1.5C6.21 1.5 1.5 6.21 1.5 12c0 1.97.55 3.81 1.5 5.38L1.5 22.5l5.12-1.5C8.19 21.95 10.03 22.5 12 22.5c5.79 0 10.5-4.71 10.5-10.5S17.79 1.5 12 1.5zm0 2c4.69 0 8.5 3.81 8.5 8.5s-3.81 8.5-8.5 8.5c-1.74 0-3.36-.53-4.71-1.43l-.33-.22-3.46 1.01 1.01-3.46-.22-.33A8.44 8.44 0 013.5 12c0-4.69 3.81-8.5 8.5-8.5z" />
+    </svg>
+  );
+}
 
 interface WeddingInfoSectionProps {
   config: SiteConfig;
@@ -13,12 +30,9 @@ interface WeddingInfoSectionProps {
 
 const ROW_TEMPLATES = [
   [
-    { span: 2, tall: false },
-    { span: 4, tall: false },
-  ],
-  [
-    { span: 4, tall: true },
-    { span: 2, tall: true },
+    { span: 8, tall: false },
+    { span: 9, tall: false },
+    { span: 3, tall: false },
   ],
   [
     { span: 6, tall: false },
@@ -47,9 +61,10 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
     return () => observer.disconnect();
   }, [handleIntersection]);
 
-  const items = [
+  const items: { title: string; content: string; isContacts?: boolean }[] = [
     { title: dict.weddingInfo.dressCodeTitle, content: getLocalizedValue(config.weddingInfo.dressCode, locale) },
-    { title: dict.weddingInfo.giftsTitle,     content: getLocalizedValue(config.weddingInfo.gifts, locale) },
+    { title: dict.weddingInfo.contactsTitle, content: "", isContacts: true },
+    { title: dict.weddingInfo.giftsTitle, content: getLocalizedValue(config.weddingInfo.gifts, locale) },
     { title: dict.weddingInfo.accommodationTitle, content: getLocalizedValue(config.weddingInfo.accommodation, locale) },
   ];
 
@@ -113,14 +128,42 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
                         ${isVisible ? "manga-panel-visible" : "manga-panel-hidden"}
                       `}
                     >
-                      <div className="relative z-10 h-full flex flex-col justify-end">
+                      <div className="relative z-10 h-full w-full flex flex-col justify-end">
                         <div className="manga-time-badge">
                           {panel.item.title}
                         </div>
-                        <div className="manga-narration">
-                          <p className="text-xs md:text-sm text-warm-gray leading-relaxed">
-                            {panel.item.content}
-                          </p>
+                        <div className="manga-narration w-full">
+                          {panel.item.isContacts ? (
+                            <div className="text-xs md:text-sm text-warm-gray leading-relaxed flex gap-4">
+                              <div className="flex-1">
+                                <p className="font-semibold text-ink/80 mb-1">Gui</p>
+                                <div className="flex items-center gap-1.5">
+                                  <WhatsAppIcon className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
+                                  <span>+31 6 3329 6522</span>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                  <Phone className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
+                                  <span>+31 6 3329 6522</span>
+                                </div>
+                              </div>
+                              <div className="w-px bg-ink/15 self-stretch" />
+                              <div className="flex-1">
+                                <p className="font-semibold text-ink/80 mb-1">Mirto</p>
+                                <div className="flex items-center gap-1.5">
+                                  <SignalIcon className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
+                                  <span>+30 xxxxx</span>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                  <Phone className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
+                                  <span>+30 xxxxxx</span>
+                                </div>
+                              </div>
+                            </div>
+                          ) : (
+                            <p className="text-xs md:text-sm text-warm-gray leading-relaxed">
+                              {panel.item.content}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </div>

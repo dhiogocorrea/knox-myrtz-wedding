@@ -29,6 +29,7 @@ const TouristicInfoSchema = z.object({
 
 const WeddingInfoSchema = z.object({
   dressCode: LocalizedStringSchema,
+  contacts: LocalizedStringSchema,
   gifts: LocalizedStringSchema,
   accommodation: LocalizedStringSchema,
 });

@@ -405,10 +405,14 @@ weddingInfo:
     en: "The location is outside in a small forest area. Wear anything you like, but stilettos are likely not a good choice."
     pt: "A localização é ao ar livre em uma pequena área de floresta. Use o que quiser, mas saltos finos provavelmente não são uma boa escolha."
     el: "Η τοποθεσία είναι έξω σε μια μικρή περιοχή δάσους. Φορέστε ό,τι θέλετε, αλλά τα stilettos πιθανόν να μην είναι καλή επιλογή."
+  contacts:
+    en: "For any questions, reach out to us at example@email.com or +1 234 567 890."
+    pt: "Para qualquer dúvida, entre em contato conosco em example@email.com ou +1 234 567 890."
+    el: "Για οποιαδήποτε ερώτηση, επικοινωνήστε μαζί μας στο example@email.com ή +1 234 567 890."
   gifts:
-    en: "Cash!"
-    pt: "Dinheiro!"
-    el: "Μετρητά!"
+    en: "💸 Cash! 💸 Cash! 💸 Cash!"
+    pt: "💸 Cash! 💸 Cash! 💸 Cash!"
+    el: "💸 Cash! 💸 Cash! 💸 Cash!"
   accommodation:
     en: "We have booked rooms/airbnbs close to the venue for the nights of the 5th and 6th. More details will follow to each guest once you have RSVP'd."
     pt: "Reservamos quartos/airbnbs perto do local para as noites de 5 e 6. Mais detalhes serão enviados a cada convidado assim que você confirmar presença."
