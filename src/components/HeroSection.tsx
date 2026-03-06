@@ -45,6 +45,16 @@ export function HeroSection({ config, dict }: HeroSectionProps) {
 
   return (
     <section className="relative flex flex-col items-center px-4 overflow-hidden min-h-[calc(100vh-5rem)]">
+      {/* Couple photo as background */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <img
+          src="/images/PORTRAIT.jpg"
+          alt=""
+          className="w-auto max-w-[min(620px,90vw)] h-auto max-h-[80vh] object-contain select-none opacity-50"
+          draggable={false}
+        />
+      </div>
+
       {/* ── Main title block (centered, cinematic) ── */}
       <div className="relative z-10 text-center max-w-2xl mx-auto flex flex-col items-center justify-start pt-[4vh] sm:pt-[6vh]">
         <div className="animate-fade-in-up opacity-0" style={{ animationFillMode: "forwards" }}>
@@ -65,18 +75,8 @@ export function HeroSection({ config, dict }: HeroSectionProps) {
             </h1>
           </div>
 
-          {/* Couple photo (centered between titles and info) */}
-          <div className="my-6 flex justify-center transform -translate-y-4 sm:-translate-y-6 md:-translate-y-40">
-            <img
-              src="/images/couple-2.png"
-              alt=""
-              className="w-auto max-w-[min(620px,90vw)] h-auto max-h-[64vh] object-contain select-none opacity-100"
-              draggable={false}
-            />
-          </div>
-
-          {/* ── Bottom block: pulled up to sit close to the image's visual bottom ── */}
-          <div className="-mt-4 sm:-mt-4 md:-mt-36">
+          {/* ── Bottom block ── */}
+          <div className="mt-auto pt-[30vh] sm:pt-[35vh] md:pt-[40vh]">
             <p className="text-xs sm:text-sm text-vermillion/80 tracking-[0.3em] uppercase mt-0 font-bold" style={{ fontFamily: "var(--font-zen)" }}>
               {dict.home.weAreGettingMarried}
             </p>
