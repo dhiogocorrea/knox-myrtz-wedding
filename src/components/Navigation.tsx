@@ -111,7 +111,7 @@ export function Navigation({
             {/* Logo / Brand – elegant Japanese */}
             <button
               onClick={() => handleTabClick("home")}
-              className="text-3xl text-ink hover:text-vermillion transition-all duration-300 cursor-pointer hover:scale-105 font-bold tracking-wider"
+              className="text-2xl text-ink hover:text-vermillion transition-all duration-300 cursor-pointer hover:scale-105 font-bold tracking-wider"
               style={{ fontFamily: "var(--font-dutch)" }}
             >
               G <span className="text-vermillion/70">&</span> M
@@ -123,7 +123,7 @@ export function Navigation({
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
-                  className={`relative px-5 py-2.5 rounded-xl text-lg font-semibold transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:-translate-y-0.5 ${
+                  className={`relative px-5 py-2.5 rounded-xl text-base font-semibold transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:-translate-y-0.5 ${
                     tab.id === "rsvp"
                       ? activeTab === tab.id
                         ? "text-white bg-vermillion shadow-lg shadow-vermillion/25 scale-[1.03]"
@@ -227,7 +227,7 @@ export function Navigation({
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
-                  className={`w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 cursor-pointer hover:translate-x-1 ${
+                  className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer hover:translate-x-1 ${
                     tab.id === "rsvp"
                       ? activeTab === tab.id
                         ? "text-white bg-vermillion shadow-lg shadow-vermillion/20"
@@ -245,7 +245,7 @@ export function Navigation({
               <div className="border-t border-ink/[0.06] mt-2 pt-2">
                 <button
                   onClick={onLogout}
-                  className="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-vermillion hover:bg-vermillion/5 transition-all duration-200 cursor-pointer hover:translate-x-1"
+                  className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-vermillion hover:bg-vermillion/5 transition-all duration-200 cursor-pointer hover:translate-x-1"
                 >
                   <span className="mr-3 inline-flex"><LogOut className="w-4 h-4" /></span>
                   {dict.nav.logout}

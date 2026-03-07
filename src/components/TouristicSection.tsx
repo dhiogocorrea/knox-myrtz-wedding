@@ -95,51 +95,28 @@ export function TouristicSection({ config, dict, locale }: TouristicSectionProps
           >
             {dict.touristicInfo.title}
           </h2>
-          {/* Intro sentence (red, smaller and subtle like the header subtitle) */}
-          {rawIntro && (
-            <p className="text-vermillion text-sm tracking-wide mb-4" style={{ fontFamily: "var(--font-dutch)" }}>
-              {introIndex >= 0 ? (
-                <>
-                  {rawIntro.slice(0, introIndex)}
-                  <a href="https://maps.app.goo.gl/a1tywE4SUAQVyE4N8" target="_blank" rel="noreferrer" className="underline font-medium">{introMatchText}</a>
-                  {rawIntro.slice(introIndex + introMatchText.length)}
-                </>
-              ) : (
-                <>{rawIntro}{' '}<a href="https://maps.app.goo.gl/a1tywE4SUAQVyE4N8" target="_blank" rel="noreferrer" className="underline font-medium">here</a></>
-              )}
-            </p>
-          )}
-        </div>
+          {/* Simplified intro + Google Maps list link */}
+          <div className="mt-4">
+            <div className="prose prose-lg mx-auto text-center">
+              <p className="text-base text-ink/90 leading-relaxed">
+                Below we have listed some of our favourite attractions of the area, for those who are looking to explore the region further.
+              </p>
 
-        {/* ── Touristic grid (titles as black hyperlink blocks; descriptions in white boxes) ─────────────────── */}
-        <div className="mt-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {config.touristicInfo?.map((item, idx) => {
-              const title = getLocalizedValue(item.title, locale) || '';
-              const content = getLocalizedValue(item.content, locale) || '';
-              const url = (item as any).url ?? null;
-              return (
-                <div key={idx} className="mb-4">
-                  <div className="inline-block bg-black text-white px-3 py-1 text-base" style={{ fontFamily: "var(--font-dutch-1756)" }}>
-                    <a href={url ?? '#'} target="_blank" rel="noreferrer" className="font-semibold">{title}</a>
-                  </div>
-
-                  <div className="mt-3 bg-white rounded-none shadow-sm p-5 text-ink">
-                    <p className="text-base leading-relaxed">{content}</p>
-                    {url && (
-                      <p className="mt-3 text-base">
-                        <a href={url} target="_blank" rel="noopener noreferrer" className="text-vermillion underline inline-flex items-center">
-                          <MapPin className="mr-2" size={14} />
-                          <span>maps</span>
-                        </a>
-                      </p>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
+              <p className="mt-4">
+                <a
+                  href={config.wedding?.venue?.mapUrl || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-vermillion font-semibold underline"
+                >
+                  Google Maps list
+                </a>
+              </p>
+            </div>
           </div>
         </div>
+
+        {/* Grid replaced by simplified content above; map remains below */}
 
         {/* ── Static map (placed below content) ─────────────────── */}
         <div className="mt-8 flex justify-center animate-fade-in-up" style={{ animationFillMode: "forwards" }}>

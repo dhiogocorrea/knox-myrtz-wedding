@@ -125,7 +125,7 @@ export const dictionaries = {
         "Here we have listed some of our favourite attractions of the area, for those who are looking to explore the region further.",
     },
     weddingInfo: {
-      title: "Wedding Details",
+      title: "Wedding Info",
       subtitle: "Important information for our guests",
       dressCodeTitle: "Dress Code",
       contactsTitle: "Contacts",
