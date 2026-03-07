@@ -458,7 +458,7 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
 
           {/* Deadline note */}
           <p className="text-center text-warm-gray/60 text-sm mt-4 tracking-wide">
-            {dict.rsvp.deadlineNote?.replace("{date}", deadlineFormatted)}
+            {dict.rsvp.deadline} {deadlineFormatted}
           </p>
         </form>
       </div>
