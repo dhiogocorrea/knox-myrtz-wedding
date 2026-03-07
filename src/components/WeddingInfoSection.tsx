@@ -30,8 +30,8 @@ interface WeddingInfoSectionProps {
 
 const ROW_TEMPLATES = [
   [
-    { span: 8, tall: false },
-    { span: 9, tall: false },
+    { span: 7, tall: false },
+    { span: 10, tall: false },
     { span: 3, tall: false },
   ],
   [
@@ -134,33 +134,39 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
                         </div>
                         <div className="manga-narration w-full">
                           {panel.item.isContacts ? (
-                            <div className="text-sm md:text-base text-warm-gray leading-relaxed flex gap-4">
-                              <div className="flex-1">
-                                <p className="font-semibold text-ink/80 mb-1">Gui</p>
-                                <div className="flex items-center gap-1.5">
-                                  <WhatsAppIcon className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
-                                  <span>+31 6 3329 6522</span>
+                            <div className="text-xs md:text-sm text-warm-gray leading-relaxed">
+                              <div className="flex gap-4">
+                                <div className="flex-1">
+                                  <p className="font-semibold text-ink/80 mb-1">Gui</p>
+                                  <div className="flex items-center gap-1.5">
+                                    <WhatsAppIcon className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
+                                    <span>+31 6 3329 6522</span>
+                                  </div>
+                                  <div className="flex items-center gap-1.5">
+                                    <Phone className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
+                                    <span>+31 6 3329 6522</span>
+                                  </div>
                                 </div>
-                                <div className="flex items-center gap-1.5">
-                                  <Phone className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
-                                  <span>+31 6 3329 6522</span>
+                                <div className="w-px bg-ink/15 self-stretch" />
+                                <div className="flex-1">
+                                  <p className="font-semibold text-ink/80 mb-1">Mirto</p>
+                                  <div className="flex items-center gap-1.5">
+                                    <SignalIcon className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
+                                    <span>+30 6986115114</span>
+                                  </div>
+                                  <div className="flex items-center gap-1.5">
+                                    <Phone className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
+                                    <span>+30 6986115114</span>
+                                  </div>
                                 </div>
                               </div>
-                              <div className="w-px bg-ink/15 self-stretch" />
-                              <div className="flex-1">
-                                <p className="font-semibold text-ink/80 mb-1">Mirto</p>
-                                <div className="flex items-center gap-1.5">
-                                  <SignalIcon className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
-                                  <span>+30 xxxxx</span>
-                                </div>
-                                <div className="flex items-center gap-1.5">
-                                  <Phone className="w-3.5 h-3.5 text-vermillion/70 shrink-0" />
-                                  <span>+30 xxxxxx</span>
-                                </div>
+
+                              <div className="w-full mt-3 text-center text-xs text-ink/70">
+                                {dict?.weddingInfo?.contactNote ?? "Contact us for any matters"}
                               </div>
                             </div>
                           ) : (
-                            <p className="text-sm md:text-base text-warm-gray leading-relaxed">
+                            <p className="text-xs md:text-sm text-warm-gray leading-relaxed">
                               {panel.item.content}
                             </p>
                           )}

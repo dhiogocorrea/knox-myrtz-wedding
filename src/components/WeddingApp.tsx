@@ -78,7 +78,7 @@ export function WeddingApp({ locale, config, dict, guestGroup, authPassword, onL
   const renderSection = () => {
     switch (activeTab) {
       case "home":
-        return <HeroSection config={config} dict={dict} />;
+        return <HeroSection config={config} dict={dict} locale={locale} />;
       case "schedule":
         return <ScheduleSection config={config} dict={dict} locale={locale} guestGroup={guestGroup} />;
       case "rsvp":

@@ -131,6 +131,7 @@ export const dictionaries = {
       contactsTitle: "Contacts",
       giftsTitle: "Gifts",
       accommodationTitle: "Accommodation",
+      contactNote: "Contact us for any matters",
     },
     admin: {
       title: "Admin Panel",
@@ -304,6 +305,7 @@ export const dictionaries = {
       contactsTitle: "Contatos",
       giftsTitle: "Presentes",
       accommodationTitle: "Hospedagem",
+      contactNote: "Contate-nos para qualquer assunto",
     },
     admin: {
       title: "Painel Admin",
@@ -477,6 +479,7 @@ export const dictionaries = {
       contactsTitle: "Επικοινωνία",
       giftsTitle: "Δώρα",
       accommodationTitle: "Διαμονή",
+      contactNote: "Επικοινωνήστε μαζί μας για οτιδήποτε",
     },
     admin: {
       title: "Πίνακας Διαχείρισης",

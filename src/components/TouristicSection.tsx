@@ -99,7 +99,7 @@ export function TouristicSection({ config, dict, locale }: TouristicSectionProps
           <div className="mt-4">
             <div className="prose prose-lg mx-auto text-center">
               <p className="text-base text-ink/90 leading-relaxed">
-                Below we have listed some of our favourite attractions of the area, for those who are looking to explore the region further.
+                {dict?.touristicInfo?.introText ?? "Below we have listed some of our favourite attractions of the area, for those who are looking to explore the region further."}
               </p>
 
               <p className="mt-4">
@@ -109,7 +109,7 @@ export function TouristicSection({ config, dict, locale }: TouristicSectionProps
                   rel="noopener noreferrer"
                   className="text-vermillion font-semibold underline"
                 >
-                  Google Maps list
+                  {dict?.touristicInfo?.mapsLinkText ?? "Google Maps list"}
                 </a>
               </p>
             </div>

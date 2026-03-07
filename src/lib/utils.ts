@@ -3,8 +3,14 @@
  */
 
 export function getLocalizedValue(
-  obj: { en: string; pt: string },
-  locale: string
+  obj: Record<string, string> | undefined,
+  locale: string,
+  defaultLocale = "en"
 ): string {
-  return locale === "pt" ? obj.pt : obj.en;
+  if (!obj) return "";
+  // prefer exact locale, then defaultLocale, then any available value
+  if (locale && obj[locale]) return obj[locale];
+  if (defaultLocale && obj[defaultLocale]) return obj[defaultLocale];
+  const first = Object.values(obj).find(v => !!v);
+  return first ?? "";
 }

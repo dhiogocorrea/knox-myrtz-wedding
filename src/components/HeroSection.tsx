@@ -8,6 +8,7 @@ import type { Dictionary } from "@/lib/i18n";
 interface HeroSectionProps {
   config: SiteConfig;
   dict: Dictionary;
+  locale?: string;
 }
 
 function calculateTimeLeft(targetDate: string) {
@@ -25,7 +26,7 @@ function calculateTimeLeft(targetDate: string) {
   };
 }
 
-export function HeroSection({ config, dict }: HeroSectionProps) {
+export function HeroSection({ config, dict, locale = "en" }: HeroSectionProps) {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(config.wedding.date));
 
   useEffect(() => {
@@ -36,7 +37,11 @@ export function HeroSection({ config, dict }: HeroSectionProps) {
   }, [config.wedding.date]);
 
   const weddingDate = new Date(config.wedding.date + "T00:00:00");
-  const dateFormatted = weddingDate.toLocaleDateString("en-US", {
+  // map simple app locale to a BCP-47 locale tag for nicer formatting
+  const LOCALE_MAP: Record<string, string> = { en: "en-US", pt: "pt-PT", el: "el-GR" };
+  const intlLocale = LOCALE_MAP[locale] || locale || "en-US";
+
+  const dateFormatted = weddingDate.toLocaleDateString(intlLocale, {
     weekday: "long",
     year: "numeric",
     month: "long",
