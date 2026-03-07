@@ -85,20 +85,20 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
   }
 
   return (
-    <section ref={sectionRef} className="min-h-[calc(100vh-5rem)] py-16 px-4 relative seigaiha">
+    <section ref={sectionRef} className="min-h-[calc(100vh-5rem)] py-16 px-4 relative seigaiha" style={{ fontFamily: "var(--font-dutch)" }}>
       <div className="max-w-4xl mx-auto relative z-10">
 
         {/* ── Header ─────────────────────── */}
         <div className="text-center mb-8 animate-fade-in-up">
           <p
             className="text-xs tracking-[0.5em] uppercase text-vermillion/60 mb-3 font-medium"
-            style={{ fontFamily: "var(--font-manga)" }}
+            style={{ fontFamily: "var(--font-dutch)" }}
           >
             ── 情報 ──
           </p>
           <h2
             className="text-3xl md:text-4xl text-ink mb-4 font-bold"
-            style={{ fontFamily: "var(--font-manga)" }}
+            style={{ fontFamily: "var(--font-dutch)" }}
           >
             {dict.weddingInfo.title}
           </h2>
@@ -134,7 +134,7 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
                         </div>
                         <div className="manga-narration w-full">
                           {panel.item.isContacts ? (
-                            <div className="text-xs md:text-sm text-warm-gray leading-relaxed flex gap-4">
+                            <div className="text-sm md:text-base text-warm-gray leading-relaxed flex gap-4">
                               <div className="flex-1">
                                 <p className="font-semibold text-ink/80 mb-1">Gui</p>
                                 <div className="flex items-center gap-1.5">
@@ -160,7 +160,7 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
                               </div>
                             </div>
                           ) : (
-                            <p className="text-xs md:text-sm text-warm-gray leading-relaxed">
+                            <p className="text-sm md:text-base text-warm-gray leading-relaxed">
                               {panel.item.content}
                             </p>
                           )}
@@ -174,7 +174,7 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
           </div>
 
           <div className="text-right mt-2 pr-2">
-            <span className="text-xs text-ink/30 tracking-wider" style={{ fontFamily: "var(--font-manga)" }}>
+            <span className="text-xs text-ink/30 tracking-wider" style={{ fontFamily: "var(--font-dutch)" }}>
               — {items.length} —
             </span>
           </div>
@@ -191,7 +191,7 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
             </p>
             <p
               className="text-2xl text-gold tracking-wide"
-              style={{ fontFamily: "var(--font-manga)" }}
+              style={{ fontFamily: "var(--font-dutch)" }}
             >
               {config.wedding.hashtag}
             </p>

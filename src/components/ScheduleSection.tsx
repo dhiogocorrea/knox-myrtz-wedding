@@ -146,20 +146,20 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
   }
 
   return (
-    <section id="schedule" ref={sectionRef} className="min-h-[calc(100vh-5rem)] py-1 px-4 relative seigaiha">
+    <section id="schedule" ref={sectionRef} className="min-h-[calc(100vh-5rem)] py-1 px-4 relative seigaiha" style={{ fontFamily: "var(--font-dutch)" }}>
       <div className="max-w-4xl mx-auto relative z-10">
 
         {/* ── Manga page header ─────────────── */}
         <div className="text-center mb-8 animate-fade-in-up">
           <p
             className="text-xs tracking-[0.5em] uppercase text-vermillion/60 mb-3 font-medium"
-            style={{ fontFamily: "var(--font-manga)" }}
+            style={{ fontFamily: "var(--font-dutch)" }}
           >
             ── 予定 ──
           </p>
           <h2
             className="text-3xl md:text-4xl text-ink mb-4 font-bold"
-            style={{ fontFamily: "var(--font-manga)" }}
+            style={{ fontFamily: "var(--font-dutch)" }}
           >
             {dict.schedule.title}
           </h2>
@@ -204,7 +204,7 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
 
               // render date; optionally highlight '6' in red for the Ultimate Quest day only
               const renderDate = (s: string, highlightSix: boolean) => (
-                <span className="ml-3 text-sm font-mono">
+                <span className="ml-3 text-base" style={{ fontFamily: "var(--font-dutch-1756)" }}>
                   {Array.from(s).map((ch, i) => (
                     ch === "6" && highlightSix ? (
                       <span key={i} className="text-rose">{ch}</span>
@@ -220,15 +220,15 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
 
               return (
                 <div key={idx} className="mb-6">
-                  <div className="inline-block bg-black text-white px-3 py-1 text-sm" style={{ fontFamily: "var(--font-manga)" }}>
+                  <div className="inline-block bg-black text-white px-3 py-1 text-base" style={{ fontFamily: "var(--font-dutch-1756)" }}>
                     <span>{newTitle}</span>
                     {renderDate(dateStr, idx === 1)}
                   </div>
                   <div className="mt-3 bg-white rounded-none shadow-sm p-5 text-ink">
                     <p className="font-semibold mb-2">{panelTitle}</p>
-                    <p className="text-sm leading-relaxed">{d.panelText}</p>
+                    <p className="text-base leading-relaxed">{d.panelText}</p>
                     {d.locationName && d.locationUrl && (
-                      <p className="mt-3 text-sm">
+                      <p className="mt-3 text-base">
                         <a href={d.locationUrl} target="_blank" rel="noopener noreferrer" className="text-vermillion underline">
                           📍 {d.locationName}
                         </a>
@@ -242,7 +242,7 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
 
           {/* Page number */}
           <div className="text-right mt-2 pr-2">
-            <span className="text-xs text-ink/30 tracking-wider" style={{ fontFamily: "var(--font-manga)" }}>
+            <span className="text-xs text-ink/30 tracking-wider" style={{ fontFamily: "var(--font-dutch)" }}>
               — {filteredSchedule.length} —
             </span>
           </div>

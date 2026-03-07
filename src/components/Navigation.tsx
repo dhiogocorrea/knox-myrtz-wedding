@@ -111,19 +111,19 @@ export function Navigation({
             {/* Logo / Brand – elegant Japanese */}
             <button
               onClick={() => handleTabClick("home")}
-              className="text-2xl text-ink hover:text-vermillion transition-all duration-300 cursor-pointer hover:scale-105 font-bold tracking-wider"
-              style={{ fontFamily: "var(--font-manga)" }}
+              className="text-3xl text-ink hover:text-vermillion transition-all duration-300 cursor-pointer hover:scale-105 font-bold tracking-wider"
+              style={{ fontFamily: "var(--font-dutch)" }}
             >
               G <span className="text-vermillion/70">&</span> M
             </button>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-2" style={{ fontFamily: "var(--font-dutch)" }}>
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
-                  className={`relative px-5 py-2.5 rounded-xl text-[15px] font-semibold transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:-translate-y-0.5 ${
+                  className={`relative px-5 py-2.5 rounded-xl text-lg font-semibold transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:-translate-y-0.5 ${
                     tab.id === "rsvp"
                       ? activeTab === tab.id
                         ? "text-white bg-vermillion shadow-lg shadow-vermillion/25 scale-[1.03]"
@@ -170,7 +170,7 @@ export function Navigation({
                       <a
                         key={opt.code}
                         href={`/${opt.code}`}
-                        className={`flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors duration-200 ${
+                        className={`flex items-center gap-2.5 px-4 py-2.5 text-base transition-colors duration-200 ${
                           locale === opt.code
                             ? "text-ink bg-sakura/30 font-medium"
                             : "text-warm-gray hover:text-ink hover:bg-ink/[0.03]"
@@ -219,6 +219,7 @@ export function Navigation({
           <div className="absolute inset-0 bg-ink/10 backdrop-blur-sm" />
           <div
             className="absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-ink/[0.06] shadow-lg shadow-ink/5 animate-fade-in"
+            style={{ fontFamily: "var(--font-dutch)" }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-4 flex flex-col gap-1">
@@ -226,7 +227,7 @@ export function Navigation({
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
-                  className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer hover:translate-x-1 ${
+                  className={`w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 cursor-pointer hover:translate-x-1 ${
                     tab.id === "rsvp"
                       ? activeTab === tab.id
                         ? "text-white bg-vermillion shadow-lg shadow-vermillion/20"
@@ -244,7 +245,7 @@ export function Navigation({
               <div className="border-t border-ink/[0.06] mt-2 pt-2">
                 <button
                   onClick={onLogout}
-                  className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-vermillion hover:bg-vermillion/5 transition-all duration-200 cursor-pointer hover:translate-x-1"
+                  className="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-vermillion hover:bg-vermillion/5 transition-all duration-200 cursor-pointer hover:translate-x-1"
                 >
                   <span className="mr-3 inline-flex"><LogOut className="w-4 h-4" /></span>
                   {dict.nav.logout}

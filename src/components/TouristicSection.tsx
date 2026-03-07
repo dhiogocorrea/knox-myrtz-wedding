@@ -78,26 +78,26 @@ export function TouristicSection({ config, dict, locale }: TouristicSectionProps
   const introIndex = introMatch?.index ?? -1;
   const introMatchText = introMatch?.[0] ?? "";
   return (
-    <section ref={sectionRef} className="min-h-[calc(100vh-5rem)] py-16 px-4 relative seigaiha">
+    <section ref={sectionRef} className="min-h-[calc(100vh-5rem)] py-16 px-4 relative seigaiha" style={{ fontFamily: "var(--font-dutch)" }}>
       <div className="max-w-4xl mx-auto relative z-10">
 
         {/* ── Header ─────────────────────── */}
         <div className="text-center mb-8 animate-fade-in-up">
           <p
             className="text-xs tracking-[0.5em] uppercase text-vermillion/60 mb-3 font-medium"
-            style={{ fontFamily: "var(--font-manga)" }}
+            style={{ fontFamily: "var(--font-dutch)" }}
           >
             ── 観光 ──
           </p>
           <h2
             className="text-3xl md:text-4xl text-ink mb-4 font-bold"
-            style={{ fontFamily: "var(--font-manga)" }}
+            style={{ fontFamily: "var(--font-dutch)" }}
           >
             {dict.touristicInfo.title}
           </h2>
           {/* Intro sentence (red, smaller and subtle like the header subtitle) */}
           {rawIntro && (
-            <p className="text-vermillion text-sm tracking-wide mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+            <p className="text-vermillion text-sm tracking-wide mb-4" style={{ fontFamily: "var(--font-dutch)" }}>
               {introIndex >= 0 ? (
                 <>
                   {rawIntro.slice(0, introIndex)}
@@ -120,14 +120,14 @@ export function TouristicSection({ config, dict, locale }: TouristicSectionProps
               const url = (item as any).url ?? null;
               return (
                 <div key={idx} className="mb-4">
-                  <div className="inline-block bg-black text-white px-3 py-1 text-sm" style={{ fontFamily: "var(--font-manga)" }}>
+                  <div className="inline-block bg-black text-white px-3 py-1 text-base" style={{ fontFamily: "var(--font-dutch-1756)" }}>
                     <a href={url ?? '#'} target="_blank" rel="noreferrer" className="font-semibold">{title}</a>
                   </div>
 
                   <div className="mt-3 bg-white rounded-none shadow-sm p-5 text-ink">
-                    <p className="text-sm leading-relaxed">{content}</p>
+                    <p className="text-base leading-relaxed">{content}</p>
                     {url && (
-                      <p className="mt-3 text-sm">
+                      <p className="mt-3 text-base">
                         <a href={url} target="_blank" rel="noopener noreferrer" className="text-vermillion underline inline-flex items-center">
                           <MapPin className="mr-2" size={14} />
                           <span>maps</span>

@@ -1,4 +1,5 @@
 import { Inter, Playfair_Display, Great_Vibes, Noto_Serif_JP, Shippori_Mincho_B1, Dancing_Script } from "next/font/google";
+import localFont from "next/font/local";
 import { getSiteConfig } from "@/lib/config";
 import { getDictionary } from "@/lib/i18n";
 import type { Metadata } from "next";
@@ -43,6 +44,18 @@ const dancingScript = Dancing_Script({
   display: "swap",
 });
 
+const dutchFont = localFont({
+  src: "../../../public/font/CCYadaYadaYada.ttf",
+  variable: "--font-dutch",
+  display: "swap",
+});
+
+const dutch1756 = localFont({
+  src: "../../../public/font/1756 Dutch W01 Normal.ttf",
+  variable: "--font-dutch-1756",
+  display: "swap",
+});
+
 export async function generateStaticParams() {
   const config = getSiteConfig();
   return config.locales.map((locale) => ({ locale }));
@@ -79,6 +92,8 @@ export default async function LocaleLayout({
     notoSerifJP?.variable,
     shipporiMincho?.variable,
     dancingScript?.variable,
+    dutchFont?.variable,
+    dutch1756?.variable,
   ]
     .filter(Boolean)
     .join(" ");

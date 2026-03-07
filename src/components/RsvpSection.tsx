@@ -120,9 +120,9 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
     day: "numeric",
   });
 
-  if (state === "loading") {
+    if (state === "loading") {
     return (
-      <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 px-4">
+      <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 px-4" style={{ fontFamily: "var(--font-dutch)" }}>
         <Heart className="w-10 h-10 text-rose animate-pulse" strokeWidth={1.5} />
       </section>
     );
@@ -131,7 +131,7 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
   if (state === "success" || state === "already-submitted") {
     const isAlready = state === "already-submitted";
     return (
-      <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 px-4">
+      <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 px-4" style={{ fontFamily: "var(--font-dutch)" }}>
         <div className="max-w-md mx-auto text-center animate-scale-in">
           <div className="glass-card p-10">
             <div className="flex justify-center mb-6">
@@ -143,7 +143,7 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
             </div>
             <h2
               className="text-3xl text-ink mb-4"
-              style={{ fontFamily: "var(--font-manga)" }}
+              style={{ fontFamily: "var(--font-dutch)" }}
             >
               {isAlready ? dict.rsvp.alreadySubmittedTitle : dict.rsvp.successTitle}
             </h2>
@@ -156,27 +156,27 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
     );
   }
 
-  return (
-    <section className="min-h-[calc(100vh-5rem)] py-16 px-4">
+    return (
+    <section className="min-h-[calc(100vh-5rem)] py-16 px-4" style={{ fontFamily: "var(--font-dutch)" }}>
       <div className="max-w-xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in-up">
-          <p className="text-xs tracking-[0.5em] uppercase text-vermillion/60 mb-3 font-medium"
-             style={{ fontFamily: "var(--font-manga)" }}>
+           <p className="text-sm tracking-[0.5em] uppercase text-vermillion/60 mb-3 font-medium"
+             style={{ fontFamily: "var(--font-dutch)" }}>
             ── 返信 ──
           </p>
           <h2
             className="text-4xl md:text-5xl text-ink mb-4 font-bold"
-            style={{ fontFamily: "var(--font-manga)" }}
+            style={{ fontFamily: "var(--font-dutch)" }}
           >
             {dict.rsvp.title}
           </h2>
           <div className="mb-4">
             <div className="katana-divider mx-auto max-w-xs">
-              <span className="text-vermillion/40 text-sm">❁</span>
+              <span className="text-vermillion/40 text-base">❁</span>
             </div>
           </div>
-          <p className="text-warm-gray">{dict.rsvp.subtitle}</p>
+          <p className="text-warm-gray text-base">{dict.rsvp.subtitle}</p>
         </div>
 
         {/* Form */}
@@ -186,7 +186,7 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
         >
           {/* Name */}
           <div className="mb-6">
-            <label className="block text-sm font-medium text-primary-dark mb-2">
+            <label className="block text-base font-medium text-primary-dark mb-2">
               {dict.rsvp.nameLabel} <span className="text-rose">*</span>
             </label>
             <input
@@ -196,13 +196,13 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
               value={formData.name}
               onChange={handleChange}
               placeholder={dict.rsvp.namePlaceholder}
-              className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20"
+              className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20 text-base"
             />
           </div>
 
           {/* Email */}
           <div className="mb-6">
-            <label className="block text-sm font-medium text-primary-dark mb-2">
+            <label className="block text-base font-medium text-primary-dark mb-2">
               {dict.rsvp.emailLabel} <span className="text-rose">*</span>
             </label>
             <input
@@ -212,7 +212,7 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
               value={formData.email}
               onChange={handleChange}
               placeholder={dict.rsvp.emailPlaceholder}
-              className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20"
+              className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20 text-base"
             />
           </div>
 
@@ -387,23 +387,23 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
           {/* Dietary restrictions */}
           {formData.attendance === "Yes" && (
             <div className="mb-6 animate-fade-in">
-              <label className="block text-sm font-medium text-primary-dark mb-2">
-                {dict.rsvp.dietaryLabel}
-              </label>
-              <textarea
-                name="dietary"
-                rows={2}
-                value={formData.dietary}
-                onChange={handleChange}
-                placeholder={dict.rsvp.dietaryPlaceholder}
-                className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20 resize-none"
-              />
-            </div>
+                <label className="block text-base font-medium text-primary-dark mb-2">
+                  {dict.rsvp.dietaryLabel}
+                </label>
+                <textarea
+                  name="dietary"
+                  rows={2}
+                  value={formData.dietary}
+                  onChange={handleChange}
+                  placeholder={dict.rsvp.dietaryPlaceholder}
+                  className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20 resize-none text-base"
+                />
+              </div>
           )}
 
           {/* Phone Number */}
           <div className="mb-6">
-            <label className="block text-sm font-medium text-primary-dark mb-2">
+            <label className="block text-base font-medium text-primary-dark mb-2">
               {dict.rsvp.phoneLabel} <span className="text-rose">*</span>
             </label>
             <input
@@ -413,13 +413,13 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
               value={formData.phone}
               onChange={handleChange}
               placeholder={dict.rsvp.phonePlaceholder}
-              className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20"
+              className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20 text-base"
             />
           </div>
 
           {/* Message */}
           <div className="mb-8">
-            <label className="block text-sm font-medium text-primary-dark mb-2">
+            <label className="block text-base font-medium text-primary-dark mb-2">
               {dict.rsvp.messageLabel}
             </label>
             <textarea
@@ -428,13 +428,13 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
               value={formData.message}
               onChange={handleChange}
               placeholder={dict.rsvp.messagePlaceholder}
-              className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20 resize-none"
+              className="w-full px-4 py-3 rounded-xl border-2 border-accent focus:border-gold bg-white/80 text-charcoal placeholder:text-warm-gray/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/20 resize-none text-base"
             />
           </div>
 
           {/* Error message */}
           {state === "error" && (
-            <div className="mb-6 p-4 rounded-xl bg-rose/10 border border-rose/20 text-rose text-sm text-center animate-fade-in">
+              <div className="mb-6 p-4 rounded-xl bg-rose/10 border border-rose/20 text-rose text-base text-center animate-fade-in">
               {dict.rsvp.errorMessage}
             </div>
           )}
@@ -443,8 +443,8 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
           <button
             type="submit"
             disabled={state === "sending"}
-            className="w-full py-4 bg-gradient-to-r from-ink to-indigo text-white rounded-xl font-medium tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-ink/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:shadow-none focus:outline-none focus:ring-2 focus:ring-vermillion/30"
-            style={{ fontFamily: "var(--font-manga)" }}
+            className="w-full py-4 bg-gradient-to-r from-ink to-indigo text-white rounded-xl font-medium tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-ink/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:shadow-none focus:outline-none focus:ring-2 focus:ring-vermillion/30 text-base"
+            style={{ fontFamily: "var(--font-dutch)" }}
           >
             {state === "sending" ? (
               <span className="flex items-center justify-center gap-2">
@@ -457,8 +457,8 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
           </button>
 
           {/* Deadline note */}
-          <p className="text-center text-warm-gray/60 text-xs mt-4 tracking-wide">
-            {dict.rsvp.deadline} {deadlineFormatted}
+          <p className="text-center text-warm-gray/60 text-sm mt-4 tracking-wide">
+            {dict.rsvp.deadlineNote?.replace("{date}", deadlineFormatted)}
           </p>
         </form>
       </div>
