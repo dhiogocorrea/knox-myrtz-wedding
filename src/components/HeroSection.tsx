@@ -56,7 +56,7 @@ export function HeroSection({ config, dict, locale = "en" }: HeroSectionProps) {
         <img
           src="/images/PORTRAIT.png"
           alt=""
-          className="h-full max-h-full object-contain select-none opacity-100 pointer-events-none transform scale-150 translate-y-16 md:scale-100 md:translate-y-15"
+          className="h-full max-h-full object-contain select-none opacity-100 pointer-events-none transform scale-300 translate-y-16 md:scale-100 md:translate-y-15"
           draggable={false}
         />
 
