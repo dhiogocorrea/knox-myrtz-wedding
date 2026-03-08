@@ -12,7 +12,7 @@ couple:
 
 wedding:
   date: "2026-06-06"
-  time: "18:00"
+  time: "19:00"
   venue:
     name: "Αγία Άννα"
     address: "Eretria, Greece"
@@ -50,7 +50,7 @@ schedule:
     panel:
       span: 14
 
-  - time: "04-06-26 @ 18:00"
+  - time: "04-06-26 @ 19:00"
     title:
       en: ""
       pt: ""
@@ -80,7 +80,7 @@ schedule:
     panel:
       span: 6
 
-  - time: "06-06-26 @ 18:00"
+  - time: "06-06-26 @ 19:00"
     title:
       en: "Join the heroes in their wedding ceremony at the beautiful Agia Anna, for a night of celebration and dancing under the stars"
       pt: "Junte-se aos heróis em sua cerimônia de casamento na bela Agia Anna, para uma noite de celebração e dança sob as estrelas"

@@ -79,7 +79,7 @@ export function HeroSection({ config, dict, locale = "en" }: HeroSectionProps) {
       </div>
 
       {/* ── Bottom area: info + countdown (in-flow, always visible) ── */}
-      <div className="relative z-10 w-full shrink-0 flex flex-col items-center text-center px-4 pb-2 -mt-36 md:mt-0 animate-fade-in-up opacity-0" style={{ animationFillMode: "forwards" }}>
+      <div className="relative z-10 w-full shrink-0 flex flex-col items-center text-center px-4 pb-2 -mt-56 md:mt-0 animate-fade-in-up opacity-0" style={{ animationFillMode: "forwards" }}>
         <div className="max-w-2xl w-full">
           <p className="text-xs sm:text-sm text-vermillion/80 tracking-[0.3em] mt-0 font-bold text-center" style={{ fontFamily: "var(--font-dutch)" }}>
             {dict.home.weAreGettingMarried}
