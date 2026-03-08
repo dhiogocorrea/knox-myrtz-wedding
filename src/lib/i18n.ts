@@ -117,12 +117,7 @@ export const dictionaries = {
       title: "Travel Guide",
       subtitle: "Everything you need to know for your trip",
       introText:
-<<<<<<< HEAD
         "Here we have listed some of our favourite attractions of the area, for those who are looking to explore the region further. <em>Note: If you want to visit Skyathos or Skopelos, please feel free to reach out for more info and guidance. We highly recommend to vacation there.</em>",
-=======
-        "Here we have listed some of our favourite attractions of the area, for those who are looking to explore the region further.",
-      mapsLinkText: "Google Maps list",
->>>>>>> ae68999544552ed19cc323a880426874a92e8733
     },
     weddingInfo: {
       title: "Wedding Info",
@@ -291,12 +286,7 @@ export const dictionaries = {
       title: "Guia de Viagem",
       subtitle: "Tudo que você precisa saber para sua viagem",
       introText:
-<<<<<<< HEAD
         "Aqui listamos algumas das nossas atrações favoritas da região, para quem quer explorar mais a área. <em>Nota: Se quiser visitar Skyathos ou Skopelos, fique à vontade para nos contactar para mais informações e orientações. Recomendamos fortemente umas férias lá.</em>",
-=======
-        "Aqui listamos algumas das nossas atrações favoritas da região, para quem quer explorar mais a área.",
-      mapsLinkText: "Lista no Google Maps",
->>>>>>> ae68999544552ed19cc323a880426874a92e8733
     },
     weddingInfo: {
       title: "Detalhes do Casamento",
@@ -467,12 +457,7 @@ export const dictionaries = {
       title: "Ταξιδιωτικός Οδηγός",
       subtitle: "Όλα όσα χρειάζεται να γνωρίζετε για το ταξίδι σας",
       introText:
-<<<<<<< HEAD
         "Εδώ έχουμε καταχωρίσει μερικά από τα αγαπημένα μας αξιοθέατα της περιοχής, για όσους θέλουν να εξερευνήσουν περαιτέρω την περιοχή. <em>Σημείωση: Αν θέλετε να επισκεφθείτε τη Skyathos ή τη Skopelos, μη διστάσετε να επικοινωνήσετε για περισσότερες πληροφορίες και καθοδήγηση. Σας το προτείνουμε ανεπιφύλακτα για διακοπές.</em>",
-=======
-        "Εδώ έχουμε καταχωρίσει μερικά από τα αγαπημένα μας αξιοθέατα της περιοχής, για όσους θέλουν να εξερευνήσουν περαιτέρω την περιοχή.",
-      mapsLinkText: "Λίστα Google Maps",
->>>>>>> ae68999544552ed19cc323a880426874a92e8733
     },
     weddingInfo: {
       title: "Λεπτομέρειες Γάμου",
