@@ -98,9 +98,7 @@ export function TouristicSection({ config, dict, locale }: TouristicSectionProps
           {/* Simplified intro + Google Maps list link */}
           <div className="mt-4">
             <div className="prose prose-lg mx-auto text-center">
-              <p className="text-base text-ink/90 leading-relaxed">
-                {dict?.touristicInfo?.introText ?? "Below we have listed some of our favourite attractions of the area, for those who are looking to explore the region further."}
-              </p>
+              <p className="text-base text-ink/90 leading-relaxed" dangerouslySetInnerHTML={{ __html: dict?.touristicInfo?.introText ?? "Below we have listed some of our favourite attractions of the area, for those who are looking to explore the region further." }} />
 
               <p className="mt-4">
                 <a

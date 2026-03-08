@@ -225,7 +225,7 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
                     {renderDate(dateStr, idx === 1)}
                   </div>
                   <div className="mt-3 bg-white rounded-none shadow-sm p-5 text-ink">
-                    <p className="font-semibold mb-2">{panelTitle}</p>
+                    {panelTitle && <p className="font-semibold mb-2">{panelTitle}</p>}
                     <p className="text-base leading-relaxed">{d.panelText}</p>
                     {d.locationName && d.locationUrl && (
                       <p className="mt-3 text-base">

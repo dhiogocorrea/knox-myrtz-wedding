@@ -38,7 +38,6 @@ export const dictionaries = {
       days: [
         {
           title: "Day 1: Thursday – The Secret Gathering",
-          panelTitle: "Panel: Close-up on a warm, glowing family dinner table at Mirto's home",
           panelText:
             "The brave heroes ignite their legendary journey! Reuniting with closest kin in the hidden hearth of Mirto's domain for a feast of heartfelt tales and unbreakable bonds. (Shh... this sacred panel reveals itself only to the chosen few!)",
           locationName: "Mirto's House",
@@ -46,23 +45,20 @@ export const dictionaries = {
         },
         {
           title: "Day 2: Friday – The Grand Reunion",
-          panelTitle: "Panel: Sun-drenched beach bar buzzing with laughter",
           panelText:
-            "All allies assemble! Heroes unite with friends and family at the sun-kissed shore tavern from noon till stars claim the sky. Devour epic feasts, share endless laughs, and let the sea whispers fuel the eve of destiny!",
+            "All allies assemble! Heroes unite with friends and family at the wave-torn shore tavern from noon till stars claim the sky. Devour epic feasts, share endless laughs, and let the waves hype us for tomorrow's union.",
           locationName: "Alykes Beach",
           locationUrl: "https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7",
         },
         {
           title: "Day 3: Saturday – The Ultimate Quest Begins",
-          panelTitle: "Panel: Heroes ascending misty Dirfys peaks into an enchanted forest glade",
           panelText:
-            "Dawn of eternity! The heroes charge into the \"Journey Beyond\" atop Evia's majestic Dirfys mountains, within a mystical woodland realm. Ceremony and revelry await—don your finest armor and come prepared for heart-pounding miracles!",
+            "Dawn of eternity! The heroes charge into the \"Journey Beyond\" atop Evia's majestic Dirfys mountains, within a mystical woodland realm. Ceremony and revelry await—don your finest armor and come prepared for feats of glory!",
           locationName: "Agia Anna",
           locationUrl: "https://maps.app.goo.gl/ExUjAww6jhaXCp8w5",
         },
         {
           title: "Day 4: Sunday – Dawn of the Survivors",
-          panelTitle: "Panel: Cozy local café, weary but grinning heroes sipping coffee",
           panelText:
             "Victors emerge from the fray! Those who conquered the enchanted trials gather for a chill morning brew at a beloved local haven. Reflect, recharge, and toast to legends forged!",
           locationName: "Ktima Anthidon",
@@ -70,9 +66,8 @@ export const dictionaries = {
         },
         {
           title: "Day 5: Monday – The Wild Odyssey",
-          panelTitle: "Panel: Epic mountain trek to a sparkling Aegean beach paradise",
           panelText:
-            "Final frontier calls! Bold heroes traverse Evia's rugged spine to the Aegean wilds—a daring pilgrimage to a bewitching beach on the island's far edge. Rally your staunchest allies for this adrenaline-fueled saga!",
+            "Final call for adventure! Brave heroes traverse Evia's rugged spine to the Aegean sea—a daring pilgrimage to a magic beach. Who is in for a wild ride with the crew?",
           locationName: "Chiliadou Beach",
           locationUrl: "https://maps.app.goo.gl/9vipXFbDTbtUQZGNA",
         },
@@ -122,7 +117,7 @@ export const dictionaries = {
       title: "Travel Guide",
       subtitle: "Everything you need to know for your trip",
       introText:
-        "Here we have listed some of our favourite attractions of the area, for those who are looking to explore the region further.",
+        "Here we have listed some of our favourite attractions of the area, for those who are looking to explore the region further. <em>Note: If you want to visit Skyathos or Skopelos, please feel free to reach out for more info and guidance. We highly recommend to vacation there.</em>",
     },
     weddingInfo: {
       title: "Wedding Info",
@@ -212,7 +207,6 @@ export const dictionaries = {
       days: [
         {
           title: "Dia 1: Quinta-feira – A Reunião Secreta",
-          panelTitle: "Painel: Close-up numa mesa de jantar familiar calorosa na casa da Mirto",
           panelText:
             "Os bravos heróis acendem sua jornada lendária! Reunindo-se com os parentes mais próximos no lar escondido do domínio de Mirto para um banquete de histórias sinceras e laços inquebráveis. (Shh... este painel sagrado revela-se apenas aos poucos escolhidos!)",
           locationName: "Casa da Mirto",
@@ -220,23 +214,20 @@ export const dictionaries = {
         },
         {
           title: "Dia 2: Sexta-feira – A Grande Reunião",
-          panelTitle: "Painel: Bar de praia ensolarado cheio de risadas",
           panelText:
-            "Todos os aliados se reúnem! Heróis unem-se com amigos e família no bar à beira-mar ensolarado, do meio-dia até as estrelas tomarem o céu. Devorem banquetes épicos, compartilhem risadas infinitas e deixem os sussurros do mar alimentar a noite do destino!",
+            "Todos os aliados, reúnam-se! Heróis unem-se com amigos e família na taverna da costa, golpeada pelas ondas, do meio-dia até que as estrelas dominem o céu. Devorem banquetes épicos, compartilhem risadas sem fim e deixem as ondas nos empolgar para a união de amanhã.",
           locationName: "Praia Alykes",
           locationUrl: "https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7",
         },
         {
           title: "Dia 3: Sábado – A Jornada Suprema Começa",
-          panelTitle: "Painel: Heróis ascendendo os picos enevoados de Dirfys em um bosque encantado",
           panelText:
-            "Aurora da eternidade! Os heróis avançam na \"Jornada Além\" no topo das majestosas montanhas Dirfys de Evia, dentro de um reino místico de floresta. Cerimônia e festejo aguardam—vista sua melhor armadura e prepare-se para milagres de tirar o fôlego!",
+            "Aurora da eternidade! Os heróis avançam na 'Jornada Além' no topo das majestosas montanhas Dirfys de Evia, dentro de um reino místico de floresta. Cerimônia e festejo aguardam—vista sua melhor armadura e venha preparado para feitos de glória!",
           locationName: "Agia Anna",
           locationUrl: "https://maps.app.goo.gl/ExUjAww6jhaXCp8w5",
         },
         {
           title: "Dia 4: Domingo – Aurora dos Sobreviventes",
-          panelTitle: "Painel: Café local acolhedor, heróis cansados porém sorridentes tomando café",
           panelText:
             "Vencedores emergem da batalha! Aqueles que conquistaram as provações encantadas reúnem-se para um café matinal relaxado em um refúgio local querido. Reflita, recarregue e brinde às lendas forjadas!",
           locationName: "Ktima Anthidon",
@@ -244,9 +235,8 @@ export const dictionaries = {
         },
         {
           title: "Dia 5: Segunda-feira – A Odisseia Selvagem",
-          panelTitle: "Painel: Caminhada épica nas montanhas até um paraíso de praia Egeu",
           panelText:
-            "A fronteira final chama! Heróis ousados percorrem a espinha acidentada de Evia até as selvagens águas do Egeu—uma peregrinação ousida para uma praia encantadora no extremo da ilha. Reúna seus aliados mais firmes para esta saga repleta de adrenalina!",
+            "Última chamada para a aventura! Heróis corajosos atravessam a espinha acidentada de Evia até o mar Egeu—uma peregrinação ousada a uma praia mágica. Quem topa uma jornada selvagem com a tripulação?",
           locationName: "Praia Chiliadou",
           locationUrl: "https://maps.app.goo.gl/9vipXFbDTbtUQZGNA",
         },
@@ -296,7 +286,7 @@ export const dictionaries = {
       title: "Guia de Viagem",
       subtitle: "Tudo que você precisa saber para sua viagem",
       introText:
-        "Aqui listamos algumas das nossas atrações favoritas da região, para quem quer explorar mais a área.",
+        "Aqui listamos algumas das nossas atrações favoritas da região, para quem quer explorar mais a área. <em>Nota: Se quiser visitar Skyathos ou Skopelos, fique à vontade para nos contactar para mais informações e orientações. Recomendamos fortemente umas férias lá.</em>",
     },
     weddingInfo: {
       title: "Detalhes do Casamento",
@@ -394,17 +384,15 @@ export const dictionaries = {
         },
         {
           title: "Ημέρα 2: Παρασκευή – Η Μεγάλη Επανένωση",
-          panelTitle: "Πίνακας: Ηλιοφώτιστο beach bar γεμάτο γέλια",
           panelText:
-            "Όλοι οι σύμμαχοι συγκεντρώνονται! Οι ήρωες ενώνουν φίλους και οικογένεια στην ηλιόλουστη παραλιακή ταβέρνα από το μεσημέρι μέχρι τα αστέρια. Καταβροχθίστε επικά γεύματα, μοιραστείτε ατελείωτα γέλια και αφήστε τους ψιθύρους της θάλασσας να τροφοδοτήσουν το βράδυ της μοίρας!",
+            "Όλοι οι σύμμαχοι, μαζευτείτε! Οι ήρωες σμίγουν με φίλους και οικογένεια στην παραλιακή ταβέρνα, λυγισμένη από τα κύματα, από το μεσημέρι μέχρι τα αστέρια να κυριεύσουν τον ουρανό. Καταβροχθίστε επικά γεύματα, μοιραστείτε ατελείωτα γέλια και αφήστε τα κύματα να μας γεμίσουν ενθουσιασμό για την αυριανή ένωση.",
           locationName: "Παραλία Alykes",
           locationUrl: "https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7",
         },
         {
           title: "Ημέρα 3: Σάββατο – Η Απόλυτη Αποστολή Ξεκινά",
-          panelTitle: "Πίνακας: Ήρωες ανεβαίνουν στα ομιχλώδη κορυφές του Δίρφυς σε έναν μαγεμένο δρυμό",
           panelText:
-            "Η αυγή της αιωνιότητας! Οι ήρωες εφορμούν στην \"Ταξίδι Πέρα\" πάνω στις μεγαλοπρεπείς κορυφές του Δίρφυ στην Εύβοια, μέσα σε έναν μυστηριακό δασώδη κόσμο. Τελετή και γλέντι περιμένουν—φορέστε την καλύτερη πανοπλία σας και ετοιμαστείτε για καρδιοχτύπι θαύματα!",
+            "Η αυγή της αιωνιότητας! Οι ήρωες εφορμούν στην «Ταξίδι Πέρα» στην κορυφή των μεγαλοπρεπών βουνών Δίρφυς της Εύβοιας, μέσα σε έναν μυστικιστικό δασώδη κόσμο. Τελετή και γιορτή περιμένουν — φορέστε την καλύτερη πανοπλία σας και ελάτε έτοιμοι για κατορθώματα δόξας!",
           locationName: "Αγία Άννα",
           locationUrl: "https://maps.app.goo.gl/ExUjAww6jhaXCp8w5",
         },
@@ -418,9 +406,8 @@ export const dictionaries = {
         },
         {
           title: "Ημέρα 5: Δευτέρα – Η Άγρια Οδύσσεια",
-          panelTitle: "Πίνακας: Επικό βουνίσιο πέρασμα προς έναν λαμπερό αιγαιοπελαγίτικο παράδεισο",
           panelText:
-            "Η τελική σύνορο καλεί! Τολμηροί ήρωες διασχίζουν την τραχιά ραχοκοκαλιά της Εύβοιας προς τα άγρια παράλια του Αιγαίου—μια τολμηρή προσκυνηματική πορεία προς μια μαγευτική παραλία στην άκρη του νησιού. Συνασπιστείτε τους πιο πιστούς συμμάχους σας για αυτήν την αδρεναλίνη-γεμάτη σάγκα!",
+            "Τελευταία κλήση για περιπέτεια! Τολμηροί ήρωες διασχίζουν τη τραχιά ραχοκοκαλιά της Εύβοιας προς το Αιγαίο — μια τολμηρή προσκύνηση σε μια μαγική παραλία. Ποιος είναι μέσα για μια άγρια βόλτα με την ομάδα;",
           locationName: "Παραλία Χιλιάδου",
           locationUrl: "https://maps.app.goo.gl/9vipXFbDTbtUQZGNA",
         },
@@ -470,7 +457,7 @@ export const dictionaries = {
       title: "Ταξιδιωτικός Οδηγός",
       subtitle: "Όλα όσα χρειάζεται να γνωρίζετε για το ταξίδι σας",
       introText:
-        "Εδώ έχουμε καταχωρίσει μερικά από τα αγαπημένα μας αξιοθέατα της περιοχής, για όσους θέλουν να εξερευνήσουν περαιτέρω την περιοχή.",
+        "Εδώ έχουμε καταχωρίσει μερικά από τα αγαπημένα μας αξιοθέατα της περιοχής, για όσους θέλουν να εξερευνήσουν περαιτέρω την περιοχή. <em>Σημείωση: Αν θέλετε να επισκεφθείτε τη Skyathos ή τη Skopelos, μη διστάσετε να επικοινωνήσετε για περισσότερες πληροφορίες και καθοδήγηση. Σας το προτείνουμε ανεπιφύλακτα για διακοπές.</em>",
     },
     weddingInfo: {
       title: "Λεπτομέρειες Γάμου",

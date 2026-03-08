@@ -402,7 +402,7 @@ touristicInfo:
 
 weddingInfo:
   dressCode:
-    en: "The location is outside in a small forest area. Wear anything you like, but stilettos are likely not a good choice."
+    en: "The ceremony is outdoors in a forest clearing. Wear whatever feels right for you--comfortable shoes are highly recommended (stilettos might not love the terrain)."
     pt: "A localização é ao ar livre em uma pequena área de floresta. Use o que quiser, mas saltos finos provavelmente não são uma boa escolha."
     el: "Η τοποθεσία είναι έξω σε μια μικρή περιοχή δάσους. Φορέστε ό,τι θέλετε, αλλά τα stilettos πιθανόν να μην είναι καλή επιλογή."
   contacts:
@@ -410,10 +410,33 @@ weddingInfo:
     pt: "Para qualquer dúvida, entre em contato conosco em example@email.com ou +1 234 567 890."
     el: "Για οποιαδήποτε ερώτηση, επικοινωνήστε μαζί μας στο example@email.com ή +1 234 567 890."
   gifts:
-    en: "💸 Cash! 💸 Cash! 💸 Cash! 💸 Cash!"
-    pt: "💸 Cash! 💸 Cash! 💸 Cash! 💸 Cash!"
-    el: "💸 Cash! 💸 Cash! 💸 Cash! 💸 Cash!"
+    en: |
+      Your presence is the best gift—seriously, no pressure to bring anything! If you'd like to contribute, we're set up for:
+      
+      1. Cash (always handy for the adventure ahead)
+      2. Bank transfer (details below)
+      - Revolut: [wise.com/pay/me/guilhermes736](https://wise.com/pay/me/guilhermes736)
+      - Wise: [revolut.me/playstationwaifu](https://revolut.me/playstationwaifu)
+
+      Thank you for being part of our journey!
+    pt: |
+      A sua presença é o melhor presente — a sério, sem pressão para trazer nada! Se quiser contribuir, estamos preparados para:
+      1. Dinheiro (sempre útil para a aventura que vem)
+      2. Transferência bancária (detalhes abaixo)
+      - Revolut: [wise.com/pay/me/guilhermes736](https://wise.com/pay/me/guilhermes736)
+      - Wise: [revolut.me/playstationwaifu](https://revolut.me/playstationwaifu)
+
+      Obrigado por fazer parte da nossa jornada!
+    el: |
+      Η παρουσία σας είναι το καλύτερο δώρο — σοβαρά, κανένας δεν χρειάζεται να φέρει τίποτα! Αν θέλετε να συνεισφέρετε, έχουμε διαθέσιμες επιλογές:
+      1. Μετρητά (πάντα χρήσιμα για την επόμενη περιπέτεια)
+      2. Τραπεζική μεταφορά (λεπτομέρειες παρακάτω)
+      - Revolut: [wise.com/pay/me/guilhermes736](https://wise.com/pay/me/guilhermes736)
+      - Wise: [revolut.me/playstationwaifu](https://revolut.me/playstationwaifu)
+
+      Ευχαριστούμε που είστε μέρος του ταξιδιού μας!
+
   accommodation:
-    en: "We have booked rooms/airbnbs close to the venue for the nights of the 5th and 6th. More details will follow to each guest once you have RSVP'd."
+    en: "We have booked accommodation close to the venue for the nights of the 5th and 6th, so you don't have to worry about that. More details will follow to each guest once you have RSVP'd."
     pt: "Reservamos quartos/airbnbs perto do local para as noites de 5 e 6. Mais detalhes serão enviados a cada convidado assim que você confirmar presença."
     el: "Κλείσαμε δωμάτια/airbnbs κοντά στον χώρο για τις νύχτες της 5ης και 6ης. Περισσότερες λεπτομέρειες θα ακολουθήσουν σε κάθε καλεσμένο μόλις επιβεβαιώσετε την παρουσία σας."

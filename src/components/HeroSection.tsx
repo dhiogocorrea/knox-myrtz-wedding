@@ -87,10 +87,10 @@ export function HeroSection({ config, dict, locale = "en" }: HeroSectionProps) {
                 {dict.home.weAreGettingMarried}
               </p>
 
-              <div className="flex items-center justify-center gap-4 my-2">
-                <div className="h-px w-16 bg-gradient-to-r from-transparent to-vermillion/50" />
-                <span className="text-vermillion/50 text-sm" style={{ fontFamily: "var(--font-dutch)" }}>❁</span>
-                <div className="h-px w-16 bg-gradient-to-l from-transparent to-vermillion/50" />
+              <div className="flex items-center justify-center gap-2 my-2">
+                <span className="text-vermillion/50 text-sm" style={{ fontFamily: "var(--font-dutch)" }}>
+                  ───── ∞ ───── · · <span className="font-bold text-vermillion/80">☽ ⋆⋅♡⋅⋆ ☾</span> · · ───── ∞ ─────
+                </span>
               </div>
 
               {/* Date · Time · Venue – second visual priority */}
