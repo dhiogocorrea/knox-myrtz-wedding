@@ -13,11 +13,11 @@ export function BackgroundScene() {
       <div className="absolute inset-0 bg-paper" />
 
       {/* ── Full illustration background ──────── */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
         <img
           src="/images/bg-1.png"
           alt=""
-          className="select-none opacity-[0.45]"
+          className="select-none opacity-[0.45] w-auto h-auto min-w-full min-h-full object-cover md:w-auto md:h-auto md:min-w-0 md:min-h-0 md:object-contain"
           draggable={false}
         />
       </div>

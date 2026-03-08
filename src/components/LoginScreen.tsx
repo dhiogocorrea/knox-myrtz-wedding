@@ -32,11 +32,11 @@ export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-cream">
       {/* Background illustration */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <img
           src="/images/bg-1.png"
           alt=""
-          className="select-none opacity-[0.40]"
+          className="select-none opacity-[0.40] w-full h-full object-cover md:w-auto md:h-auto md:object-contain"
           draggable={false}
         />
 
