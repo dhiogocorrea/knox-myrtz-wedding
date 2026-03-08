@@ -220,7 +220,7 @@ export function ScheduleSection({ config, dict, locale, guestGroup }: ScheduleSe
 
               return (
                 <div key={idx} className="mb-6">
-                  <div className="inline-block bg-black text-white px-3 py-1 text-base" style={{ fontFamily: "var(--font-dutch-1756)" }}>
+                  <div className="inline-block bg-black text-white px-3 py-1 text-xl" style={{ fontFamily: "var(--font-dutch-1756)" }}>
                     <span>{newTitle}</span>
                     {renderDate(dateStr, idx === 1)}
                   </div>

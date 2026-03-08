@@ -192,8 +192,8 @@ export function WeddingInfoSection({ config, dict, locale }: WeddingInfoSectionP
                                         key={src}
                                         src={src}
                                         alt="Mirto Signal"
-                                        width={88}
-                                        height={88}
+                                        width={112}
+                                        height={112}
                                         className="object-contain rounded-sm"
                                       />
                                     ))}

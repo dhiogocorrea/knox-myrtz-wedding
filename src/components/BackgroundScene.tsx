@@ -8,16 +8,16 @@ import { SakuraTreePetals } from "./SakuraTreePetals";
  */
 export function BackgroundScene() {
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 z-0 pointer-events-none">
       {/* Base paper */}
       <div className="absolute inset-0 bg-paper" />
 
       {/* ── Full illustration background ──────── */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 flex items-center justify-center">
         <img
           src="/images/bg-1.png"
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center select-none opacity-[0.45]"
+          className="select-none opacity-[0.45]"
           draggable={false}
         />
       </div>

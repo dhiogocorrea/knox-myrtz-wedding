@@ -51,11 +51,11 @@ export function HeroSection({ config, dict, locale = "en" }: HeroSectionProps) {
   return (
     <section className="relative flex flex-col items-center px-4 overflow-visible min-h-[calc(100vh-5rem)] pb-[30vh] sm:pb-[36vh] md:pb-[40vh]">
       {/* Couple photo as background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <img
           src="/images/PORTRAIT.jpg"
           alt=""
-          className="w-auto max-w-[min(620px,90vw)] h-auto max-h-[80vh] object-contain select-none opacity-50"
+            className="w-auto max-w-[min(620px,90vw)] h-auto max-h-[80vh] object-contain select-none opacity-80"
           draggable={false}
         />
       </div>
