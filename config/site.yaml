@@ -14,9 +14,9 @@ wedding:
   date: "2026-06-06"
   time: "19:00"
   venue:
-    name: "Αγία Άννα"
+    name: "Enchanted Woods"
     address: "Eretria, Greece"
-    mapUrl: "https://maps.app.goo.gl/cFBkHtM6AmK45byo7"
+    mapUrl: "https://maps.app.goo.gl/knqd3XDkGtmdH15KA"
     coordinates:
       lat: 36.3512
       lng: 25.3767
@@ -82,9 +82,9 @@ schedule:
 
   - time: "06-06-26 @ 19:00"
     title:
-      en: "Join the heroes in their wedding ceremony at the beautiful Agia Anna, for a night of celebration and dancing under the stars"
-      pt: "Junte-se aos heróis em sua cerimônia de casamento na bela Agia Anna, para uma noite de celebração e dança sob as estrelas"
-      el: "Ελάτε να συναντήσετε τους ήρωες στην τελετή του γάμου τους στην όμορφη Αγία Άννα, για μια νύχτα γιορτής και χορού κάτω από τα αστέρια"
+      en: "Join the heroes in their wedding ceremony at the beautiful Enchanted Woods, for a night of celebration and dancing under the stars"
+      pt: "Junte-se aos heróis em sua cerimônia de casamento na bela Floresta Encantada , para uma noite de celebração e dança sob as estrelas"
+      el: "Ελάτε να συναντήσετε τους ήρωες στην τελετή του γάμου τους στην όμορφη Μαγικό Δάσος, για μια νύχτα γιορτής και χορού κάτω από τα αστέρια"
     # description:
     #   en: "Spend the day at Chiliadou beach, known for its crystal-clear waters and stunning rock formations. Perfect for swimming, snorkeling, and relaxing under the sun."
     #   pt: "Passe o dia na praia de Chiliadou, conhecida por suas águas cristalinas e formações rochosas deslumbrantes. Perfeita para nadar, fazer snorkel e relaxar ao sol."
@@ -93,9 +93,9 @@ schedule:
     image: "/images/schedule/himmel_cutie.png"
     location:
       name:
-        en: "Agia Anna"
-        pt: "Agia Anna"
-        el: "Αγία Άννα"
+        en: "Enchanted Woods"
+        pt: "Floresta Encantada"
+        el: "Μαγικό Δάσος"
       url: "https://goo.gl/maps/nndURo4VnTG9VFcw7"
     balloon:
       type: "square"
@@ -357,9 +357,9 @@ touristicInfo:
     icon: "landmark"
 
   - title:
-      en: "17. Agia Anna"
-      pt: "17. Agia Anna"
-      el: "17. Agia Anna"
+      en: "17. Enchanted Woods"
+      pt: "17. Floresta Encantada"
+      el: "17. Μαγικό Δάσος"
     url: "https://maps.app.goo.gl/gjoQtKs27bsTKnMZ7"
     content:
       en: "This is the wedding location for Saturday afternoon."

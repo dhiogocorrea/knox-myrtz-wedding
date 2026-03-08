@@ -54,7 +54,7 @@ export const dictionaries = {
           title: "Day 3: Saturday – The Ultimate Quest Begins",
           panelText:
             "Dawn of eternity! The heroes charge into the \"Journey Beyond\" atop Evia's majestic Dirfys mountains, within a mystical woodland realm. Ceremony and revelry await—don your finest armor and come prepared for feats of glory!",
-          locationName: "Agia Anna",
+          locationName: "Enchanted Woods",
           locationUrl: "https://maps.app.goo.gl/ExUjAww6jhaXCp8w5",
         },
         {
@@ -109,7 +109,7 @@ export const dictionaries = {
       eventOptions: {
         "2026-06-04": "<strong>4 June</strong>&nbsp;—&nbsp;Close-family dinner at <a href=\"https://maps.app.goo.gl/kn94JwutcQFEfdpg9\">📍 Mirto's House</a>",
         "2026-06-05": "<strong>5 June</strong>&nbsp;—&nbsp;All day at Alykes beach at <a href=\"https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7\">📍 Alykes Beach</a>",
-        "2026-06-06": "<strong>6 June</strong>&nbsp;—&nbsp;Wedding ceremony at <a href=\"https://maps.app.goo.gl/ExUjAww6jhaXCp8w5\">📍 Agia Anna</a>",
+        "2026-06-06": "<strong>6 June</strong>&nbsp;—&nbsp;Wedding ceremony at <a href=\"https://maps.app.goo.gl/ExUjAww6jhaXCp8w5\">📍 Enchanted Woods</a>",
         "2026-06-07": "<strong>7 June</strong>&nbsp;—&nbsp;Brunch at Ktima Anthidon at <a href=\"https://maps.app.goo.gl/qGqXru5bec2JYz356\">📍 Ktima Anthidon</a>",
         "2026-06-08": "<strong>8 June</strong>&nbsp;—&nbsp;All day at Chiliadou beach at <a href=\"https://maps.app.goo.gl/9vipXFbDTbtUQZGNA\">📍 Chiliadou Beach</a>",
       },
@@ -225,7 +225,7 @@ export const dictionaries = {
           title: "Dia 3: Sábado – A Jornada Suprema Começa",
           panelText:
             "Aurora da eternidade! Os heróis avançam na 'Jornada Além' no topo das majestosas montanhas Dirfys de Evia, dentro de um reino místico de floresta. Cerimônia e festejo aguardam—vista sua melhor armadura e venha preparado para feitos de glória!",
-          locationName: "Agia Anna",
+          locationName: "Enchanted Woods",
           locationUrl: "https://maps.app.goo.gl/ExUjAww6jhaXCp8w5",
         },
         {
@@ -280,7 +280,7 @@ export const dictionaries = {
       eventOptions: {
         "2026-06-04": "<strong>4 de junho</strong>&nbsp;—&nbsp;Jantar íntimo em família na <a href=\"https://maps.app.goo.gl/kn94JwutcQFEfdpg9\">📍 Casa da Mirto</a>",
         "2026-06-05": "<strong>5 de junho</strong>&nbsp;—&nbsp;Dia todo na praia Alykes em <a href=\"https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7\">📍 Praia Alykes</a>",
-        "2026-06-06": "<strong>6 de junho</strong>&nbsp;—&nbsp;Cerimônia de casamento em <a href=\"https://maps.app.goo.gl/ExUjAww6jhaXCp8w5\">📍 Agia Anna</a>",
+        "2026-06-06": "<strong>6 de junho</strong>&nbsp;—&nbsp;Cerimônia de casamento em <a href=\"https://maps.app.goo.gl/ExUjAww6jhaXCp8w5\">📍 Enchanted Woods</a>",
         "2026-06-07": "<strong>7 de junho</strong>&nbsp;—&nbsp;Brunch no <a href=\"https://maps.app.goo.gl/qGqXru5bec2JYz356\">📍 Ktima Anthidon</a>",
         "2026-06-08": "<strong>8 de junho</strong>&nbsp;—&nbsp;Dia todo na praia Chiliadou em <a href=\"https://maps.app.goo.gl/9vipXFbDTbtUQZGNA\">📍 Praia Chiliadou</a>",
       },
@@ -397,7 +397,7 @@ export const dictionaries = {
           title: "Ημέρα 3: Σάββατο – Η Απόλυτη Αποστολή Ξεκινά",
           panelText:
             "Η αυγή της αιωνιότητας! Οι ήρωες εφορμούν στην «Ταξίδι Πέρα» στην κορυφή των μεγαλοπρεπών βουνών Δίρφυς της Εύβοιας, μέσα σε έναν μυστικιστικό δασώδη κόσμο. Τελετή και γιορτή περιμένουν — φορέστε την καλύτερη πανοπλία σας και ελάτε έτοιμοι για κατορθώματα δόξας!",
-          locationName: "Αγία Άννα",
+          locationName: "Μαγικό Δάσος",
           locationUrl: "https://maps.app.goo.gl/ExUjAww6jhaXCp8w5",
         },
         {
@@ -453,7 +453,7 @@ export const dictionaries = {
         eventOptions: {
           "2026-06-04": "<strong>4 Ιουνίου</strong>&nbsp;—&nbsp;Δείπνο με την πολύ κοντινή οικογένεια στο <a href=\"https://maps.app.goo.gl/kn94JwutcQFEfdpg9\">📍 Σπίτι της Μύρτου</a>",
           "2026-06-05": "<strong>5 Ιουνίου</strong>&nbsp;—&nbsp;Ολη την ημέρα στην παραλία Alykes στο <a href=\"https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7\">📍 Παραλία Alykes</a>",
-          "2026-06-06": "<strong>6 Ιουνίου</strong>&nbsp;—&nbsp;Τελετή γάμου στο <a href=\"https://maps.app.goo.gl/ExUjAww6jhaXCp8w5\">📍 Αγία Άννα</a>",
+          "2026-06-06": "<strong>6 Ιουνίου</strong>&nbsp;—&nbsp;Τελετή γάμου στο <a href=\"https://maps.app.goo.gl/ExUjAww6jhaXCp8w5\">📍 Μαγικό Δάσος</a>",
           "2026-06-07": "<strong>7 Ιουνίου</strong>&nbsp;—&nbsp;Brunch στο <a href=\"https://maps.app.goo.gl/qGqXru5bec2JYz356\">📍 Κτήμα Ανθίδων</a>",
           "2026-06-08": "<strong>8 Ιουνίου</strong>&nbsp;—&nbsp;Ολη την ημέρα στην παραλία Χιλιάδου στο <a href=\"https://maps.app.goo.gl/9vipXFbDTbtUQZGNA\">📍 Παραλία Χιλιάδου</a>",
         },
