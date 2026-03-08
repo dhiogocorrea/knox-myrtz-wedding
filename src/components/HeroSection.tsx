@@ -78,8 +78,9 @@ export function HeroSection({ config, dict, locale = "en" }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* ── Bottom area: info + countdown (pinned to bottom on mobile) ── */}
-      <div className="absolute bottom-2 left-0 right-0 z-10 flex flex-col items-center text-center px-4 md:relative md:bottom-auto md:shrink-0 md:pb-2 animate-fade-in-up opacity-0" style={{ animationFillMode: "forwards" }}>
+      {/* ── Bottom area: info + countdown ── */}
+      {/* Mobile: absolute inside the section, closer to image. Desktop: in-flow at bottom */}
+      <div className="absolute bottom-[10vh] left-0 right-0 z-10 flex flex-col items-center text-center px-4 md:relative md:bottom-auto md:w-full md:shrink-0 md:pb-2 animate-fade-in-up opacity-0" style={{ animationFillMode: "forwards" }}>
         <div className="max-w-2xl w-full">
           <p className="text-xs sm:text-sm text-vermillion/80 tracking-[0.3em] mt-0 font-bold text-center" style={{ fontFamily: "var(--font-dutch)" }}>
             {dict.home.weAreGettingMarried}
