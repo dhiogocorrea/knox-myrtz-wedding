@@ -48,19 +48,21 @@ export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
       </div>
 
       <div className="relative z-10 w-full max-w-md mx-4">
-        <div className="glass-card p-10">
+        <div
+          className="glass-card p-10"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)), url('/images/PORTRAIT_ORIGINAL.JPG')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
           {/* Couple puppet illustration */}
-          <div className="flex justify-center mb-4 animate-fade-in-up">
-            <img
-              src="/images/couple-login.svg"
-              alt="Gui and Mirto"
-              className="w-40 h-40 opacity-90"
-            />
-          </div>
+          {/* cartoon removed */}
 
           {/* Couple Names */}
           <div className="text-center mb-8 animate-fade-in-up">
-            <p className="text-xs tracking-[0.5em] uppercase text-warm-gray mb-4">
+            <p className="text-xs tracking-[0.5em] uppercase text-ink mb-4">
               The Wedding of
             </p>
             <h1
@@ -93,7 +95,7 @@ export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
             >
               {dict.login.title}
             </h2>
-            <p className="text-warm-gray text-sm leading-relaxed">
+            <p className="text-ink text-sm leading-relaxed">
               {dict.login.subtitle}
             </p>
           </div>
