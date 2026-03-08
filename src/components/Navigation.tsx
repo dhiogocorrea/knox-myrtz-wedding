@@ -49,9 +49,9 @@ interface NavigationProps {
 const baseTabs: { id: TabId; icon: ReactNode }[] = [
   { id: "home", icon: <Home className="w-[18px] h-[18px]" /> },
   { id: "schedule", icon: <CalendarDays className="w-[18px] h-[18px]" /> },
-  { id: "rsvp", icon: <Mail className="w-[18px] h-[18px]" /> },
-  { id: "touristicInfo", icon: <Plane className="w-[18px] h-[18px]" /> },
   { id: "weddingInfo", icon: <Gem className="w-[18px] h-[18px]" /> },
+  { id: "touristicInfo", icon: <Plane className="w-[18px] h-[18px]" /> },
+  { id: "rsvp", icon: <Mail className="w-[18px] h-[18px]" /> },
 ];
 
 const adminTab: { id: TabId; icon: ReactNode } = {
