@@ -118,6 +118,7 @@ export const dictionaries = {
       subtitle: "Everything you need to know for your trip",
       introText:
         "Here we have listed some of our favourite attractions of the area, for those who are looking to explore the region further. <em>Note: If you want to visit Skyathos or Skopelos, please feel free to reach out for more info and guidance. We highly recommend to vacation there.</em>",
+      mapsLinkText: "Google Maps list",
     },
     weddingInfo: {
       title: "Wedding Info",
@@ -287,6 +288,7 @@ export const dictionaries = {
       subtitle: "Tudo que você precisa saber para sua viagem",
       introText:
         "Aqui listamos algumas das nossas atrações favoritas da região, para quem quer explorar mais a área. <em>Nota: Se quiser visitar Skyathos ou Skopelos, fique à vontade para nos contactar para mais informações e orientações. Recomendamos fortemente umas férias lá.</em>",
+      mapsLinkText: "Lista do Google Maps",
     },
     weddingInfo: {
       title: "Detalhes do Casamento",
@@ -458,6 +460,7 @@ export const dictionaries = {
       subtitle: "Όλα όσα χρειάζεται να γνωρίζετε για το ταξίδι σας",
       introText:
         "Εδώ έχουμε καταχωρίσει μερικά από τα αγαπημένα μας αξιοθέατα της περιοχής, για όσους θέλουν να εξερευνήσουν περαιτέρω την περιοχή. <em>Σημείωση: Αν θέλετε να επισκεφθείτε τη Skyathos ή τη Skopelos, μη διστάσετε να επικοινωνήσετε για περισσότερες πληροφορίες και καθοδήγηση. Σας το προτείνουμε ανεπιφύλακτα για διακοπές.</em>",
+      mapsLinkText: "Λίστα Google Maps",
     },
     weddingInfo: {
       title: "Λεπτομέρειες Γάμου",
