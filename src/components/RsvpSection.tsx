@@ -309,6 +309,8 @@ export function RsvpSection({ config, dict, authPassword }: RsvpSectionProps) {
               <label className="block text-sm font-medium text-primary-dark mb-2">
                 {dict.rsvp.eventDatesLabel}{' '}
                 <a href="/#schedule" className="underline text-ink">{dict.rsvp.scheduleLinkText}</a>
+                {' '}
+                <span className="text-warm-gray text-sm">{dict.rsvp.eventDatesNote}</span>
               </label>
               <div className="grid grid-cols-2 gap-2 mt-2">
                 {(

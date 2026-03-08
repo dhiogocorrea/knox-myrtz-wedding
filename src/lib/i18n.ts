@@ -105,6 +105,7 @@ export const dictionaries = {
       rentCarNo: "No",
       eventDatesLabel: "Please confirm which dates you'll join the heroes in our",
       scheduleLinkText: "planned events",
+      eventDatesNote: "(We will provide accommodation for the 5th and 6th of June)",
       eventOptions: {
         "2026-06-04": "<strong>4 June</strong>&nbsp;—&nbsp;Close-family dinner at <a href=\"https://maps.app.goo.gl/kn94JwutcQFEfdpg9\">📍 Mirto's House</a>",
         "2026-06-05": "<strong>5 June</strong>&nbsp;—&nbsp;All day at Alykes beach at <a href=\"https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7\">📍 Alykes Beach</a>",
@@ -275,6 +276,7 @@ export const dictionaries = {
       rentCarNo: "Não",
       eventDatesLabel: "Por favor confirme em quais datas você participará dos nossos",
       scheduleLinkText: "eventos planejados",
+      eventDatesNote: "(Forneceremos acomodação para os dias 5 e 6 de junho)",
       eventOptions: {
         "2026-06-04": "<strong>4 de junho</strong>&nbsp;—&nbsp;Jantar íntimo em família na <a href=\"https://maps.app.goo.gl/kn94JwutcQFEfdpg9\">📍 Casa da Mirto</a>",
         "2026-06-05": "<strong>5 de junho</strong>&nbsp;—&nbsp;Dia todo na praia Alykes em <a href=\"https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7\">📍 Praia Alykes</a>",
@@ -447,6 +449,7 @@ export const dictionaries = {
       rentCarNo: "Όχι",
         eventDatesLabel: "Παρακαλούμε επιβεβαιώστε ποιες ημερομηνίες θα συμμετάσχετε στις",
         scheduleLinkText: "προγραμματισμένες εκδηλώσεις",
+        eventDatesNote: "(Θα παρέχουμε διαμονή για τις 5 και 6 Ιουνίου)",
         eventOptions: {
           "2026-06-04": "<strong>4 Ιουνίου</strong>&nbsp;—&nbsp;Δείπνο με την πολύ κοντινή οικογένεια στο <a href=\"https://maps.app.goo.gl/kn94JwutcQFEfdpg9\">📍 Σπίτι της Μύρτου</a>",
           "2026-06-05": "<strong>5 Ιουνίου</strong>&nbsp;—&nbsp;Ολη την ημέρα στην παραλία Alykes στο <a href=\"https://maps.app.goo.gl/k1vWCCXF9Bb79aAG7\">📍 Παραλία Alykes</a>",
