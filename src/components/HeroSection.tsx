@@ -54,9 +54,9 @@ export function HeroSection({ config, dict, locale = "en" }: HeroSectionProps) {
       <div className="relative flex-1 w-full flex items-center justify-center min-h-0">
         {/* Couple photo – fills the top area, shrinks to leave room for bottom info */}
         <img
-          src="/images/PORTRAIT.jpg"
+          src="/images/PORTRAIT.png"
           alt=""
-          className="w-auto max-w-[min(620px,90vw)] h-full max-h-full object-contain select-none opacity-80 pointer-events-none"
+          className="h-full max-h-full object-contain select-none opacity-100 pointer-events-none transform translate-y-15"
           draggable={false}
         />
 
@@ -68,11 +68,11 @@ export function HeroSection({ config, dict, locale = "en" }: HeroSectionProps) {
           </p>
 
           <h1
-            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-ink font-black leading-[0.85] drop-shadow-[0_2px_4px_rgba(26,26,46,0.15)]"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-ink font-black leading-[0.85] drop-shadow-[0_2px_4px_rgba(26,26,46,0.15)]"
             style={{ fontFamily: "var(--font-brush)" }}
           >
             {config.couple.partner1.shortName}
-            <span className="text-vermillion mx-3 text-4xl sm:text-5xl md:text-6xl align-middle">&amp;</span>
+            <span className="text-vermillion mx-3 text-3xl sm:text-4xl md:text-5xl align-middle">&amp;</span>
             {config.couple.partner2.shortName}
           </h1>
         </div>
