@@ -48,15 +48,7 @@ export function LoginScreen({ dict, config, onLogin }: LoginScreenProps) {
       </div>
 
       <div className="relative z-10 w-full max-w-md mx-4">
-        <div
-          className="glass-card p-10"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)), url('/images/PORTRAIT_ORIGINAL.JPG')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
+        <div className="glass-card p-10">
           {/* Couple puppet illustration */}
           {/* cartoon removed */}
 
