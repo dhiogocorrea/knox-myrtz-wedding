@@ -402,9 +402,9 @@ touristicInfo:
 
 weddingInfo:
   dressCode:
-    en: "The ceremony is outdoors in a forest clearing. Wear whatever feels right for you–comfortable shoes are highly recommended (stilettos might not love the terrain)."
-    pt: "A localização é ao ar livre em uma pequena área de floresta. Use o que quiser, mas saltos finos provavelmente não são uma boa escolha."
-    el: "Η τοποθεσία είναι έξω σε μια μικρή περιοχή δάσους. Φορέστε ό,τι θέλετε, αλλά τα stilettos πιθανόν να μην είναι καλή επιλογή."
+    en: "The ceremony is outdoors in a forest clearing. Wear whatever feels right for you–comfortable shoes are highly recommended (stilettos might not love the terrain). Although its summer in Greece, the location can get chilly at night."
+    pt: "A localização é ao ar livre em uma pequena área de floresta. Use o que quiser, mas saltos finos provavelmente não são uma boa escolha. Embora seja verão na Grécia, o local pode ficar frio à noite."
+    el: "Η τοποθεσία είναι έξω σε μια μικρή περιοχή δάσους. Φορέστε ό,τι θέλετε, αλλά τα stilettos πιθανόν να μην είναι καλή επιλογή. Παρόλο που είναι καλοκαίρι στην Ελλάδα, ο χώρος μπορεί να γίνει κρύος τη νύχτα."
   contacts:
     en: "For any questions, reach out to us at example@email.com or +1 234 567 890."
     pt: "Para qualquer dúvida, entre em contato conosco em example@email.com ou +1 234 567 890."

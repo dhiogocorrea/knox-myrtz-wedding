@@ -60,7 +60,7 @@ interface WeddingInfoSectionProps {
 const ROW_TEMPLATES = [
   [
     { span: 10, tall: false },
-    { span: 10, tall: false },
+    { span: 8, tall: false },
   ],
   [
     { span: 4, tall: false },
