@@ -63,7 +63,7 @@ const ROW_TEMPLATES = [
     { span: 8, tall: false },
   ],
   [
-    { span: 4, tall: false },
+    { span: 3, tall: false },
     { span: 6, tall: false },
   ],
 ];
