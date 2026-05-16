@@ -56,6 +56,7 @@ export const SiteConfigSchema = z.object({
   }),
   defaultLocale: z.string(),
   locales: z.array(z.string()),
+  touristicInfoLink: z.string().url(),
   touristicInfo: z.array(TouristicInfoSchema),
   weddingInfo: WeddingInfoSchema,
 });

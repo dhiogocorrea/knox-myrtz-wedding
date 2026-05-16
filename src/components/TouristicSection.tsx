@@ -102,7 +102,7 @@ export function TouristicSection({ config, dict, locale }: TouristicSectionProps
 
               <p className="mt-4">
                 <a
-                  href={config.wedding?.venue?.mapUrl || "#"}
+                  href={config.touristicInfoLink || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-vermillion font-semibold underline"

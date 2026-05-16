@@ -179,6 +179,8 @@ locales:
   - "pt"
   - "el"
 
+touristicInfoLink: "https://www.google.com/maps/@/data=!4m3!11m2!2sgJRyTeOD4sRqNm3QEH4PXzF940-KPg!3e3?utm_source=mstt_11&utm_medium=mstt_2&g_ep=IP___________wEqAA%3D%3D&skid=b9e28937-20f0-46e3-b9a7-0f6589b9fe71"
+
 touristicInfo:
   - title:
       en: "1. Brown Beach Chalkida"
